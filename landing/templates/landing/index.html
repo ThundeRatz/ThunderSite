@@ -1,0 +1,49 @@
+{% extends 'landing/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+    <nav id="header" class="navbar navbar-expand-lg navbar-fixed-top navbar-light">
+        <img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: yellow">
+            <i class="icon ion-navicon-round"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ml-auto">
+                <a id="menu1" class="nav-item nav-link active">{{ menu1 }}</a>
+                <a id="menu2" class="nav-item nav-link">{{ menu2 }}</a>
+                <a id="menu3" class="nav-item nav-link">{{ menu3 }}</a>
+                <a id="menu4" class="nav-item nav-link">{{ menu4 }}</a>
+                <a id="menu5" class="nav-item nav-link">{{ menu5 }}</a>
+                <a id="menu6" class="nav-item nav-link">{{ menu6 }}</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="fullpage">
+
+        <div class="section text-center" id="section-home">
+            {% include 'landing/section_home.html' %}
+        </div>
+
+        <div class="section text-center" id="section2">
+            <h1>Teste3</h1>
+        </div>
+
+        <div class="section text-center" id="section-projects">
+            {% include 'landing/section_projects.html' %}
+        </div>
+
+        <div class="section" id="section-timeline">
+            {% include 'landing/section_timeline.html' %}
+        </div>
+
+        <div class="section text-center" id="section-sponsors">
+            {% include 'landing/section_sponsors.html' %}
+        </div>
+
+        <div class="section fp-auto-height" id="footer">
+            {% include 'landing/section_footer.html' %}
+        </div>
+    </div>
+{% endblock %}

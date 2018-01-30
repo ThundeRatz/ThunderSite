@@ -1,0 +1,335 @@
+#section-timeline {
+    font-size: 1.6rem;
+    color: #383838;
+    background-color: #f8f8f8;
+
+    ol, ul {
+        list-style: none;
+    }
+
+    a {
+        color: $base-color;
+        text-decoration: none;
+    }
+
+    .cd-horizontal-timeline {
+        opacity: 0;
+        transition: opacity 0.2s;
+
+        &::before {
+            content: 'mobile';
+            display: none;
+        }
+
+        &.loaded {
+            opacity: 1;
+        }
+
+        .timeline {
+            position: relative;
+            height: 100px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .events-wrapper {
+            position: relative;
+            height: 100%;
+            margin: 0 40px;
+            overflow: hidden;
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                height: 100%;
+                width: 20px;
+            }
+
+            &::before {
+                left: 0;
+                background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+            }
+
+            &::after {
+                right: 0;
+                background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+            }
+        }
+
+        .events {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 49px;
+            height: 2px;
+            background: #dfdfdf;
+            transition: transform 0.4s;
+
+            a {
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
+                text-align: center;
+                font-size: 1rem;
+                padding-bottom: 15px;
+                color: #383838;
+                transform: translateZ(0);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    right: auto;
+                    transform: translateX(-50%);
+                    bottom: -5px;
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 50%;
+                    border: 2px solid #dfdfdf;
+                    background-color: #f8f8f8;
+                    transition: background-color 0.3s, border-color 0.3s;
+                }
+
+                .no-touch &:hover::after {
+                    background-color: $base-color;
+                    border-color: $base-color;
+                }
+
+                &.selected {
+                    pointer-events: none;
+
+                    &::after {
+                        background-color: $base-color;
+                        border-color: $base-color;
+                    }
+                }
+
+                &.older-event::after {
+                    border-color: $base-color;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 1100px) {
+            &::before {
+                content: 'desktop';
+            }
+        }
+
+        .filling-line {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $base-color;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.3s;
+        }
+
+        .cd-timeline-navigation {
+            a {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+                height: 34px;
+                width: 34px;
+                border-radius: 50%;
+                border: 2px solid #dfdfdf;
+
+                overflow: hidden;
+                color: transparent;
+                text-indent: 100%;
+                white-space: nowrap;
+                transition: border-color 0.3s;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 16px;
+                    width: 16px;
+                    left: 50%;
+                    top: 50%;
+                    bottom: auto;
+                    right: auto;
+                    transform: translateX(-50%) translateY(-50%);
+                    background: url(../img/cd-arrow.svg) no-repeat 0 0;
+                }
+
+                &.prev {
+                    left: 0;
+                    transform: translateY(-50%) rotate(180deg);
+                }
+
+                &.next {
+                    right: 0;
+                }
+
+                .no-touch &:hover {
+                    border-color: $base-color;
+                }
+
+                &.inactive {
+                    cursor: not-allowed;
+
+                    &::after {
+                        background-position: 0 -16px;
+                    }
+
+                    .no-touch &:hover {
+                        border-color: #dfdfdf;
+                    }
+                }
+            }
+        }
+
+        .events-content {
+            position: relative;
+            width: 100%;
+            margin: 2em 0 0;
+            overflow: hidden;
+            height: 60vh !important;
+
+            li {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                left: 0;
+                top: 0;
+                transform: translateX(-100%);
+                padding: 0 5%;
+                opacity: 0;
+                animation-duration: 0.4s;
+                animation-timing-function: ease-in-out;
+
+                &.selected {
+                    position: relative;
+                    z-index: 2;
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                &.enter-right, &.leave-right {
+                    animation-name: cd-enter-right;
+                }
+
+                &.enter-left,  &.leave-left {
+                    animation-name: cd-enter-left;
+                }
+
+                &.leave-right, &.leave-left {
+                    animation-direction: reverse;
+                }
+
+                & > * {
+                    margin: 0 auto;
+                }
+            }
+
+            h2 {
+                font-family: 'Fira Sans', sans-serif;
+                font-size: 2.3rem;
+                font-weight: 700;
+                line-height: 1.2;
+            }
+
+            em {
+                display: block;
+                font-style: italic;
+                margin: 5px auto 10px;
+                font-size: 1rem;
+
+                &::before {
+                    content: '- ';
+                }
+            }
+
+            p {
+                font-family: 'Lato', sans-serif;
+                font-size: 1.3rem;
+                color: #959595;
+            }
+
+            em, p {
+                line-height: 1.5;
+            }
+
+            .event-image {
+                margin: 0.5rem 1.5rem .5rem 0;
+                width: 20vw;
+                float: left;
+
+                position: relative;
+                border-radius: 0.25rem;
+
+                background: {
+                    position: center;
+                    size: cover;
+                    repeat: no-repeat;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                    height: 0;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                h2 {
+                    font-size: 3rem;
+                }
+
+                em {
+                    font-size: 1.4rem;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                & {
+                    margin: .5rem 0 0;
+                }
+
+                .event-image {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @keyframes cd-enter-right {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes cd-enter-left {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
+}

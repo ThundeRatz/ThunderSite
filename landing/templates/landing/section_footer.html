@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<div id="flex-footer" class="d-flex flex-column flex-nowrap text-center align-items-stretch justify">
+    <div id="flex-footer-1" class="d-flex flex-row flex-wrap justify-content-between text-left">
+        <div class="contato">
+            <h5>Contato:</h5>
+            <i class="fas fa-envelope"></i>&nbsp;<span>contato@thunderatz.org</span><br>
+            <i class="fas fa-phone"></i>&nbsp;<span>+55 11 97338-8419</span><br>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+        <div class="endereco">
+            <h5>Endere&ccedil;o:</h5>
+            Av. Professor Mello Moraes, 2231<br>
+            CEP: 05508-030<br>
+            São Paulo, SP<br>
+        </div>
+        <div class="apoio align-right">
+            <!-- <h5>Apoio:</h5><br> -->
+            <img src="{% static 'landing/img/gear_logo.svg' %}" height="50px">
+        </div>
+    </div>
+    <div>
+        <div class="line"></div>
+        <div class="footer">&copy; 2018 ThundeRatz</footer>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+{% load compress %}
+{% load staticfiles %}
+
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title_block %}{% endblock %}</title>
+
+        {% compress js %}
+        <script src="{% static 'landing/js/fontawesome-all.js' %}"></script>
+        {% endcompress %}
+
+        {% compress css %}
+        <link rel="stylesheet" href="{% static 'generic/css/bootstrap.css' %}">
+
+        <link rel="stylesheet" type="text/x-sass" href="{% static 'projects/.scss/projects.scss' %}">
+        {% endcompress %}
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="d-none d-md-block sidebar">
+                    <div class="sidebar-sticky">
+                        {% block side_block %}
+                        {% endblock %}
+                    </div>
+                </nav>
+
+                <main role="main" class="content">
+                    {% block content_block %}
+                    {% endblock %}
+                </main>
+            </div>
+        </div>
+
+        {% compress js %}   
+        <script src="{% static 'generic/js/popper.min.js' %}"></script>
+        <script src="{% static 'generic/js/bootstrap.js' %}"></script>
+
+        <script src="{% static 'projects/js/projects.js' %}"></script>
+        {% endcompress %}
+    </body>
+</html>

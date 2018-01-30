@@ -1,0 +1,83 @@
+.sidebar-sticky {
+    .header {
+        width: 90%;
+        margin: 0 auto;
+
+        a {
+            color: $white;
+            font-size: 1.1rem;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.75);
+                text-decoration: none;
+            }
+        }
+    }
+
+    .image-container {
+        width: 90%;
+        margin: .5rem auto;
+        position: relative;
+        border-radius: 0.25rem;
+
+        background: {
+            position: center;
+            size: cover;
+            repeat: no-repeat;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            height: 0;
+        }
+    }
+
+    h1 {
+        margin: .5rem auto;
+    }
+
+    .nav-link {
+        font-weight: 500;
+    }
+}
+
+.content {
+    .card {
+        margin: {
+            top: 15px;
+            bottom: 15px;
+        }
+
+        .card-img-top {
+            position: relative;
+            background: {
+                position: center;
+                size: cover;
+                repeat: no-repeat;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                padding-bottom: 80%;
+                height: 0;
+            }
+        }
+
+        .btn-outline-primary {
+            border-color: $base-color;
+            color: $base-color;
+
+            &:hover {
+                background-color: $base-color;
+                color: $white;
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 1rem;
+    }
+}
