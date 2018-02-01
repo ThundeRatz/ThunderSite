@@ -11,4 +11,3 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(SuperCategory)
 admin.site.register(Category)
 admin.site.register(ProjectImage)
-1

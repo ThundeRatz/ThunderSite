@@ -26,6 +26,7 @@ class IndexView(TemplateView):
 
         context['list_gold'] = [x for x in range(1, 8)]     # TODO put actual sponsor here
         context['list_silver'] = [x for x in range(1, 11)]
+        context['list_bronze'] = [x for x in range(1, 11)]
 
         context['events'] = Event.objects.all()
 

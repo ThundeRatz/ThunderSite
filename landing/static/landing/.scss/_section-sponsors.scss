@@ -23,7 +23,7 @@
 
                         background: {
                             position: center;
-                            size: auto auto;
+                            size: cover;
                             repeat: no-repeat;
                         }
                     }
@@ -33,7 +33,7 @@
 
         #sponsors-silver-w1 {
             width: 100%;
-            height: calc(0.3 * (100vh - 40px - 1rem));
+            height: calc(0.35 * (100vh - 40px - 1rem));
             // background-color: silver;
 
             #sponsors-silver-w2 {
@@ -46,13 +46,13 @@
                     }
 
                     div {
-                        height: calc(0.9 * 0.3 * (100vh - 40px - 1rem));
-                        width: calc(250 / 180 * 0.9 * 0.3 * (100vh - 40px - 1rem));
+                        height: calc(0.9 * 0.35 * (100vh - 40px - 1rem));
+                        width: calc(250 / 180 * 0.9 * 0.35 * (100vh - 40px - 1rem));
                         margin: 0 auto;
 
                         background: {
                             position: center;
-                            size: auto auto;
+                            size: cover;
                             repeat: no-repeat;
                         }
                     }
@@ -61,15 +61,32 @@
 
         }
 
+        #sponsors-bronze-w1 {
+            width: 100%;
+            height: calc(0.25 * (100vh - 40px - 1rem));
 
-        #sponsors-bronze {
-            height: calc(0.15 * (100vh - 40px - 1rem));
-            background-color: brown;
-        }
+            #sponsors-bronze-w2 {
+                .slick-slide {
+                    opacity: 1;
+                    transition: opacity 300ms ease-in-out;
 
-        #sponsors-support {
-            height: calc(0.15 * (100vh - 40px - 1rem));
-            background-color: cyan;
+                    &.opacidown {
+                        opacity: 0;
+                    }
+
+                    div {
+                        height: calc(0.9 * 0.25 * (100vh - 40px - 1rem));
+                        width: calc(230 / 160 * 0.9 * 0.25 * (100vh - 40px - 1rem));
+                        margin: 0 auto;
+
+                        background: {
+                            position: center;
+                            size: cover;
+                            repeat: no-repeat;
+                        }
+                    }
+                }
+            }
         }
     }
 }
