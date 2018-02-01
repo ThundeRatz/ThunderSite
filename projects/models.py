@@ -1,3 +1,12 @@
+"""
+ThunderSite - ThundeRatz
+
+Projects Models
+Daniel Nery Silva de Oliveira
+
+01/2018
+"""
+
 from django.db import models
 from ckeditor.fields import RichTextField
 

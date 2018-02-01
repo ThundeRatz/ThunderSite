@@ -1,3 +1,12 @@
+"""
+ThunderSite - ThundeRatz
+
+Projects Pages Views
+Daniel Nery Silva de Oliveira
+
+01/2018
+"""
+
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, TemplateView, ListView, DetailView
 from .models import Project, SuperCategory, Category

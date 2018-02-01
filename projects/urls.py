@@ -1,3 +1,12 @@
+"""
+ThunderSite - ThundeRatz
+
+Projects Pages URL patterns
+Daniel Nery Silva de Oliveira
+
+01/2018
+"""
+
 from django.urls import path
 from . import views
 
