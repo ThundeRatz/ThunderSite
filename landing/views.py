@@ -1,6 +1,15 @@
+"""
+ThunderSite - ThundeRatz
+
+Landing Page view
+Daniel Nery Silva de Oliveira
+
+01/2018
+"""
+
 from django.shortcuts import render
 from django.views.generic import View, TemplateView
-from .models import Event
+from .models import Event, Sponsor
 
 class IndexView(TemplateView):
     template_name = 'landing/index.html'
@@ -15,12 +24,9 @@ class IndexView(TemplateView):
         context['menu5'] = 'Patrocinadores'
         context['menu6'] = 'Contato'
 
-        context['list_gold'] = [x for x in range(1, 8)]
+        context['list_gold'] = [x for x in range(1, 8)]     # TODO put actual sponsor here
         context['list_silver'] = [x for x in range(1, 11)]
 
         context['events'] = Event.objects.all()
 
         return context
-
-def soon(request):
-    return render(request, 'landing/soon.html')

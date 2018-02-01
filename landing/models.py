@@ -1,3 +1,12 @@
+"""
+ThunderSite - ThundeRatz
+
+Landing Page models
+Daniel Nery Silva de Oliveira
+
+01/2018
+"""
+
 from django.db import models
 from ckeditor.fields import RichTextField
 
@@ -17,6 +26,7 @@ class Sponsor(models.Model):
     def __str__(self):
         return self.name
 
+## Timeline events
 class Event(models.Model):
     title = models.CharField(max_length=64)
     date = models.DateField(unique=True)
