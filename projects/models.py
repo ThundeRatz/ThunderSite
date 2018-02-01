@@ -31,7 +31,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'categories'
 
-def project_image_path(instance, filename):
+def project_thumbnail_path(instance, filename):
     return 'projects/' + instance.name + '/thumb_' + filename
 
 class Project(models.Model):
@@ -39,7 +39,7 @@ class Project(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     logo = models.ImageField(upload_to='project_logos')
     typography = models.ImageField(upload_to='project_typography')
-    thumbnail = models.ImageField(upload_to=project_image_path)
+    thumbnail = models.ImageField(upload_to=project_thumbnail_path)
     debut_year = models.PositiveSmallIntegerField()
     gold = models.PositiveSmallIntegerField(default=0)
     silver = models.PositiveSmallIntegerField(default=0)
@@ -50,12 +50,12 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
-def project_image_path(instance, filename):
+def project_images_path(instance, filename):
     return 'projects/' + instance.project.name + '/' + filename
 
 class ProjectImage(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=project_image_path)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='pictures')
+    image = models.ImageField(upload_to=project_images_path)
     description = models.CharField(max_length=512)
 
     def __str__(self):
