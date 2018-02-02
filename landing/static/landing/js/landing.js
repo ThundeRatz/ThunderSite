@@ -3,7 +3,7 @@ $(document).ready(function() {
         navigation: true,
         controlArrows: false,
         responsiveWidth: 768,
-        keyboardScrolling: false,
+        // keyboardScrolling: false,
 
         onLeave: function(index, nextIndex, direction) {
             $('#menu'+index).removeClass('active');

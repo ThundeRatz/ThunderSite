@@ -1,5 +1,11 @@
 {% load staticfiles %}
 
+<div id="map"></div>
+<script src="{% static 'landing/js/map.js' %}"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIQMoNq6AoioZjLDNeb5ltulkzlXx6cI0&callback=initMap">
+</script>
+
 <div id="flex-footer" class="d-flex flex-column flex-nowrap text-center align-items-stretch justify">
     <div id="flex-footer-1" class="d-flex flex-row flex-wrap justify-content-between text-left">
         <div class="contato">

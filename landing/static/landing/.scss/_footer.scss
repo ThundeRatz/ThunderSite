@@ -7,6 +7,11 @@
 		font-family: 'Fira Sans', 'Lato', sans-serif;
 	}
 
+	#map {
+		height: 400px;
+		width: 100%;	
+	}
+
 	#flex-footer {
 		margin: 1rem 5rem;
 
@@ -35,10 +40,8 @@
 			background: linear-gradient(to right, transparent 0%, rgba(255,255,255,.2) 50%, transparent 100%);
 		}
 	}
-}
 
-@media (max-width: 768px) {
-	#footer {
+	@media (max-width: 768px) {
 		#flex-footer {
 			margin: 1rem 3rem;
 		}
