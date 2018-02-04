@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'landing',
     'projects',
+    'news',
 ]
 
 MIDDLEWARE = [

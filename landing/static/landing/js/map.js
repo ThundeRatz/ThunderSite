@@ -1,8 +1,9 @@
 function initMap() {
-  var uluru = { lat: -23.553551, lng: -46.728786 };
+  var gaiola = { lat: -23.553551, lng: -46.728786 };
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
-    center: uluru,
+    center: gaiola,
+    gestureHandling: 'cooperative',
     styles: [{
         "elementType": "geometry",
         "stylers": [{ "color": "#f5f5f5" }],
@@ -76,7 +77,7 @@ function initMap() {
   });
 
   var marker = new google.maps.Marker({
-      position: uluru,
+      position: gaiola,
       map: map,
       icon: '/static/landing/img/Pin_TR.png',
   });

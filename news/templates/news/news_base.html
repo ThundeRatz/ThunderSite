@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% load compress %}
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Daniel Nery">
+        <meta name="description" content=
+            "Equipe ThundeRatz de Robótica da Escola Politécnica da USP">
+
+        <meta name="google-site-verification" content="ITXrfAL9-Dpei4NNqxzq6pUSgCCP3tBPnviXPv_y1tU">
+
+        <title>{% block title_block %}{% endblock %}</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato" rel="stylesheet">
+
+        {% compress css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'generic/css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'news/css/mdb.css' %}">
+
+        <link rel="stylesheet" type="text/x-sass" href="{% static 'news/.scss/news.scss' %}">
+        {% endcompress %}
+
+        {% compress js %}
+        <script src="{% static 'generic/js/fontawesome-all.js' %}"></script>
+        <script src="{% static 'generic/js/jquery-3.2.1.js' %}"></script>
+        {% endcompress %}
+    </head>
+    <body>
+        {% block body_block %}
+        {% endblock %}
+
+        {% compress js %}
+        <script src="{% static 'generic/js/popper.min.js' %}"></script>
+        <script src="{% static 'generic/js/bootstrap.js' %}"></script>
+        <script src="{% static 'news/js/mdb.js' %}"></script>
+
+        <script src="{% static 'news/js/news.js' %}"></script>
+        {% endcompress %}
+    </body>
+</html>
