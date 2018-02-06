@@ -3,30 +3,36 @@
 <div id="sponsors" class="d-flex flex-column flex-nowrap justify-content-end">
     <div id="sponsors-gold-w1" class="d-flex flex-column flex-nowrap justify-content-center">
         <div id="sponsors-gold-w2">
-            {% for i in list_gold %}
-            <div>
-                <div style="background-image: url('http://via.placeholder.com/330x250')"></div>
-            </div>
+            {% for sponsor in sponsors %}
+                {% if sponsor.quota.name == 'Ouro' %}
+                <div>
+                    <a href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
+                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
 
     <div id="sponsors-silver-w1" class="d-flex flex-column flex-nowrap justify-content-center">
         <div id="sponsors-silver-w2">
-            {% for i in list_silver %}
-            <div>
-                <div style="background-image: url('http://via.placeholder.com/250x180')"></div>
-            </div>
+            {% for sponsor in sponsors %}
+                {% if sponsor.quota.name == 'Prata' %}
+                <div>
+                    <a href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
+                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
 
     <div id="sponsors-bronze-w1" class="d-flex flex-column flex-nowrap justify-content-center">
         <div id="sponsors-bronze-w2">
-            {% for i in list_bronze %}
-            <div>
-                <div style="background-image: url('http://via.placeholder.com/230x160')"></div>
-            </div>
+            {% for sponsor in sponsors %}
+                {% if sponsor.quota.name == 'Bronze' %}
+                <div>
+                    <a href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
+                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>

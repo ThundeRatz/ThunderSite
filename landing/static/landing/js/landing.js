@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#fullpage').fullpage({
         navigation: true,
         controlArrows: false,
-        responsiveWidth: 768,
+        responsiveWidth: 768    ,
         // keyboardScrolling: false,
 
         onLeave: function(index, nextIndex, direction) {
@@ -11,11 +11,9 @@ $(document).ready(function() {
 
             if (index === 1) {
                 $('#header').fadeIn();
-                $('#section-buttons').addClass('hidden');
                 $('#fp-nav ul li a span, .fp-slidesNav ul li a span').css('background', '#1C1C42');
             } else if (nextIndex === 1) {
                 $('#header').fadeOut();
-                $('#section-buttons').removeClass('hidden');
                 $('#fp-nav ul li a span, .fp-slidesNav ul li a span').css('background', '#FFFFFF');
             }
 
@@ -57,7 +55,7 @@ $(document).ready(function() {
         cssEase: 'linear',
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         speed: 300,
         pauseOnHover: false,
         pauseOnFocus: false,
@@ -67,13 +65,13 @@ $(document).ready(function() {
             breakpoint: 1000,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2,
+                // slidesToScroll: 2,
             },
         }, {
             breakpoint: 670,
             settings: {
                 slidesToScroll: 1,
-                slidesToShow: 1,
+                // slidesToShow: 1,
             },
         }],
     })
@@ -86,7 +84,7 @@ $(document).ready(function() {
         cssEase: 'linear',
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         speed: 300,
         pauseOnHover: false,
         pauseOnFocus: false,
@@ -102,19 +100,19 @@ $(document).ready(function() {
             breakpoint: 1010,
             settings: {
                 slidesToScroll: 3,
-                slidesToShow: 3,
+                // slidesToShow: 3,
             },
         }, {
             breakpoint: 760,
             settings: {
                 slidesToScroll: 2,
-                slidesToShow: 2,
+                // slidesToShow: 2,
             },
         }, {
             breakpoint: 510,
             settings: {
                 slidesToScroll: 1,
-                slidesToShow: 1,
+                // slidesToShow: 1,
             },
         }],
     });
@@ -127,7 +125,7 @@ $(document).ready(function() {
         cssEase: 'linear',
         infinite: true,
         slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToScroll: 1,
         speed: 300,
         pauseOnHover: false,
         pauseOnFocus: false,
@@ -137,54 +135,54 @@ $(document).ready(function() {
             breakpoint: 1260,
             settings: {
                 slidesToShow: 4,
-                slidesToScroll: 4,
+                // slidesToScroll: 4,
             },
         }, {
             breakpoint: 1010,
             settings: {
                 slidesToScroll: 3,
-                slidesToShow: 3,
+                // slidesToShow: 3,
             },
         }, {
             breakpoint: 760,
             settings: {
                 slidesToScroll: 2,
-                slidesToShow: 2,
+                // slidesToShow: 2,
             },
         }, {
             breakpoint: 510,
             settings: {
                 slidesToScroll: 1,
-                slidesToShow: 1,
+                // slidesToShow: 1,
             },
         }],
     });
 
-    // this is for the first fadeout
-    setTimeout(function(){
-        $('.slick-slide').addClass('opacidown');
-    }, 2700);
-    // all the rest of the transitions after the initial
-    $('#sponsors-gold-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-        $('#sponsors-gold-w2 .slick-slide').removeClass('opacidown');
-        setTimeout(function(){
-            $('#sponsors-gold-w2 .slick-slide').addClass('opacidown');
-        }, 2700);
-    });
+    // // this is for the first fadeout
+    // setTimeout(function(){
+    //     $('.slick-slide').addClass('opacidown');
+    // }, 2700);
+    // // all the rest of the transitions after the initial
+    // $('#sponsors-gold-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    //     $('#sponsors-gold-w2 .slick-slide').removeClass('opacidown');
+    //     setTimeout(function(){
+    //         $('#sponsors-gold-w2 .slick-slide').addClass('opacidown');
+    //     }, 2700);
+    // });
 
-    $('#sponsors-silver-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-        $('#sponsors-silver-w2 .slick-slide').removeClass('opacidown');
-        setTimeout(function(){
-            $('#sponsors-silver-w2 .slick-slide').addClass('opacidown');
-        }, 2700);
-    });
+    // $('#sponsors-silver-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    //     $('#sponsors-silver-w2 .slick-slide').removeClass('opacidown');
+    //     setTimeout(function(){
+    //         $('#sponsors-silver-w2 .slick-slide').addClass('opacidown');
+    //     }, 2700);
+    // });
 
-    $('#sponsors-bronze-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-        $('#sponsors-bronze-w2 .slick-slide').removeClass('opacidown');
-        setTimeout(function(){
-            $('#sponsors-bronze-w2 .slick-slide').addClass('opacidown');
-        }, 2700);
-    });
+    // $('#sponsors-bronze-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    //     $('#sponsors-bronze-w2 .slick-slide').removeClass('opacidown');
+    //     setTimeout(function(){
+    //         $('#sponsors-bronze-w2 .slick-slide').addClass('opacidown');
+    //     }, 2700);
+    // });
 
     $('#header').hide();
 

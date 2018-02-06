@@ -6,7 +6,7 @@
     <nav id="header" class="navbar navbar-expand-lg navbar-fixed-top navbar-light">
         <img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: yellow">
-            <i class="icon ion-navicon-round"></i>
+            <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav ml-auto">
@@ -22,28 +22,28 @@
 
     <div id="fullpage">
 
-        <div class="section text-center" id="section-home">
+        <section class="section text-center" id="section-home">
             {% include 'landing/section_home.html' %}
-        </div>
+        </section>
 
-        <div class="section text-center" id="section2">
+        <section class="section text-center" id="section2">
             <h1>Teste3</h1>
-        </div>
+        </section>
 
-        <div class="section text-center" id="section-projects">
+        <section class="section text-center" id="section-projects">
             {% include 'landing/section_projects.html' %}
-        </div>
+        </section>
 
-        <div class="section" id="section-timeline">
+        <section class="section" id="section-timeline">
             {% include 'landing/section_timeline.html' %}
-        </div>
+        </section>
 
-        <div class="section text-center" id="section-sponsors">
+        <section class="section text-center" id="section-sponsors">
             {% include 'landing/section_sponsors.html' %}
-        </div>
+        </section>
 
-        <div class="section fp-auto-height" id="footer">
+        <footer class="section fp-auto-height" id="footer">
             {% include 'landing/section_footer.html' %}
-        </div>
+        </footer>
     </div>
 {% endblock %}

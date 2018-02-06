@@ -5,7 +5,6 @@
         #sponsors-gold-w1 {
             width: 100%;
             height: calc(0.4 * (100vh - 40px - 1rem));
-            // background-color: gold;
 
             #sponsors-gold-w2 {
                 .slick-slide {
@@ -23,7 +22,7 @@
 
                         background: {
                             position: center;
-                            size: cover;
+                            size: contain;
                             repeat: no-repeat;
                         }
                     }
@@ -34,7 +33,6 @@
         #sponsors-silver-w1 {
             width: 100%;
             height: calc(0.35 * (100vh - 40px - 1rem));
-            // background-color: silver;
 
             #sponsors-silver-w2 {
                 .slick-slide {
@@ -52,7 +50,7 @@
 
                         background: {
                             position: center;
-                            size: cover;
+                            size: contain;
                             repeat: no-repeat;
                         }
                     }
@@ -81,7 +79,7 @@
 
                         background: {
                             position: center;
-                            size: cover;
+                            size: contain;
                             repeat: no-repeat;
                         }
                     }

@@ -21,7 +21,7 @@
 
     #section-buttons {
         width: 100%;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         transition: opacity 1s ease;
         border-top: 2px solid $white;
