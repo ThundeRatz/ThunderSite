@@ -2,41 +2,4 @@ $base-color: #161843;
 $accent-color: #F7E901;
 $white: #FFFFFF;
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0;
-    background: $base-color;
-    color: $white;
-    z-index: 1000;
-    width: 375px;
-
-    .sidebar-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        height: 100vh;
-        padding: 1rem 1rem;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-}
-
-.content {
-    width: calc(100% - 375px);
-    margin-left: 375px;
-    padding: {
-        left: 25px;
-        right: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .content {
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
 @import 'list'

@@ -3,18 +3,15 @@
 {% block title_block %}ThundeRatz | {{ project.name }}{% endblock %}
 
 
-{% block side_block %}
+{% block body_block %}
 <h1>{{ project.name }}</h1>
-{% endblock %}
 
-
-{% block content_block %}
 <ul>
 <li>{{ project.name }}</li>
 <li>{{ project.category }} - {{ project.category.super_category.name }}</li>
-<li>{{ project.logo.url }}</li>
-<li>{{ project.typography.url }}</li>
-<li>{{ project.thumbnail.url }}</li>
+<img src="{{ project.logo.url }}">
+<img src="{{ project.typography.url }}">
+<img src="{{ project.thumbnail.url }}">
 <li>{{ project.debut_year }}</li>
 <li>{{ project.gold }} | {{ project.silver }} | {{ project.bronze }}</li>
 <li>{{ project.description | safe }}</li>

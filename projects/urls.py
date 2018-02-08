@@ -13,7 +13,6 @@ from . import views
 app_name = 'projects'
 
 urlpatterns = [
-    path('', views.IndexTemplateView.as_view(), name='index'),
-    path('<category>/', views.ProjectListView.as_view(), name='category'),
+    path('', views.ProjectListView.as_view(), name='index'),
     path('<pk>', views.ProjectDetailView.as_view(), name='detail'),
 ]
