@@ -35,26 +35,27 @@
         position: relative;
         background-color: white;
         z-index: 3;
-        top: -30vh;
+        margin-top: -30vh;
 
         @media all and (max-width: 1200px) {
-            top: -25vh;
+            margin-top: -25vh;
         }
 
         @media all and (max-width: 992px) {
-            top: -15vh;
+            margin-top: -15vh;
         }
 
         @media all and (max-width: 768px) {
-            top: -5vh;
+            margin-top: -5vh;
         }
 
         @media all and (max-width: 576px) {
-            top: -2vh;
+            margin-top: -2vh;
         }
 
         .navbar {
             box-shadow: none;
+            background-color: $base-color;
         }
     }
 
@@ -90,6 +91,11 @@
         .surprise {
             transition: opacity 0.3s ease;
             opacity: 0;
+
+            &.btn {
+                background-color: $base-color;
+                color: white;
+            }
         }
     }
 }

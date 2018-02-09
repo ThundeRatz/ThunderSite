@@ -17,6 +17,7 @@ $(document).ready(function() {
         $('#project-row > div').each(function() {
             ($(this).data('cat') == category) ? $(this).show() : $(this).hide();
         });
+        window.history.replaceState("projects_hist", "ThundeRatz | Projects", "/projects/");
     }
 
     $('#project-search').on('keyup', function() {
@@ -37,5 +38,18 @@ $(document).ready(function() {
                 $(this).show();
             }
         });
+    });
+
+    $('#project-images-w2').slick({
+        infinite: true,
+        speed: 500,
+        cssEase: 'linear',
+        // variableWidth: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+    });
+
+    $('#contact-button').on('click', function() {
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 1000);
     })
 })
