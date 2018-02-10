@@ -8,7 +8,7 @@
     <div class="top view hm-black-strong">
         <div class="top-image" style="background-image: url({{ project.thumbnail.url }});"></div>
         <div class="mask waves-effect waves-light">
-            <h1 class="title white-text">{{ project.name }}</h1>
+            <img src="{{ project.typography.url }}" class="typography">
         </div>
     </div>
 
@@ -37,10 +37,10 @@
         <div class="row">
             <div class="col-md-3" id="left-info-wrapper">
                 <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
-                    <div style="background-image: url({{ project.logo.url }})" class="logo"></div>
-                    <div style="background-image: url({{ project.typography.url }})" class="typography"></div>
+                    <div style="background-image: url({{ project.thumbnail.url }})" class="thumbnail mx-auto pt-2"></div>
+                    <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div>
                     <div class="card-body">
-                        <h4 class="card-title">{{ project.name }}</h4>
+                        <h2 class="card-title text-center">{{ project.name }}</h4>
                         <p class="card-text text-muted">{{ project.category }}</p>
                         <p class="card-text">Estreia: {{ project.debut_year }}</p>
                         <p class="card-text row">
@@ -54,13 +54,19 @@
 
             <div class="col-md-9">
                 <div class="d-block w-100 p-3 text-justify">
+                    <h1>{{ project.name }}</h1>
+
+                    <hr>
+
                     {{ project.description | safe }}
+
+                    <hr>
 
                     <div id="project-images-w1" class="d-flex flex-column flex-nowrap justify-content-center mx-auto">
                         <div id="project-images-w2">
                             {% for pic in project.pictures.all %}
                             <div>
-                                <div class="image z-depth-1" style="background-image: url({{ pic.image.url }});"></div>
+                                <a href="{{ pic.image.url }}" data-lightbox="project-gallery" data-title="{{ pic.description }}"><div class="image z-depth-1" style="background-image: url({{ pic.image.url }});"></div></a>
                             </div>
                             {% endfor %}
                         </div>
@@ -107,7 +113,7 @@
 
             <div class="footer-lower">
                 <div class="line"></div>
-                <div class="text-center">&copy; 2018 ThundeRatz</div>
+                <div class="text-center">&copy; 2018 Equipe ThundeRatz de Rob&oacute;tica</div>
             </div>
 
         </div>

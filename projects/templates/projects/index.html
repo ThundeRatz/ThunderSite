@@ -52,7 +52,7 @@
                     <div class="text-white d-flex flex-column justify-content-around align-items-center card-img-overlay">
                         <h3 class="mb-0 card-title">{{ project.name }}</h3>
 
-                        <a class="surprise btn" href="{% url 'projects:detail' project.pk %}">
+                        <a class="surprise btn" href="{% url 'projects:detail' project.slug %}">
                             Ver projeto
                         </a>
 

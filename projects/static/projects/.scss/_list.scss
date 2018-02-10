@@ -66,6 +66,7 @@
             position: center;
             size: cover;
             repeat: no-repeat;
+            color: white;
         }
 
         &::after {
@@ -78,7 +79,8 @@
 
     .card-img-overlay {
         transition: background-color 0.3s ease;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: transparent;
+        // background-color: rgba(0, 0, 0, 0.3);
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.5);

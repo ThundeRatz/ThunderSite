@@ -41,7 +41,7 @@ $(document).ready(function() {
     });
 
     $('#project-images-w2').slick({
-        infinite: true,
+        infinite: false,
         speed: 500,
         cssEase: 'linear',
         // variableWidth: true,
@@ -52,4 +52,12 @@ $(document).ready(function() {
     $('#contact-button').on('click', function() {
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 1000);
     })
+
+    // Start with typography on top
+    var $container = $('html, body'),
+        $scrollTo = $('.typography');
+
+    $container.scrollTop(
+        $scrollTo.offset().top - $container.offset().top + $container.scrollTop() - 10
+    );
 })

@@ -7,6 +7,7 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'is_active')
     list_editable = ('is_active',)
     list_filter = ('is_active',)
+    prepopulated_fields = { "slug": ("name",)}
 
 admin.site.register(SuperCategory)
 admin.site.register(Category)

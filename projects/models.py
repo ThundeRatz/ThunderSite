@@ -35,7 +35,8 @@ def project_thumbnail_path(instance, filename):
     return 'projects/' + instance.name + '/thumb_' + filename
 
 class Project(models.Model):
-    name = models.CharField(max_length=64, primary_key=True)
+    name = models.CharField(max_length=64)
+    slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/projects/&lt;slug&gt;</em>")
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     logo = models.ImageField(upload_to='project_logos')
     typography = models.ImageField(upload_to='project_typography')
