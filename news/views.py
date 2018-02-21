@@ -8,11 +8,13 @@ Daniel Nery Silva de Oliveira
 """
 
 from django.views.generic import View, TemplateView, ListView, DetailView
+from .models import News
 
-
-# TODO put the List and DetailView, with the models
+# TODO put the ListView, with the models
 class NewsListView(TemplateView):
     template_name = 'news/news_list.html'
 
-class NewsDetailView(TemplateView):
+class NewsDetailView(DetailView):
+    model = News
     template_name = 'news/news_detail.html'
+    context_object_name = 'news'

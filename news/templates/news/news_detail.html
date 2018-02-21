@@ -1,13 +1,13 @@
 {% extends 'news/news_base.html' %}
 
 {% load  staticfiles %}
-{% block title_block %}ThundeRatz | News | {{ slug }}{% endblock %}
+{% block title_block %}ThundeRatz | News | {{ news.title }}{% endblock %}
 
 {% block body_block %}
 
 <section class="container">
-    <h1>Teste</h1>
-    <p>{{ slug }}</p>
+    <h1>{{ news.title }}</h1>
+    <div class="text-justify">{{ news.text | safe }}</div>
 </section>
 
 {% endblock %}

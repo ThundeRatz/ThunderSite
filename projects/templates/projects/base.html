@@ -24,10 +24,11 @@
         <link rel="stylesheet" href="{% static 'generic/css/slick-theme.css' %}">
         <link rel="stylesheet" href="{% static 'projects/css/lightbox.css' %}">
 
+        <link rel="stylesheet" type="text/x-sass" href="{% static 'generic/.scss/thundersite.scss' %}">
         <link rel="stylesheet" type="text/x-sass" href="{% static 'projects/.scss/projects.scss' %}">
         {% endcompress %}
     </head>
-    <body>
+    <body class="custom-scroll">
         {% block body_block %}
         {% endblock %}
 

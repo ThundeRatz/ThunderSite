@@ -57,21 +57,21 @@ $(document).ready(function() {
         slidesToShow: 3,
         slidesToScroll: 1,
         speed: 300,
-        pauseOnHover: false,
-        pauseOnFocus: false,
+        pauseOnHover: true,
+        pauseOnFocus: true,
 
         respondTo: 'min',
         responsive: [{
             breakpoint: 1000,
             settings: {
                 slidesToShow: 2,
-                // slidesToScroll: 2,
+                slidesToScroll: 1,
             },
         }, {
             breakpoint: 670,
             settings: {
+                slidesToShow: 1,
                 slidesToScroll: 1,
-                // slidesToShow: 1,
             },
         }],
     })
@@ -86,33 +86,27 @@ $(document).ready(function() {
         slidesToShow: 4,
         slidesToScroll: 1,
         speed: 300,
-        pauseOnHover: false,
-        pauseOnFocus: false,
+        pauseOnHover: true,
+        pauseOnFocus: true,
 
         respondTo: 'min',
         responsive: [{
-        //     breakpoint: 1260,
-        //     settings: {
-        //         slidesToShow: 4,
-        //         slidesToScroll: 4,
-        //     },
-        // }, {
             breakpoint: 1010,
             settings: {
-                slidesToScroll: 3,
-                // slidesToShow: 3,
+                slidesToShow: 3,
+                slidesToScroll: 1,
             },
         }, {
             breakpoint: 760,
             settings: {
-                slidesToScroll: 2,
-                // slidesToShow: 2,
+                slidesToShow: 2,
+                slidesToScroll: 1,
             },
         }, {
             breakpoint: 510,
             settings: {
+                slidesToShow: 1,
                 slidesToScroll: 1,
-                // slidesToShow: 1,
             },
         }],
     });
@@ -127,86 +121,60 @@ $(document).ready(function() {
         slidesToShow: 5,
         slidesToScroll: 1,
         speed: 300,
-        pauseOnHover: false,
-        pauseOnFocus: false,
+        pauseOnHover: true,
+        pauseOnFocus: true,
 
         respondTo: 'min',
         responsive: [{
             breakpoint: 1260,
             settings: {
                 slidesToShow: 4,
-                // slidesToScroll: 4,
+                slidesToScroll: 1,
             },
         }, {
             breakpoint: 1010,
             settings: {
-                slidesToScroll: 3,
-                // slidesToShow: 3,
+                slidesToShow: 3,
+                slidesToScroll: 1,
             },
         }, {
             breakpoint: 760,
             settings: {
-                slidesToScroll: 2,
-                // slidesToShow: 2,
+                slidesToShow: 2,
+                slidesToScroll: 1,
             },
         }, {
             breakpoint: 510,
             settings: {
+                slidesToShow: 1,
                 slidesToScroll: 1,
-                // slidesToShow: 1,
             },
         }],
     });
 
-    // // this is for the first fadeout
-    // setTimeout(function(){
-    //     $('.slick-slide').addClass('opacidown');
-    // }, 2700);
-    // // all the rest of the transitions after the initial
-    // $('#sponsors-gold-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    //     $('#sponsors-gold-w2 .slick-slide').removeClass('opacidown');
-    //     setTimeout(function(){
-    //         $('#sponsors-gold-w2 .slick-slide').addClass('opacidown');
-    //     }, 2700);
-    // });
-
-    // $('#sponsors-silver-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    //     $('#sponsors-silver-w2 .slick-slide').removeClass('opacidown');
-    //     setTimeout(function(){
-    //         $('#sponsors-silver-w2 .slick-slide').addClass('opacidown');
-    //     }, 2700);
-    // });
-
-    // $('#sponsors-bronze-w2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    //     $('#sponsors-bronze-w2 .slick-slide').removeClass('opacidown');
-    //     setTimeout(function(){
-    //         $('#sponsors-bronze-w2 .slick-slide').addClass('opacidown');
-    //     }, 2700);
-    // });
-
     $('#header').hide();
 
-    $('.navbar-brand, #menu1').click(function() {
+    $('.navbar-brand').on('click', function() {
         $.fn.fullpage.moveTo(1);
     });
 
-    $('#menu2, #menu2-start').click(function() {
+    $('#menu2, #menu2-start').on('click', function() {
         $.fn.fullpage.moveTo(2);
     });
 
-    $('#menu3, #menu3-start').click(function() {
+    $('#menu3, #menu3-start').on('click', function() {
         $.fn.fullpage.moveTo(3, 0);
     });
 
-    $('#menu4, #menu4-start').click(function() {
+    $('#menu4, #menu4-start').on('click', function() {
         $.fn.fullpage.moveTo(4);
     });
 
-    $('#menu5, #menu5-start').click(function() {
+    $('#menu5, #menu5-start').on('click', function() {
         $.fn.fullpage.moveTo(5);
     });
 
-    $('#menu6, #menu6-start').click(function() {
+    $('#menu6, #menu6-start').on('click', function() {
         $.fn.fullpage.moveTo(6);
     });
 });

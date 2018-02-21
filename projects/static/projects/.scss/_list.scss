@@ -79,8 +79,12 @@
 
     .card-img-overlay {
         transition: background-color 0.3s ease;
-        background-color: transparent;
-        // background-color: rgba(0, 0, 0, 0.3);
+        // background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        .card-title {
+            color: white;
+        }
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.5);

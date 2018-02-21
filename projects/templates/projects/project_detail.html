@@ -6,7 +6,7 @@
 {% block body_block %}
 <section id="project-detail" class="container-fluid px-0">
     <div class="top view hm-black-strong">
-        <div class="top-image" style="background-image: url({{ project.thumbnail.url }});"></div>
+        <div class="top-image" style="background-image: url({{ project.pictures.all.0.image.url }});"></div>
         <div class="mask waves-effect waves-light">
             <img src="{{ project.typography.url }}" class="typography">
         </div>
@@ -76,47 +76,7 @@
         </div>
     </div>
 
-    <footer id="footer" class="w-100">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-12 col-md-3">
-                    <h5>Contato:</h5>
-                    <p class="py-2"><i class="fas fa-envelope"></i>&nbsp;<span>contato@thunderatz.org</span><br>
-                    <i class="fas fa-phone"></i>&nbsp;<span>+55 11 97338-8419</span></p>
+    {% include "generic/footer.html" %}
 
-                    <h5>Endere&ccedil;o:</h5>
-                    <p class="py-2">Av. Professor Mello Moraes, 2231<br>
-                    CEP: 05508-030<br>
-                    São Paulo, SP<br></p>
-                </div>
-
-                <div class="col-12 col-md-3">
-                    <h5>Social:</h5>
-                    <div class="row justify-content-between pt-3 pb-4 social">
-                        <a class="col text-center" href="http://fb.com/thunderatz"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        <a class="col text-center" href="http://youtube.com/thunderatz"><i class="fab fa-youtube fa-2x"></i></a>
-                        <a class="col text-center" href="http://instagram.com/thunderatz"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a class="col text-center" href="http://github.com/thunderatz"><i class="fab fa-github fa-2x"></i></a>
-                    </div>
-                    <h5>Apoio:</h5>
-                    <div class="pt-2 pb-3"><img src="{% static 'landing/img/gear_logo.svg' %}" height="50px"></div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                    <div id="map"></div>
-                    <script src="{% static 'landing/js/map.js' %}"></script>
-                    <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIQMoNq6AoioZjLDNeb5ltulkzlXx6cI0&callback=initMap">
-                    </script>
-                </div>
-            </div>
-
-            <div class="footer-lower">
-                <div class="line"></div>
-                <div class="text-center">&copy; 2018 Equipe ThundeRatz de Rob&oacute;tica</div>
-            </div>
-
-        </div>
-    </footer>
 </section>
 {% endblock %}

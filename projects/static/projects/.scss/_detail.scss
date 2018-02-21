@@ -103,35 +103,5 @@
         position: relative;
         padding-top: 20vh;
         z-index: 2;
-
-        color: $white;
-        background-color: $base-color;
-        font-family: 'Lato', sans-serif;
-
-        h5 {
-            font-family: 'Fira Sans', 'Lato', sans-serif;
-        }
-
-        #map {
-            height: 250px;
-            width: 100%;
-        }
-
-        .social {
-            a {
-                color: rgba(255,255,255,1) !important;
-
-                &:hover {
-                    color: rgba(255,255,255,.75) !important;
-                }
-            }
-        }
-
-        .line {
-            margin: 1rem 5rem;
-            height: 1px;
-            background: rgba(255,255,255,.2);
-            background: linear-gradient(to right, transparent 0%, rgba(255,255,255,.2) 50%, transparent 100%);
-        }
     }
 }

@@ -18,6 +18,7 @@ def get_sentinel_user():
 class News(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.SET(get_sentinel_user))
     title = models.CharField(max_length=256)
+    slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/news/&lt;slug&gt;</em>")
     text = RichTextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
