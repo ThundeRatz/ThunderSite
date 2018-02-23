@@ -1,82 +1,60 @@
-{% extends 'projects/base.html' %}
+{% extends 'projects/projects_base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}ThundeRatz | {{ project.name }}{% endblock %}
 
-{% block body_block %}
-<section id="project-detail" class="container-fluid px-0">
-    <div class="top view hm-black-strong">
-        <div class="top-image" style="background-image: url({{ project.pictures.all.0.image.url }});"></div>
-        <div class="mask waves-effect waves-light">
-            <img src="{{ project.typography.url }}" class="typography">
-        </div>
-    </div>
+{% block top_image_block %}{{ project.pictures.all.0.image.url }}{% endblock %}
+{% block top_title_block %}<img src="{{ project.typography.url }}" class="typography">{% endblock %}
 
-    <div class="content z-depth-4 mx-1 mx-md-4 mx-lg-5">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{% block nav_block %}
+<a href="{% url 'landing:index' %}" class="nav-link nav-item nav-special">In&iacute;cio</a>
+<a href="{% url 'projects:robots' %}"class="nav-link nav-item nav-special">Lista de Projetos</a>
+<a id="contact-button" class="nav-link nav-item nav-special">Contato</a>
+{% endblock %}
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul id="categories-menu" class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="{% url 'landing:index' %}" class="nav-link">In&iacute;cio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'projects:index' %}"class="nav-link">Lista de Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="contact-button" class="nav-link">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="row">
-            <div class="col-md-3" id="left-info-wrapper">
-                <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
-                    <div style="background-image: url({{ project.thumbnail.url }})" class="thumbnail mx-auto pt-2"></div>
-                    <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div>
-                    <div class="card-body">
-                        <h2 class="card-title text-center">{{ project.name }}</h4>
-                        <p class="card-text text-muted">{{ project.category }}</p>
-                        <p class="card-text">Estreia: {{ project.debut_year }}</p>
-                        <p class="card-text row">
-                            <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
-                            <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>
-                            <span class="col"><i class="fas fa-trophy" style="color: brown"></i> {{ project.bronze }}</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-                <div class="d-block w-100 p-3 text-justify">
-                    <h1>{{ project.name }}</h1>
-
-                    <hr>
-
-                    {{ project.description | safe }}
-
-                    <hr>
-
-                    <div id="project-images-w1" class="d-flex flex-column flex-nowrap justify-content-center mx-auto">
-                        <div id="project-images-w2">
-                            {% for pic in project.pictures.all %}
-                            <div>
-                                <a href="{{ pic.image.url }}" data-lightbox="project-gallery" data-title="{{ pic.description }}"><div class="image z-depth-1" style="background-image: url({{ pic.image.url }});"></div></a>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+{% block content_block %}
+<div class="row">
+    <div class="col-md-3" id="left-info-wrapper">
+        <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
+            <div style="background-image: url({{ project.thumbnail.url }})" class="thumbnail mx-auto pt-2"></div>
+            <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div>
+            <div class="card-body">
+                <h2 class="card-title text-center">{{ project.name }}</h4>
+                <p class="card-text text-muted">{{ project.category }}</p>
+                <p class="card-text">Estreia: {{ project.debut_year }}</p>
+                <p class="card-text row">
+                    <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
+                    <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>
+                    <span class="col"><i class="fas fa-trophy" style="color: brown"></i> {{ project.bronze }}</span>
+                </p>
             </div>
         </div>
     </div>
 
-    {% include "generic/footer.html" %}
+    <div class="col-md-9">
+        <div class="d-block w-100 p-3 text-justify">
+            <h1>{{ project.name }}</h1>
 
-</section>
+            <hr>
+
+            {{ project.description | safe }}
+
+            <hr>
+
+            <div id="project-images-w1" class="d-flex flex-column flex-nowrap justify-content-center mx-auto">
+                <div id="project-images-w2">
+                    {% for pic in project.pictures.all %}
+                    <div>
+                        <a href="{{ pic.image.url }}" data-lightbox="project-gallery" data-title="{{ pic.description }}"><div class="image z-depth-1" style="background-image: url({{ pic.image.url }});"></div></a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js_block %}
+<script src="{% static 'projects/js/projects_detail.js' %}"></script>
 {% endblock %}

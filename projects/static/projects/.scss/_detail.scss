@@ -1,107 +1,83 @@
-#project-detail {
-    .top {
-        z-index: 2;
-        border-radius: 4px;
+#header {
+    .navbar-nav {
+		.nav-special {
+            color: $white !important;
 
-        .top-image {
-            height: 500px;
-            width: 100%;
+			&:hover, &:focus {
+				border-bottom-color: $white;
+			}
+		}
+	}
+}
 
-            background: {
-                size: cover;
-                position: center;
-            }
-        }
+.typography, .title {
+    position: absolute !important;
+    bottom: 21vh;
+    right: 50%;
+    transform: translateX(50%);
+    max-width: 90%;
+    max-height: 50%;
+}
+
+#left-info {
+    position: sticky;
+    top: 1rem;
+}
+
+.thumbnail, .logo {
+    width: 90%;
+    position: relative;
+    border-radius: 2px;
+
+
+    background: {
+        size: contain;
+        position: center;
+        repeat: no-repeat;
     }
 
-    .typography {
-        position: absolute;
-        bottom: 21vh;
-        right: 50%;
-        transform: translateX(50%);
-        max-width: 90%;
-        max-height: 50%;
+    &::after {
+        content: "";
+        display: block;
+        height: 0;
     }
+}
 
-    .content {
-        position: relative;
-        background-color: white;
-        z-index: 3;
-        margin-top: -20vh;
-        margin-bottom: -20vh;
+.thumbnail::after {
+    padding-bottom: 80%;
+}
 
-        .navbar {
-            box-shadow: none;
-            background-color: $base-color;
-        }
+.logo::after {
+    padding-bottom: 40%;
+}
 
-        #left-info {
-            position: sticky;
-            top: 1rem;
-        }
+#project-images-w1 {
+    width: 90%;
 
-        .thumbnail, .logo {
-            width: 90%;
-            position: relative;
-            border-radius: 2px;
+    #project-images-w2 {
+        .slick-slide {
+            div {
+                margin: 0 1rem;
+                position: relative;
+                border-radius: 2px;
 
+                &::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 80%;
+                    height: 0;
+                }
 
-            background: {
-                size: contain;
-                position: center;
-                repeat: no-repeat;
-            }
-
-            &::after {
-                content: "";
-                display: block;
-                height: 0;
-            }
-        }
-
-        .thumbnail::after {
-            padding-bottom: 80%;
-        }
-
-        .logo::after {
-            padding-bottom: 40%;
-        }
-
-        #project-images-w1 {
-            width: 90%;
-
-            #project-images-w2 {
-                .slick-slide {
-                    div {
-                        margin: 0 1rem;
-                        position: relative;
-                        border-radius: 2px;
-
-                        &::after {
-                            content: "";
-                            display: block;
-                            padding-bottom: 80%;
-                            height: 0;
-                        }
-
-                        background: {
-                            position: center;
-                            size: cover;
-                            repeat: no-repeat;
-                        }
-                    }
+                background: {
+                    position: center;
+                    size: cover;
+                    repeat: no-repeat;
                 }
             }
         }
-
-        .slick-arrow::before, .slick-arrow::after {
-            color: $base-color;
-        }
     }
+}
 
-    #footer {
-        position: relative;
-        padding-top: 20vh;
-        z-index: 2;
-    }
+.slick-arrow::before, .slick-arrow::after {
+    color: $base-color;
 }

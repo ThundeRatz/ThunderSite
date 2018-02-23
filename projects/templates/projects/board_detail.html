@@ -1,0 +1,52 @@
+{% extends 'projects/projects_base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}ThundeRatz | {{ board.name }}{% endblock %}
+
+{% block top_image_block %}{{ project.pictures.all.0.image.url }}{% endblock %}
+{% block top_title_block %}<h1 class="title white-text">{{ board.name }}</h1>{% endblock %}
+
+{% block nav_block %}
+<a href="{% url 'landing:index' %}" class="nav-link nav-item nav-special">In&iacute;cio</a>
+<a href="{% url 'projects:boards' %}"class="nav-link nav-item nav-special">Lista de Placas</a>
+<a id="contact-button" class="nav-link nav-item nav-special">Contato</a>
+{% endblock %}
+
+{% block content_block %}
+<div class="row">
+    <div class="col-md-3" id="left-info-wrapper">
+        <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
+            <div style="background-image: url({{ board.thumbnail.url }})" class="thumbnail mx-auto pt-2"></div>
+            <div class="card-body">
+                <h2 class="card-title text-center">{{ board.name }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="d-block w-100 p-3 text-justify">
+            <h1>{{ board.name }}</h1>
+
+            <hr>
+
+            {{ board.description | safe }}
+
+            <hr>
+
+            <div id="project-images-w1" class="d-flex flex-column flex-nowrap justify-content-center mx-auto">
+                <div id="project-images-w2">
+                    {% for pic in board.pictures.all %}
+                    <div>
+                        <a href="{{ pic.image.url }}" data-lightbox="project-gallery" data-title="{{ pic.description }}"><div class="image z-depth-1" style="background-image: url({{ pic.image.url }});"></div></a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js_block %}
+<script src="{% static 'projects/js/boards_detail.js' %}"></script>
+{% endblock %}

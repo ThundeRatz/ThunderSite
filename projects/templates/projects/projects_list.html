@@ -1,0 +1,47 @@
+{% extends 'projects/projects_base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}ThundeRatz | Robôs{% endblock %}
+
+{% block top_image_block %}{% static 'projects/img/cover.png' %}{% endblock %}
+{% block top_title_block %}<h1 class="title white-text">Projetos</h1>{% endblock %}
+
+{% block nav_block %}
+<a class="nav-link nav-item" data-cat='combate'>Combate</a>
+<a class="nav-link nav-item" data-cat='sumo'>Sumo</a>
+<a class="nav-link nav-item" data-cat='autonomo'>Autonomo</a>
+<a class="nav-link nav-item" data-cat='hockey'>Hockey</a>
+<a class="nav-link nav-item" data-cat='all'>Todos</a>
+{% endblock %}
+
+{% block content_block %}
+<div id="project-row" class="row">
+    {% for project in project_list %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-cat="{{ project.category.super_category }}">
+        <div class="card bg-dark my-2 mx-2">
+            <div style="background-image: url({{ project.thumbnail.url }});" class="card-img"></div>
+            <div class="text-white d-flex flex-column justify-content-around align-items-center card-img-overlay">
+                <h3 class="mb-0 card-title">{{ project.name }}</h3>
+
+                <a class="surprise btn" href="{% url 'projects:robot_detail' project.slug %}">
+                    Ver projeto
+                </a>
+
+                <div class="surprise d-flex w-100 justify-content-around">
+                    <p>{{ project.category.super_category | title }}</p>
+                    {% if project.is_active %}
+                    <p>Ativo</p>
+                    {% else %}
+                    <p>Inativo</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_js_block %}
+<script src="{% static 'projects/js/projects_list.js' %}"></script>
+{% endblock %}

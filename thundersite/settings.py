@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'landing',
     'projects',
     'news',
+    'members',
 ]
 
 MIDDLEWARE = [

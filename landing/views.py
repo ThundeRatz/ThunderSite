@@ -17,14 +17,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['menu1'] = 'Início'
-        context['menu2'] = 'Projetos'
-        context['menu3'] = 'História'
-        context['menu4'] = 'Patrocinadores'
-        context['menu5'] = 'Contato'
-
         context['sponsors'] = Sponsor.objects.all()
-
         context['events'] = Event.objects.all()
 
         return context

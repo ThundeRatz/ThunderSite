@@ -17,9 +17,9 @@ $(document).ready(function() {
                 $('#fp-nav ul li a span, .fp-slidesNav ul li a span').css('background', '#FFFFFF');
             }
 
-            if (index === 3 && nextIndex !== 1) {
+            if (index === 4 && nextIndex !== 1) {
                 $('#fp-nav ul li a span, .fp-slidesNav ul li a span').css('background', '#1C1C42');
-            } else if (nextIndex === 3) {
+            } else if (nextIndex === 4) {
                 $('#fp-nav ul li a span, .fp-slidesNav ul li a span').css('background', '#FFFFFF');
             }
         }
@@ -164,6 +164,10 @@ $(document).ready(function() {
 
     $('#menu3, #menu3-start').on('click', function() {
         $.fn.fullpage.moveTo(3, 0);
+    });
+
+    $('#timeline-btn').on('click', function() {
+        $.fn.fullpage.moveTo(3, 1);
     });
 
     $('#menu4, #menu4-start').on('click', function() {

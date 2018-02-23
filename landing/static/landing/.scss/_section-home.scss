@@ -26,7 +26,7 @@
         transition: opacity 1s ease;
         border-top: 2px solid $white;
 
-        button {
+        .btn {
             padding: 0.5rem 2rem;
             font-family: 'Fira Sans', 'Lato', sans-serif;
             font-size: 1.75rem;
@@ -35,11 +35,11 @@
 
             background-color: $base-color;
             color: $white;
-            // border: 2px solid $white;
+            box-shadow: unset;
 
             &:hover {
                 background-color: $white;
-                color: $base-color;
+                color: $base-color !important;
             }
         }
 

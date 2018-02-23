@@ -1,35 +1,4 @@
 #project_list {
-    .top {
-        z-index: 2;
-        border-radius: 4px;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .title {
-        position: absolute;
-        bottom: 31vh;
-        right: 50%;
-        transform: translateX(50%);
-
-        @media all and (max-width: 1200px) {
-            bottom: 26vh;
-        }
-
-        @media all and (max-width: 992px) {
-            bottom: 16vh;
-        }
-
-        @media all and (max-width: 768px) {
-            bottom: 6vh;
-        }
-
-        @media all and (max-width: 576px) {
-            bottom: 3vh;
-        }
-    }
 
     .content {
         position: relative;
@@ -52,56 +21,76 @@
         @media all and (max-width: 576px) {
             margin-top: -2vh;
         }
-
-        .navbar {
-            box-shadow: none;
-            background-color: $base-color;
-        }
     }
 
-    .card-img {
-        position: relative;
 
-        background: {
-            position: center;
-            size: cover;
-            repeat: no-repeat;
-            color: white;
-        }
+}
 
-        &::after {
-            content: "";
-            display: block;
-            padding-bottom: 75%;
-            height: 0;
-        }
+.title {
+    position: absolute;
+    bottom: 31vh;
+    right: 50%;
+    transform: translateX(50%);
+
+    @media all and (max-width: 1200px) {
+        bottom: 26vh;
     }
 
-    .card-img-overlay {
-        transition: background-color 0.3s ease;
-        // background-color: transparent;
-        background-color: rgba(0, 0, 0, 0.3);
+    @media all and (max-width: 992px) {
+        bottom: 16vh;
+    }
 
-        .card-title {
-            color: white;
-        }
+    @media all and (max-width: 768px) {
+        bottom: 6vh;
+    }
 
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+    @media all and (max-width: 576px) {
+        bottom: 3vh;
+    }
+}
 
-            .surprise {
-                opacity: 1;
-            }
-        }
+.card-img {
+    position: relative;
+
+    background: {
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+        color: white;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 75%;
+        height: 0;
+    }
+}
+
+.card-img-overlay {
+    transition: background-color 0.3s ease;
+    // background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .card-title {
+        color: white;
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
 
         .surprise {
-            transition: opacity 0.3s ease;
-            opacity: 0;
+            opacity: 1;
+        }
+    }
 
-            &.btn {
-                background-color: $base-color;
-                color: white;
-            }
+    .surprise {
+        transition: opacity 0.3s ease;
+        opacity: 0;
+
+        &.btn {
+            background-color: $base-color;
+            color: white;
         }
     }
 }

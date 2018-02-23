@@ -14,5 +14,41 @@ $white: #FFFFFF;
     }
 }
 
+#project-body {
+    .top {
+        z-index: 2;
+        border-radius: 4px;
+
+        .top-image {
+            height: 500px;
+            width: 100%;
+
+            background: {
+                size: cover;
+                position: center;
+            }
+        }
+    }
+
+    .content {
+        position: relative;
+        background-color: white;
+        z-index: 3;
+        margin-top: -20vh;
+        margin-bottom: -20vh;
+
+        .navbar {
+            box-shadow: none;
+            background-color: $base-color;
+        }
+    }
+
+    #footer {
+        position: relative;
+        padding-top: 20vh;
+        z-index: 2;
+    }
+}
+
 @import 'list';
 @import 'detail';

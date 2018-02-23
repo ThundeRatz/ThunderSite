@@ -1,0 +1,35 @@
+{% extends 'projects/projects_base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}ThundeRatz | Placas{% endblock %}
+
+{% block top_image_block %}{% static 'projects/img/cover.png' %}{% endblock %}
+{% block top_title_block %}<h1 class="title white-text">Placas</h1>{% endblock %}
+
+{% block nav_block %}
+
+{% endblock %}
+
+{% block content_block %}
+<div id="project-row" class="row">
+    {% for board in board_list %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-name="{{ board.name }}">
+        <div class="card bg-dark my-2 mx-2">
+            <div style="background-image: url({{ board.thumbnail.url }});" class="card-img"></div>
+            <div class="text-white d-flex flex-column justify-content-around align-items-center card-img-overlay">
+                <h3 class="mb-0 card-title">{{ board.name }}</h3>
+
+                <a class="surprise btn" href="{% url 'projects:board_detail' board.slug %}">
+                    Ver placa
+                </a>
+
+                <div class="surprise d-flex w-100 justify-content-around">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
