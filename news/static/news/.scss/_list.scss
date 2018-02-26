@@ -1,7 +1,11 @@
 .carousel-img-div {
-    padding-bottom: 43.75%;
+    padding-bottom: 25%;
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 768px) {
+        padding-bottom: 50%;
+    }
 }
 
 .list-img-div {
@@ -9,4 +13,52 @@
     padding-bottom: 66.67%;
     background-size: cover;
     background-position: center;
+}
+
+.content {
+    #header {
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+
+        @media (min-width: 768px) {
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+        }
+
+        @media (min-width: 992px) {
+            margin-left: -3rem;
+            margin-right: -3rem;
+        }
+    }
+}
+
+.carousel-caption {
+    h1 {
+        font-family: 'Fira Sans', 'Lato', sans-serif;
+        font-weight: 500;
+        text-shadow: 2px 2px #000000;
+    }
+}
+
+#news-carousel {
+    position: relative;
+    z-index: 2;
+}
+
+.content {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    position: relative;
+    z-index: 3;
+    background-color: $white;
+}
+
+#footer {
+    position: relative;
+    padding-top: 1rem;
+    z-index: 1;
+}
+
+.btn {
+    background-color: $base-color;
 }

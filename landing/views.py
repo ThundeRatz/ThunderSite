@@ -10,6 +10,7 @@ Daniel Nery Silva de Oliveira
 from django.shortcuts import render
 from django.views.generic import View, TemplateView
 from .models import Event, Sponsor
+from news.models import News
 
 class IndexView(TemplateView):
     template_name = 'landing/index.html'
@@ -19,5 +20,6 @@ class IndexView(TemplateView):
 
         context['sponsors'] = Sponsor.objects.all()
         context['events'] = Event.objects.all()
+        context['news'] = News.objects.all()[:3]
 
         return context

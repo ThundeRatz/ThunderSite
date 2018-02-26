@@ -10,33 +10,22 @@
         </ol>
 
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <div class="view hm-black-light">
-                    <div class="d-block carousel-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                    <a href="{% url 'news:news_detail' 'noticia-legal' %}"><div class="mask"></div></a>
+            {% for new in news %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="view hm-white-slight">
+                    <div class="d-block carousel-img-div" style="background-image: url({{ new.cover_image.url }})"></div>
+                    <a class="mask" href="{% url 'news:news_detail' new.slug %}"></a>
                 </div>
-                <div class="carousel-caption">
-                    <h1 class="h1-responsive">This is the title 1</h1>
+                <div class="carousel-caption title">
+                    <h1 class="h1-responsive mt-2 mt-md-4">{{ new.title }}</h1>
                 </div>
+                {% if forloop.last %}
+                <div class="carousel-caption button">
+                    <a href="{% url 'news:news_list' %}"<button id="news-btn" class="btn mx-auto mb-2 mb-md-4">Todas as Notícias &nbsp;&nbsp;<i class="fas fa-newspaper"></i></button></a>
+                </div>
+                {% endif %}
             </div>
-            <div class="carousel-item">
-                <div class="view hm-black-light">
-                    <div class="d-block carousel-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                    <a href="{% url 'news:news_detail' 'noticia-top' %}"><div class="mask"></div></a>
-                </div>
-                <div class="carousel-caption">
-                    <h1 class="h1-responsive">This is the title 2</h1>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="view hm-black-light">
-                    <div class="d-block carousel-img-div" style="background-image: url('http://via.placeholder.com/1600x700')"></div>
-                    <a href="{% url 'news:news_detail' 'noticia-maneira' %}"><div class="mask"></div></a>
-                </div>
-                <div class="carousel-caption">
-                    <h1 class="h1-responsive">This is the title 3</h1>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <a class="carousel-control-prev" href="#news-carousel" role="button" data-slide="prev">
@@ -48,5 +37,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <!-- <button class="btn btn-inline">Todas as Notícias</button> -->
 </div>

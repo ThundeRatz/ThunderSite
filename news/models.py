@@ -27,6 +27,7 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = 'news'
+        ordering = ['-published_date']
 
     def publish(self):
         self.published_date = timezone.now()

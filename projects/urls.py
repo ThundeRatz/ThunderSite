@@ -14,7 +14,7 @@ from . import views
 app_name = 'projects'
 
 urlpatterns = [
-    path('', RedirectView.as_view(url=reverse_lazy('projects:index'))),
+    path('', RedirectView.as_view(url=reverse_lazy('projects:robots'))),
     path('robots/', views.ProjectListView.as_view(), name='robots'),
     path('robots/<slug:slug>', views.ProjectDetailView.as_view(), name='robot_detail'),
     path('boards/', views.BoardListView.as_view(), name='boards'),

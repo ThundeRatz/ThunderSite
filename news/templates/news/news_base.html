@@ -20,8 +20,9 @@
 
         {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'generic/css/bootstrap.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'news/css/mdb.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'generic/css/mdb.css' %}">
 
+        <link rel="stylesheet" type="text/x-sass" href="{% static 'generic/.scss/thundersite.scss' %}">
         <link rel="stylesheet" type="text/x-sass" href="{% static 'news/.scss/news.scss' %}">
         {% endcompress %}
 
@@ -37,7 +38,7 @@
         {% compress js %}
         <script src="{% static 'generic/js/popper.min.js' %}"></script>
         <script src="{% static 'generic/js/bootstrap.js' %}"></script>
-        <script src="{% static 'news/js/mdb.js' %}"></script>
+        <script src="{% static 'generic/js/mdb.js' %}"></script>
 
         <script src="{% static 'news/js/news.js' %}"></script>
         {% endcompress %}

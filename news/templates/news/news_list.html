@@ -7,45 +7,26 @@
 
 {% block body_block %}
 
-<section class="container py-4">
-
-    <h2 class="h1 text-center mb-5">Notícias Recentes</h2>
-
-    <div id="news-carousel" class="d-none d-md-block carousel slide carousel-fade mb-5" data-ride="carousel">
+<section class="container-fluid px-0">
+    <div id="news-carousel" class="d-md-block carousel slide carousel-fade z-depth-1" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#news-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#news-carousel" data-slide-to="1"></li>
-            <li data-target="#news-carousel" data-slide-to="2"></li>
+            {% for new in news_list|slice:':5' %}
+            <li data-target="#news-carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+            {% endfor %}
         </ol>
 
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <div class="view hm-black-light">
-                    <div class="d-block w-100 carousel-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                    <a href="{% url 'news:news_detail' 'noticia-legal' %}"><div class="mask"></div></a>
+            {% for new in news_list|slice:':5' %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="view hm-black-slight">
+                    <div class="d-block carousel-img-div" style="background-image: url({{ new.cover_image.url }})"></div>
+                    <a class="mask" href="{% url 'news:news_detail' new.slug %}"></a>
                 </div>
                 <div class="carousel-caption">
-                    <h3 class="h3-responsive">This is the title 1</h3>
+                    <h1 class="h1-responsive mt-2 mt-md-4">{{ new.title }}</h1>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="view hm-black-light">
-                    <div class="d-block w-100 carousel-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                    <a href="{% url 'news:news_detail' 'noticia-top' %}"><div class="mask"></div></a>
-                </div>
-                <div class="carousel-caption">
-                    <h3 class="h3-responsive">This is the title 2</h3>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="view hm-black-light">
-                    <div class="d-block w-100 carousel-img-div" style="background-image: url('http://via.placeholder.com/1600x700')"></div>
-                    <a href="{% url 'news:news_detail' 'noticia-maneira' %}"><div class="mask"></div></a>
-                </div>
-                <div class="carousel-caption">
-                    <h3 class="h3-responsive">This is the title 3</h3>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <a class="carousel-control-prev" href="#news-carousel" role="button" data-slide="prev">
@@ -58,96 +39,53 @@
         </a>
     </div>
 
+    <div class="content z-depth-4 mx-1 mx-md-4 mx-lg-5 px-1 px-md-4 px-lg-5">
+        <nav id="header" class="navbar navbar-expand-md navbar-dark">
+            <a href="{% url 'landing:index' %}"><img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="row mt-3">
-        <div class="col-lg-5 col-xl-4 mb-4">
-            <div class="view overlay hm-white-slight rounded z-depth-1-half">
-                <div class="img-fluid w-100 list-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                <a href="{% url 'news:news_detail' 'noticia-legal' %}"><div class="mask"></div></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul id="categories-menu" class="navbar-nav ml-auto">
+                    {% block nav_block %}
+                    {% endblock %}
+                </ul>
             </div>
-        </div>
+        </nav>
 
-        <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-            <h3 class="mb-3 font-bold dark-grey-text">
-            <strong>This is title of the news</strong>
-            </h3>
-            <p class="grey-text">
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-                possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis aut rerum.
-            </p>
-            <p>by <a class="font-bold dark-grey-text">Jessica Clark</a>, 26/08/2018</p>
-            <a href="{% url 'news:news_detail' 'noticia-legal' %}" class="btn btn-primary btn-md">Read more</a>
+        <div class="row">
+            {% for new in news_list %}
+            <div class="col-12 col-md-6">
+                <div class="row mt-2 mb-2">
+                    <div class="col-12 col-xl-4 mb-3 mb-xl-0">
+                        <div class="view overlay hm-black-slight rounded z-depth-1-half">
+                            <div class="img-fluid w-100 list-img-div" style="background-image: url({{ new.cover_image.url }})"></div>
+                            <a href="{% url 'news:news_detail' new.slug %}"><div class="mask"></div></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xl-8">
+                        <h3 class="mb-3 font-bold dark-grey-text">
+                        <strong>{{ new.title }}</strong>
+                        </h3>
+                        <p class="grey-text text-justify">
+                            {{ new.text|truncatechars_html:190|safe }}
+                        </p>
+                        <p>by <a class="font-bold dark-grey-text">{{ new.author.first_name }}</a>, {{ new.published_date | date:'d/m/Y' }}</p>
+                        <a href="{% url 'news:news_detail' new.slug %}" class="btn btn-md">Ler mais</a>
+                    </div>
+                </div>
+            </div>
+
+            {% if not forloop.last %}
+            <hr class="mb-5">
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 
-    <hr class="mb-5">
-
-    <div class="row mt-3">
-        <div class="col-lg-5 col-xl-4 mb-4">
-            <div class="view overlay hm-white-slight rounded z-depth-1">
-                <div class="img-fluid w-100 list-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                <a href="{% url 'news:news_detail' 'noticia-top' %}"><div class="mask"></div></a>
-            </div>
-        </div>
-
-        <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-            <h3 class="mb-3 font-bold dark-grey-text">
-            <strong>This is title of the news</strong>
-            </h3>
-            <p class="grey-text">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-                corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident et dolorum fuga.
-            </p>
-            <p>by <a class="font-bold dark-grey-text">Jessica Clark</a>, 24/08/2018</p>
-            <a href="{% url 'news:news_detail' 'noticia-top' %}" class="btn btn-primary btn-md">Read more</a>
-        </div>
-    </div>
-
-    <hr class="mb-5">
-
-    <div class="row">
-        <div class="col-lg-5 col-xl-4 mb-4">
-            <div class="view overlay hm-white-slight rounded z-depth-1">
-                <div class="img-fluid w-100 list-img-div" style="background-image: url('http://via.placeholder.com/1600x700')"></div>
-                <a href="{% url 'news:news_detail' 'noticia-maneira' %}"><div class="mask"></div></a>
-            </div>
-        </div>
-
-        <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-            <h3 class="mb-3 font-bold dark-grey-text">
-            <strong>This is title of the news</strong>
-            </h3>
-            <p class="grey-text">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-                eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.
-            </p>
-            <p>by <a class="font-bold dark-grey-text">Jessica Clark</a>, 21/08/2018</p>
-            <a href="{% url 'news:news_detail' 'noticia-maneira' %}" class="btn btn-primary btn-md">Read more</a>
-        </div>
-    </div>
-
-    <hr class="mb-5">
-
-    <div class="row">
-        <div class="col-lg-5 col-xl-4 mb-4">
-            <div class="view overlay hm-white-slight rounded z-depth-1">
-                <div class="img-fluid w-100 list-img-div" style="background-image: url('http://via.placeholder.com/780x520')"></div>
-                <a href="{% url 'news:news_detail' 'noticia-supimpa' %}"><div class="mask"></div></a>
-            </div>
-        </div>
-
-        <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-            <h3 class="mb-3 font-bold dark-grey-text">
-            <strong>This is title of the news</strong>
-            </h3>
-            <p class="grey-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio et repellendus mollitia, recusandae provident ad quia!
-                Inventore mollitia modi asperiores molestiae dolor voluptatum voluptate vero corrupti placeat, tenetur expedita. Explicabo!
-            </p>
-            <p>by <a class="font-bold dark-grey-text">Jessica Clark</a>, 21/08/2018</p>
-            <a href="{% url 'news:news_detail' 'noticia-supimpa' %}" class="btn btn-primary btn-md">Read more</a>
-        </div>
-    </div>
+    {% include 'generic/footer.html' %}
 </section>
 
 {% endblock %}
