@@ -42,6 +42,7 @@
 </div>
 {% endblock %}
 
-{% block extra_js_block %}
+{% block extra_js %}
+{{ block.super }}
 <script src="{% static 'projects/js/projects_list.js' %}"></script>
 {% endblock %}

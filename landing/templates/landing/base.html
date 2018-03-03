@@ -1,63 +1,18 @@
-<!DOCTYPE html>
+{% extends 'generic/base.html' %}
 
-{% load compress %}
 {% load staticfiles %}
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Daniel Nery">
-        <meta name="description" content=
-            "Equipe ThundeRatz de Robótica da Escola Politécnica da USP">
+{% block title_block %} ThundeRatz {% endblock %}
 
-        <meta name="google-site-verification" content="ITXrfAL9-Dpei4NNqxzq6pUSgCCP3tBPnviXPv_y1tU">
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'landing/css/jquery.fullPage.css' %}">
+<link rel="stylesheet" type="text/x-sass" href="{% static 'landing/.scss/landing.scss' %}">
+{% endblock %}
 
-        <title>ThundeRatz</title>
+{% block extra_js %}
+<script src="{% static 'landing/js/vivus.min.js' %}"></script>
+<script src="{% static 'landing/js/jquery.fullPage.js' %}"></script>
+<script src="{% static 'landing/js/timeline.js' %}"></script>
 
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato" rel="stylesheet">
-
-        {% compress css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'generic/css/bootstrap.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'generic/css/mdb.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'generic/css/slick.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'generic/css/slick-theme.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'landing/css/jquery.fullPage.css' %}">
-
-        <link rel="stylesheet" type="text/x-sass" href="{% static 'generic/.scss/thundersite.scss' %}">
-        <link rel="stylesheet" type="text/x-sass" href="{% static 'landing/.scss/landing.scss' %}">
-        {% endcompress %}
-
-        {% compress js %}
-        <script src="{% static 'generic/js/fontawesome-all.js' %}"></script>
-        <script src="{% static 'landing/js/modernizr.js' %}"></script>
-        <script src="{% static 'generic/js/jquery-3.2.1.js' %}"></script>
-        <script>
-            $(window).on('load', function() {
-                $(".se-pre-con").fadeOut("slow");
-            });
-        </script>
-        {% endcompress %}
-    </head>
-    <body>
-        <div class="se-pre-con"></div>
-
-        {% block body_block %}
-
-        {% endblock %}
-
-
-        {% compress js %}
-        <script src="{% static 'generic/js/popper.min.js' %}"></script>
-        <script src="{% static 'generic/js/bootstrap.js' %}"></script>
-        <script src="{% static 'generic/js/mdb.js' %}"></script>
-        <script src="{% static 'generic/js/slick.min.js' %}"></script>
-        <script src="{% static 'landing/js/vivus.min.js' %}"></script>
-        <script src="{% static 'landing/js/jquery.fullPage.js' %}"></script>
-        <script src="{% static 'landing/js/timeline.js' %}"></script>
-
-        <script src="{% static 'landing/js/landing.js' %}"></script>
-        {% endcompress %}
-    </body>
-</html>
+<script src="{% static 'landing/js/landing.js' %}"></script>
+{% endblock %}

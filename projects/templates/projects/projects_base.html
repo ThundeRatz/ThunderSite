@@ -1,75 +1,45 @@
-<!DOCTYPE html>
+{% extends 'generic/base.html' %}
 
-{% load compress %}
 {% load staticfiles %}
 
-<html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title_block %}{% endblock %}</title>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'projects/css/lightbox.css' %}">
+<link rel="stylesheet" type="text/x-sass" href="{% static 'projects/.scss/projects.scss' %}">
+{% endblock %}
 
-        {% compress js %}
-        <script src="{% static 'generic/js/fontawesome-all.js' %}"></script>
-        <script src="{% static 'generic/js/jquery-3.2.1.js' %}"></script>
-        {% endcompress %}
+{% block body_block %}
+<section id="project-body" class="container-fluid px-0">
+    <div class="top view hm-black-strong">
+        <div class="top-image" style="background-image: url({% block top_image_block %}{% endblock %});"></div>
+        <div class="mask waves-effect waves-light">
+            {% block top_title_block %}{% endblock %}
+        </div>
+    </div>
 
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato" rel="stylesheet">
+    <div class="content z-depth-4 mx-1 mx-md-4 mx-lg-5">
+        <nav id="header" class="navbar navbar-expand-md navbar-dark">
+            <a href="{% url 'landing:index' %}"><img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        {% compress css %}
-        <link rel="stylesheet" href="{% static 'generic/css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'generic/css/mdb.css' %}">
-        <link rel="stylesheet" href="{% static 'generic/css/slick.css' %}">
-        <link rel="stylesheet" href="{% static 'generic/css/slick-theme.css' %}">
-        <link rel="stylesheet" href="{% static 'projects/css/lightbox.css' %}">
-
-        <link rel="stylesheet" type="text/x-sass" href="{% static 'generic/.scss/thundersite.scss' %}">
-        <link rel="stylesheet" type="text/x-sass" href="{% static 'projects/.scss/projects.scss' %}">
-        {% endcompress %}
-    </head>
-    <body class="custom-scroll">
-        <section id="project-body" class="container-fluid px-0">
-            <div class="top view hm-black-strong">
-                <div class="top-image" style="background-image: url({% block top_image_block %}{% endblock %});"></div>
-                <div class="mask waves-effect waves-light">
-                    {% block top_title_block %}{% endblock %}
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul id="categories-menu" class="navbar-nav ml-auto">
+                    {% block nav_block %}
+                    {% endblock %}
+                </ul>
             </div>
+        </nav>
 
-            <div class="content z-depth-4 mx-1 mx-md-4 mx-lg-5">
-                <nav id="header" class="navbar navbar-expand-md navbar-dark">
-                    <a href="{% url 'landing:index' %}"><img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+        {% block content_block %}
+        {% endblock %}
 
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul id="categories-menu" class="navbar-nav ml-auto">
-                            {% block nav_block %}
-                            {% endblock %}
-                        </ul>
-                    </div>
-                </nav>
+    </div>
 
-                {% block content_block %}
-                {% endblock %}
+    {% include "generic/footer.html" %}
+</section>
+{% endblock %}
 
-            </div>
-
-            {% include "generic/footer.html" %}
-
-        </section>
-
-        {% compress js %}
-        <script src="{% static 'generic/js/popper.min.js' %}"></script>
-        <script src="{% static 'generic/js/bootstrap.js' %}"></script>
-        <script src="{% static 'generic/js/mdb.js' %}"></script>
-        <script src="{% static 'generic/js/slick.min.js' %}"></script>
-        <script src="{% static 'projects/js/lightbox.js' %}"></script>
-
-        {% block extra_js_block %}{% endblock %}
-
-        {% endcompress %}
-    </body>
-</html>
+{% block extra_js %}
+<script src="{% static 'projects/js/lightbox.js' %}"></script>
+{% endblock %}
