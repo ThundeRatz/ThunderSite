@@ -30,9 +30,11 @@ class Member(models.Model):
     team_captain = models.BooleanField(default=False)
     picture = models.ImageField(upload_to=member_picture_path)
     facebook = models.URLField(blank=True, null=True)
+    email = models.EmailField();
+    entry_year = models.PositiveSmallIntegerField()
 
     class Meta:
-        ordering = ['team_captain', 'area_captain', 'name']
+        ordering = ['-team_captain', '-area_captain', 'name']
 
     def __str__(self):
         return self.name
@@ -40,10 +42,10 @@ class Member(models.Model):
     def clean(self):
         if self.area_captain is True and self.team_captain is True:
             raise ValidationError({
-                'area_captain': ValidationError(_('Choose only one!.'), code='invalid'),
-                'team_captain': ValidationError(_('Choose only one!'), code='invalid'),
+                'area_captain': ValidationError('Choose only one!.', code='invalid'),
+                'team_captain': ValidationError('Choose only one!', code='invalid'),
             })
         if self.area_captain is True and self.area == 'AF':
             raise ValidationError({
-                'area_captain': ValidationError(_("This area doesn't have captains!"), code='invalid'),
+                'area_captain': ValidationError("This area doesn't have captains!", code='invalid'),
             })

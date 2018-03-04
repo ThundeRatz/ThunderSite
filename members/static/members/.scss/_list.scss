@@ -1,0 +1,85 @@
+.title {
+    position: absolute;
+    bottom: 21vh;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+#project-row {
+    .member-photo {
+        width: 90%;
+        position: relative;
+        border-radius: 50%;
+
+        background: {
+            size: cover;
+            position: center;
+            repeat: no-repeat;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            height: 0;
+            padding-bottom: 100%;
+        }
+    }
+
+    .card-flip {
+        perspective: 1000px;
+
+        &:hover .flip {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .flip {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .front, .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+
+    .back {
+        transform: rotateY(180deg);
+    }
+
+    .card {
+        height: calc(100% - 1rem);
+
+        .area-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+
+            & > svg {
+                filter: drop-shadow(0 0 0.5px #CCC);
+            }
+
+            &.tcap {
+                color: $base-color;
+
+            }
+
+            &.acap {
+                color: $accent-color;
+
+                & > svg {
+                    filter: drop-shadow(0 0 0.5px #000);
+                }
+            }
+        }
+    }
+}

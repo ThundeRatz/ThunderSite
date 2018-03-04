@@ -1,0 +1,44 @@
+{% extends 'generic/base.html' %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/x-sass" href="{% static 'members/.scss/members.scss' %}">
+{% endblock %}
+
+{% block body_block %}
+<section id="members-body" class="container-fluid px-0">
+    <div class="top view hm-black-strong">
+        <div class="top-image" style="background-image: url({% block top_image_block %}{% endblock %});"></div>
+        <div class="mask waves-effect waves-light">
+            {% block top_title_block %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="content z-depth-4 mx-1 mx-md-4 mx-lg-5">
+        <nav id="header" class="navbar navbar-expand-md navbar-dark">
+            <a href="{% url 'landing:index' %}"><img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul id="areas-menu" class="navbar-nav ml-auto">
+                    {% block nav_block %}
+                    {% endblock %}
+                </ul>
+            </div>
+        </nav>
+
+        {% block content_block %}
+        {% endblock %}
+
+    </div>
+
+    {% include "generic/footer.html" %}
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'members/js/members.js' %}"></script>
+{% endblock %}

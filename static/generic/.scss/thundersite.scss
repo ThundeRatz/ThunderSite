@@ -72,8 +72,6 @@ h1, h2, h3, h4, h5, h6, .fira-sans {
 	}
 }
 
-
-
 #footer {
     color: $white;
 	background-color: $base-color;
@@ -98,5 +96,15 @@ h1, h2, h3, h4, h5, h6, .fira-sans {
 		height: 1px;
 		background: rgba(255,255,255,.2);
 		background: linear-gradient(to right, transparent 0%, rgba(255,255,255,.2) 50%, transparent 100%);
+	}
+
+	.footer-lower {
+		a {
+			color: rgba(255,255,255,1) !important;
+
+			&:hover {
+				color: rgba(255,255,255,.75) !important;
+			}
+		}
 	}
 }

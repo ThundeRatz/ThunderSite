@@ -1,0 +1,83 @@
+{% extends 'members/members_base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}ThundeRatz | Membros{% endblock %}
+
+{% block top_image_block %}{% static 'members/img/cover.jpg' %}{% endblock %}
+{% block top_title_block %}<h1 class="title white-text">Membros</h1>{% endblock %}
+
+{% block nav_block %}
+<a class="nav-link nav-item" data-area='EL'><i class="fas fa-bolt"></i> Elétrica</a>
+<a class="nav-link nav-item" data-area='MC'><i class="fas fa-cogs"></i> Mecânica</a>
+<a class="nav-link nav-item" data-area='CP'><i class="fas fa-code"></i> Computação</a>
+<a class="nav-link nav-item" data-area='DM'><i class="fas fa-paint-brush"></i> Design e Marketing</a>
+<a class="nav-link nav-item" data-area='AF'><i class="fas fa-handshake"></i> Administrativo e Financeiro</a>
+<a class="nav-link nav-item" data-area='all'>Todos</a>
+{% endblock %}
+
+{% block content_block %}
+<div id="project-row" class="row">
+    {% for member in members_list %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" data-area="{{ member.area }}">
+        <div class="card-flip w-100">
+            <div class="flip">
+                <div class="front w-100">
+                    <div class="card card-body text-center mx-2 my-2">
+                        <div class="member-photo mx-auto my-3" style="background-image: url({{ member.picture.url }})">
+                            <div class="area-badge
+                                    {% if member.team_captain %}
+                                    tcap
+                                    {% elif member.area_captain %}
+                                    acap
+                                    {% endif %}
+                                ">
+                                {% if member.team_captain %}
+                                <i class="fas fa-copyright fa-2x"></i>
+                                {% elif member.area == 'EL' %}
+                                <i class="fas fa-bolt fa-2x"></i>
+                                {% elif member.area == 'MC' %}
+                                <i class="fas fa-cogs fa-2x"></i>
+                                {% elif member.area == 'CP' %}
+                                <i class="fas fa-code fa-2x"></i>
+                                {% elif member.area == 'DM' %}
+                                <i class="fas fa-paint-brush fa-2x"></i>
+                                {% elif member.area == 'AF' %}
+                                <i class="fas fa-handshake fa-2x"></i>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <h3 class="h3-responsive font-bold">{{ member.nickname }}</h3>
+                        <p class="text-muted mb-0">{{ member.name }}</h2>
+                    </div>
+                </div>
+                <div class="back w-100">
+                    <div class="card card-body mx-2 my-2">
+                        <h3 class="h3-responsive font-bold">{{ member.nickname }}</h3>
+                        <p class="text-muted mb-0">{{ member.name }}</h2>
+                        <p>Ano de Ingresso: {{ member.entry_year }}</p>
+                        <p>
+                            {% if member.area == 'EL' %}
+                            <i class="fas fa-bolt"></i>
+                            {% elif member.area == 'MC' %}
+                            <i class="fas fa-cogs"></i>
+                            {% elif member.area == 'CP' %}
+                            <i class="fas fa-code"></i>
+                            {% elif member.area == 'DM' %}
+                            <i class="fas fa-paint-brush"></i>
+                            {% elif member.area == 'AF' %}
+                            <i class="fas fa-handshake"></i>
+                            {% endif %}
+                            {{ member.get_area_display }}
+                        </p>
+                        <p><i class="fas fa-envelope"></i> {{ member.email }}</p>
+                        <div class="d-flex flex-row mt-auto">
+                            <a href="{{ member.facebook }}"><i class="fab fa-facebook fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
