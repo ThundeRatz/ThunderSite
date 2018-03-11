@@ -1,12 +1,38 @@
 #section-about {
     .carousel-img-div {
-        padding-bottom: 70%;
+        height: 100vh;
+        // padding-bottom: 70%;
         background-size: cover;
         background-position: center;
+
+        @media all and (max-width: 768px) {
+            height: 30vh;
+        }
     }
 
     .btn {
         background-color: $base-color;
         font-size: 1.25rem;
+    }
+
+    .description {
+        padding-top: calc(40px + 1rem);
+
+        @media all and (max-width: 768px) {
+            padding-top: 1rem;
+        }
+    }
+
+    .btn-container {
+        position: absolute;
+        top: calc(40px + 1rem);
+
+        .btn {
+            background-color: $accent-color;
+            color: $base-color !important;
+            font-weight: 700;
+            border-radius: 10px;
+            padding: 0.6rem 1.5rem;
+        }
     }
 }

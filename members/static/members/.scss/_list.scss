@@ -6,6 +6,20 @@
 }
 
 #project-row {
+    .col-xxl-2 {
+        @media all and (min-width: 1200px) {
+            -webkit-box-flex: 0;
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+
+        @media all and (min-width: 1500px) {
+            -webkit-box-flex: 0;
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+    }
+
     .member-photo {
         width: 90%;
         position: relative;
@@ -79,6 +93,14 @@
                 & > svg {
                     filter: drop-shadow(0 0 0.5px #000);
                 }
+            }
+        }
+
+        .social a {
+            color: black;
+
+            &:hover {
+                color: lighten(black, 30%);
             }
         }
     }

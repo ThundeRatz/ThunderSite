@@ -1,63 +1,63 @@
 {% load staticfiles %}
 
-<div class="container-fluid p-5 row mx-auto">
+<div class="container-fluid p-0 row no-gutters mx-auto h-100">
     <div class="col-12 col-md-5">
-        <div class="row">
-            <div class="col-12">
-                <div id="about-carousel" class="carousel carousel-fade" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#about-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#about-carousel" data-slide-to="1"></li>
-                        <li data-target="#about-carousel" data-slide-to="2"></li>
-                    </ol>
+        <div id="about-carousel" class="carousel carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#about-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#about-carousel" data-slide-to="1"></li>
+                <li data-target="#about-carousel" data-slide-to="2"></li>
+            </ol>
 
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <div class="view hm-black-slight">
-                                <div class="d-block w-100 carousel-img-div" style="background-image: url({% static 'landing/img/hockey.jpg' %})"></div>
-                                <div class="mask"></div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="view hm-black-slight">
-                                <div class="d-block w-100 carousel-img-div" style="background-image: url({% static 'landing/img/combate.jpg' %})"></div>
-                                <div class="mask"></div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="view hm-black-slight">
-                                <div class="d-block w-100 carousel-img-div" style="background-image: url({% static 'landing/img/auto.jpg' %})"></div>
-                                <div class="mask"></div>
-                            </div>
-                        </div>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="view hm-black-slight">
+                        <div class="d-block w-100 carousel-img-div" style="background-image: url({% static 'landing/img/hockey.jpg' %})"></div>
+                        <div class="mask"></div>
                     </div>
-
-                    <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                </div>
+                <div class="carousel-item">
+                    <div class="view hm-black-slight">
+                        <div class="d-block w-100 carousel-img-div" style="background-image: url({% static 'landing/img/combate.jpg' %})"></div>
+                        <div class="mask"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="view hm-black-slight">
+                        <div class="d-block w-100 carousel-img-div" style="background-image: url({% static 'landing/img/auto.jpg' %})"></div>
+                        <div class="mask"></div>
+                    </div>
                 </div>
             </div>
-            <div class="py-3 col-6">
+
+            <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="btn-container row pt-3 mx-auto w-100 justify-content-around">
+            <div class="col-5">
                 <a href="{% url 'members:members_list' %}"><button class="btn btn-block mx-auto">Membros</button></a>
             </div>
-            <div class="py-3 col-6">
+            {% comment %} <div class="col-6">
                 <button id="timeline-btn" class="btn btn-block mx-auto">Linha do Tempo</button>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
-    <div class="col-12 col-md-7 text-justify">
-        <h3>A Equipe</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+    <div class="description col-12 col-md-7 px-3 pr-md-5 text-justify d-flex flex-column justify-content-around">
+        <div>
+            <h3>A Equipe</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+        </div>
     </div>
 </div>

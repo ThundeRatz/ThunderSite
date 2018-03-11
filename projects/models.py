@@ -9,6 +9,7 @@ Daniel Nery Silva de Oliveira
 
 from django.db import models
 from ckeditor.fields import RichTextField
+from members.models import Member
 
 ## Boards
 def board_thumbnail_path(instance, filename):
@@ -71,7 +72,8 @@ class Project(models.Model):
     bronze = models.PositiveSmallIntegerField(default=0)
     description = RichTextField()
     is_active = models.BooleanField(default=True)
-    boards = models.ManyToManyField(Board)
+    boards = models.ManyToManyField(Board, blank=True)
+    bold = models.ForeignKey(Member, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
         ordering = ['is_active', 'name']

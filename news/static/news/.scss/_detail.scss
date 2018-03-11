@@ -1,0 +1,18 @@
+#header {
+    .navbar-nav {
+		.nav-special {
+            color: $white !important;
+
+			&:hover, &:focus {
+				border-bottom-color: $white;
+			}
+		}
+	}
+}
+
+.content {
+    div img {
+        max-width: 70%;
+        height: auto;
+    }
+}

@@ -22,6 +22,9 @@
                 <h2 class="card-title text-center">{{ project.name }}</h4>
                 <p class="card-text text-muted">{{ project.category }}</p>
                 <p class="card-text">Estreia: {{ project.debut_year }}</p>
+                {% if project.bold.nickname %}
+                <p class="card-text">Negrito: <a href="{% url 'members:members_list' %}">{{ project.bold.nickname }}</a></p>
+                {% endif %}
                 <p class="card-text row">
                     <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
                     <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>

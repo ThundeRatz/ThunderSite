@@ -18,7 +18,7 @@
 {% block content_block %}
 <div id="project-row" class="row">
     {% for member in members_list %}
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" data-area="{{ member.area }}">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2" data-area="{{ member.area }}">
         <div class="card-flip w-100">
             <div class="flip">
                 <div class="front w-100">
@@ -69,9 +69,11 @@
                             {% endif %}
                             {{ member.get_area_display }}
                         </p>
-                        <p><i class="fas fa-envelope"></i> {{ member.email }}</p>
-                        <div class="d-flex flex-row mt-auto">
-                            <a href="{{ member.facebook }}"><i class="fab fa-facebook fa-2x"></i></a>
+                        <div class="social d-flex flex-row mt-auto">
+                            {% if member.facebook %}
+                            <a href="{{ member.facebook }}" class="mr-2"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="mailto:{{ member.email }}"><i class="fas fa-envelope fa-2x"></i></a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

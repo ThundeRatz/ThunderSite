@@ -61,3 +61,11 @@
 .btn {
     background-color: $base-color;
 }
+
+.news-title {
+    color: $base-color;
+
+    &:hover {
+        color: lighten($base-color, 15%);
+    }
+}

@@ -1,28 +1,79 @@
 #section-lastnews {
-
-    .carousel-img-div {
-        height: 100vh;
-        width: 100vw;
+    .slide {
         background-size: cover;
         background-position: center;
     }
 
-    .carousel-caption {
-        &.title {
-            h1 {
-                font-weight: 500;
-                text-shadow: 2px 2px #000000;
+    .last-news-and-button {
+        position: absolute;
+        z-index: 10;
+        top: calc(40px + 1rem);
+        margin-top: 1rem;
+        right: 0;
+        left: 0;
+
+        .btn {
+            background-color: $accent-color;
+            color: $base-color !important;
+            font-weight: 700;
+            border-radius: 10px;
+            padding: 0.6rem 1.5rem;
+        }
+    }
+
+    .fp-slidesNav ul li a span {
+        background: $white !important;
+    }
+
+    .fp-controlArrow {
+        &.fp-prev {
+            margin-left: 1.5rem;
+        }
+
+        &.fp-next {
+            margin-right: 1.5rem;
+        }
+
+        @media all and (max-width: 768px) {
+            &.fp-prev {
+                margin-left: 0.5rem;
+            }
+
+            &.fp-next {
+                margin-right: 0.5rem;
             }
         }
-
-        &.button {
-            top: calc(40px + 1rem);
-            bottom: unset;
-        }
     }
 
-    .btn {
-        background-color: $base-color;
-        font-size: 1.25rem;
+    .title {
+        font-weight: 500;
+        color: $white;
+        text-shadow: 2px 2px #000000;
     }
+
+    // .carousel-img-div {
+    //     height: 100vh;
+    //     width: 100vw;
+    //     background-size: cover;
+    //     background-position: center;
+    // }
+
+    // .carousel-caption {
+    //     &.title {
+    //         h1 {
+    //             font-weight: 500;
+    //             text-shadow: 2px 2px #000000;
+    //         }
+    //     }
+
+    //     &.button {
+    //         top: calc(40px + 1rem);
+    //         bottom: unset;
+    //     }
+    // }
+
+    // .btn {
+    //     background-color: $base-color;
+    //     font-size: 1.25rem;
+    // }
 }
