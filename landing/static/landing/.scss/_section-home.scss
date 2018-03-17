@@ -32,6 +32,16 @@
             line-height: 2;
             border-radius: 0;
 
+            @media all and (max-width: 1110px) {
+                font-size: 1.25rem;
+                line-height: 1.5;
+            }
+
+            @media all and (max-width: 890px) {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
             background-color: $base-color;
             color: $white;
             box-shadow: unset;

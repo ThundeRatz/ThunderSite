@@ -5,6 +5,36 @@
     transform: translateX(50%);
 }
 
+#header {
+    .navbar-nav {
+        .dropdown-toggle, .nav-special {
+            color: $white !important;
+
+			&:hover, &:focus {
+				border-bottom-color: $white;
+			}
+        }
+
+        .dropdown-menu {
+            background-color: $base-color;
+
+            a {
+                color: $white !important;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: $base-color !important;
+                }
+            }
+
+            .active {
+                background-color: $white;
+                color: $base-color !important;
+            }
+        }
+    }
+}
+
 #project-row {
     .col-xxl-2 {
         @media all and (min-width: 1200px) {

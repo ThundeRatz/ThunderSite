@@ -39,16 +39,8 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="btn-container row pt-3 mx-auto w-100 justify-content-around">
-            <div class="col-5">
-                <a href="{% url 'members:members_list' %}"><button class="btn btn-block mx-auto">Membros</button></a>
-            </div>
-            {% comment %} <div class="col-6">
-                <button id="timeline-btn" class="btn btn-block mx-auto">Linha do Tempo</button>
-            </div> {% endcomment %}
-        </div>
     </div>
-    <div class="description col-12 col-md-7 px-3 pr-md-5 text-justify d-flex flex-column justify-content-around">
+    <div class="description col-12 col-md-7 px-3 pr-md-5 text-justify d-flex flex-column justify-content-center">
         <div>
             <h3>A Equipe</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
@@ -58,6 +50,14 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam assumenda pariatur magnam accusantium recusandae, laboriosam doloribus consequatur reprehenderit est exercitationem quas aliquid vitae at id fugit quam debitis odio.</p>
+        </div>
+        <div class="btn-container row px-3">
+            <div class="">
+                <a href="{% url 'members:members_list' %}"><button class="btn">Membros</button></a>
+            </div>
+            {% comment %} <div class="col-6">
+                <button id="timeline-btn" class="btn">Linha do Tempo</button>
+            </div> {% endcomment %}
         </div>
     </div>
 </div>

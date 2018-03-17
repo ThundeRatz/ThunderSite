@@ -24,12 +24,12 @@
     }
 
     .btn-container {
-        position: absolute;
-        top: calc(40px + 1rem);
+        // position: absolute;
+        // top: calc(40px + 1rem);
 
         .btn {
-            background-color: $accent-color;
-            color: $base-color !important;
+            background-color: $base-color;
+            color: $white !important;
             font-weight: 700;
             border-radius: 10px;
             padding: 0.6rem 1.5rem;

@@ -7,12 +7,28 @@
 {% block top_title_block %}<h1 class="title white-text">Membros</h1>{% endblock %}
 
 {% block nav_block %}
-<a class="nav-link nav-item" data-area='EL'><i class="fas fa-bolt"></i> Elétrica</a>
-<a class="nav-link nav-item" data-area='MC'><i class="fas fa-cogs"></i> Mecânica</a>
-<a class="nav-link nav-item" data-area='CP'><i class="fas fa-code"></i> Computação</a>
-<a class="nav-link nav-item" data-area='DM'><i class="fas fa-paint-brush"></i> Design e Marketing</a>
-<a class="nav-link nav-item" data-area='AF'><i class="fas fa-handshake"></i> Administrativo e Financeiro</a>
-<a class="nav-link nav-item" data-area='all'>Todos</a>
+<li class="nav-item">
+    <a href="{% url 'landing:index' %}" class="nav-special nav-link">Início</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'news:news_list' %}" class="nav-special nav-link">Notícias</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'projects:robots' %}" class="nav-special nav-link">Projetos</a>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="areasMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Áreas
+    </a>
+    <div id="areas-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="areasMenu">
+        <a class="dropdown-item" data-area='EL'><i class="fas fa-bolt"></i> Elétrica</a>
+        <a class="dropdown-item" data-area='MC'><i class="fas fa-cogs"></i> Mecânica</a>
+        <a class="dropdown-item" data-area='CP'><i class="fas fa-code"></i> Computação</a>
+        <a class="dropdown-item" data-area='DM'><i class="fas fa-paint-brush"></i> Design e Marketing</a>
+        <a class="dropdown-item" data-area='AF'><i class="fas fa-handshake"></i> Administrativo e Financeiro</a>
+        <a class="dropdown-item" data-area='all'>Todas</a>
+    </div>
+</li>
 {% endblock %}
 
 {% block content_block %}

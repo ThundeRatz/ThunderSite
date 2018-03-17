@@ -7,11 +7,31 @@
 {% block top_title_block %}<h1 class="title white-text">Projetos</h1>{% endblock %}
 
 {% block nav_block %}
-<a class="nav-link nav-item" data-cat='combate'>Combate</a>
-<a class="nav-link nav-item" data-cat='sumo'>Sumo</a>
-<a class="nav-link nav-item" data-cat='autonomo'>Autonomo</a>
-<a class="nav-link nav-item" data-cat='hockey'>Hockey</a>
-<a class="nav-link nav-item" data-cat='all'>Todos</a>
+<li class="nav-item">
+    <a href="{% url 'landing:index' %}" class="nav-special nav-link">Início</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'news:news_list' %}" class="nav-special nav-link">Notícias</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'projects:boards' %}" class="nav-special nav-link">Placas</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'members:members_list' %}" class="nav-special nav-link">Membros</a>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="catMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categorias
+    </a>
+    <div id="categories-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="catMenu">
+        <a class="dropdown-item" data-cat='combate'>Combate</a>
+        <a class="dropdown-item" data-cat='sumo'>Sumo</a>
+        <a class="dropdown-item" data-cat='autonomo'>Autonomo</a>
+        <a class="dropdown-item" data-cat='hockey'>Hockey</a>
+        <a class="dropdown-item" data-cat='all'>Todas</a>
+    </div>
+</li>
+
 {% endblock %}
 
 {% block content_block %}
