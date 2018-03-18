@@ -59,24 +59,32 @@ class Category(models.Model):
 def project_thumbnail_path(instance, filename):
     return 'projects/' + instance.name + '/thumb_' + filename
 
+def project_card_path(instance, filename):
+    return 'projects/' + instance.name + '/card_' + filename
+
 class Project(models.Model):
     name = models.CharField(max_length=64)
     slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/projects/robots/&lt;slug&gt;</em>")
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
+
     logo = models.ImageField(upload_to='project_logos')
     typography = models.ImageField(upload_to='project_typography')
     thumbnail = models.ImageField(upload_to=project_thumbnail_path)
+    card_and_top = models.ImageField(upload_to=project_card_path)
+
     debut_year = models.PositiveSmallIntegerField()
+
     gold = models.PositiveSmallIntegerField(default=0)
     silver = models.PositiveSmallIntegerField(default=0)
     bronze = models.PositiveSmallIntegerField(default=0)
+
     description = RichTextField()
     is_active = models.BooleanField(default=True)
     boards = models.ManyToManyField(Board, blank=True)
     bold = models.ForeignKey(Member, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
-        ordering = ['is_active', 'name']
+        ordering = ['-is_active', 'name']
 
     def __str__(self):
         return self.name

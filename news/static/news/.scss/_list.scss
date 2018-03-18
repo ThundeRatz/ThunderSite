@@ -46,7 +46,7 @@
 
 .content {
     margin-top: -1rem;
-    margin-bottom: -1rem;
+    margin-bottom: -2rem;
     position: relative;
     z-index: 3;
     background-color: $white;
@@ -67,5 +67,16 @@
 
     &:hover {
         color: lighten($base-color, 15%);
+    }
+}
+
+.page-item {
+    .page-link {
+        color: $base-color;
+    }
+
+    &.active .page-link {
+        color: $white;
+        background-color: $base-color;
     }
 }

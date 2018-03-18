@@ -37,11 +37,42 @@
 {% block content_block %}
 <div id="project-row" class="row">
     {% for project in project_list %}
+    <div class="col-12 col-custom" data-cat="{{ project.category.super_category }}">
+        <div class="card my-2 mx-2">
+            <div class="card-img-top" style="background-image: url({{ project.card_and_top.url }})"></div>
+            <div class="card-body">
+                <div class="d-flex flex-column px-2">
+                    <div class="row">
+                        <div class="font-bold">Nome</div>
+                        <div class="ml-auto">{{ project.name }}</div>
+                    </div>
+                    <div class="line line1"></div>
+                    <div class="row">
+                        <div class="font-bold">Categoria</div>
+                        <div class="ml-auto">{{ project.category }}</div>
+                    </div>
+                    <div class="line line2"></div>
+                    <div class="row">
+                        <div class="font-bold">Estreia</div>
+                        <div class="ml-auto">{{ project.debut_year }}</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'projects:robot_detail' project.slug %}" class="card-overlay w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+                <img src="{{ project.typography.url }}" alt="">
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+{% comment %} <div id="project-row" class="row">
+    {% for project in project_list %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-cat="{{ project.category.super_category }}">
-        <div class="card bg-dark my-2 mx-2">
+        <div class="card my-2 mx-2">
             <div style="background-image: url({{ project.thumbnail.url }});" class="card-img"></div>
             <div class="text-white d-flex flex-column justify-content-around align-items-center card-img-overlay">
-                <h3 class="mb-0 card-title">{{ project.name }}</h3>
 
                 <a class="surprise btn" href="{% url 'projects:robot_detail' project.slug %}">
                     Ver projeto
@@ -56,10 +87,13 @@
                     {% endif %}
                 </div>
             </div>
+            <div class="card-body text-center">
+                <h3 class="mb-0 card-title">{{ project.name }}</h3>
+            </div>
         </div>
     </div>
     {% endfor %}
-</div>
+</div> {% endcomment %}
 {% endblock %}
 
 {% block extra_js %}

@@ -8,12 +8,14 @@ Daniel Nery Silva de Oliveira
 """
 
 from django.views.generic import ListView, DetailView
+from django.core.paginator import Paginator
 from .models import News
 
 class NewsListView(ListView):
     model = News
-    template_name = 'news/news_list.html'
     context_object_name = 'news_list'
+    template_name = 'news/news_list.html'
+    paginate_by = 14
 
 class NewsDetailView(DetailView):
     model = News

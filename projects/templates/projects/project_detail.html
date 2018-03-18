@@ -3,7 +3,7 @@
 
 {% block title_block %}ThundeRatz | {{ project.name }}{% endblock %}
 
-{% block top_image_block %}{{ project.pictures.all.0.image.url }}{% endblock %}
+{% block top_image_block %}{{ project.card_and_top.url }}{% endblock %}
 {% block top_title_block %}<img src="{{ project.typography.url }}" class="typography">{% endblock %}
 
 {% block nav_block %}
@@ -16,20 +16,33 @@
 <div class="row">
     <div class="col-md-3" id="left-info-wrapper">
         <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
-            <div style="background-image: url({{ project.thumbnail.url }})" class="thumbnail mx-auto pt-2"></div>
-            <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div>
+            <div style="background-image: url({{ project.card_and_top.url }})" class="thumbnail mx-auto pt-2"></div>
+            {% comment %} <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div> {% endcomment %}
             <div class="card-body">
-                <h2 class="card-title text-center">{{ project.name }}</h4>
-                <p class="card-text text-muted">{{ project.category }}</p>
-                <p class="card-text">Estreia: {{ project.debut_year }}</p>
-                {% if project.bold.nickname %}
-                <p class="card-text">Negrito: <a href="{% url 'members:members_list' %}">{{ project.bold.nickname }}</a></p>
-                {% endif %}
-                <p class="card-text row">
-                    <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
-                    <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>
-                    <span class="col"><i class="fas fa-trophy" style="color: brown"></i> {{ project.bronze }}</span>
-                </p>
+                <div class="d-flex flex-column px-2">
+                    <div class="row">
+                        <div class="font-bold">Categoria</div>
+                        <div class="ml-auto">{{ project.category }}</div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="row">
+                        <div class="font-bold">Estreia</div>
+                        <div class="ml-auto">{{ project.debut_year }}</div>
+                    </div>
+                    <div class="line"></div>
+                    {% if project.bold.nickname %}
+                    <div class="row">
+                        <div class="font-bold">Negrito</div>
+                        <div class="ml-auto"><a href="{% url 'members:members_list' %}">{{ project.bold.nickname }}</a></div>
+                    </div>
+                    <div class="line"></div>
+                    {% endif %}
+                    <div class="row">
+                        <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
+                        <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>
+                        <span class="col"><i class="fas fa-trophy" style="color: brown"></i> {{ project.bronze }}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -58,6 +71,7 @@
 </div>
 {% endblock %}
 
-{% block extra_js_block %}
+{% block extra_js %}
+{{ block.super }}
 <script src="{% static 'projects/js/projects_detail.js' %}"></script>
 {% endblock %}

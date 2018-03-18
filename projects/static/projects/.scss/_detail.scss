@@ -22,16 +22,34 @@
 #left-info {
     position: sticky;
     top: 1rem;
+
+    background: {
+        image: url('http://thunderatz.org/wp-content/uploads/2015/02/background2.jpg');
+        repeat: no-repeat;
+        position: center;
+    }
+
+    color: $white;
+
+    .card-body {
+        a {
+            color: $white;
+
+            &:hover {
+                color: darken($white, 30%);
+            }
+        }
+    }
 }
 
 .thumbnail, .logo {
-    width: 90%;
+    width: 100%;
     position: relative;
     border-radius: 2px;
 
 
     background: {
-        size: contain;
+        size: cover;
         position: center;
         repeat: no-repeat;
     }

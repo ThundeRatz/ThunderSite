@@ -47,3 +47,8 @@
 </section>
 
 {% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<!-- <script src="{% static 'projects/js/lightbox.js' %}"></script> -->
+{% endblock %}

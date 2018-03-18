@@ -50,5 +50,19 @@ $white: #FFFFFF;
     }
 }
 
+.line {
+    margin: 1rem -1.75rem;
+    height: 1px;
+    background: $accent-color;
+
+    &.line1 {
+        background: linear-gradient(to right, $accent-color 0%, transparent 80%);
+    }
+
+    &.line2 {
+        background: linear-gradient(to left, $accent-color 0%, transparent 80%);
+    }
+}
+
 @import 'list';
 @import 'detail';

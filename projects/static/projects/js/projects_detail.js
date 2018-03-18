@@ -7,9 +7,23 @@ $(document).ready(function() {
         infinite: false,
         speed: 500,
         cssEase: 'linear',
-        // variableWidth: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+
+        respondTo: 'min',
+        responsive: [{
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            },
+        }, {
+            breakpoint: 670,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        }],
     });
 
     // Start with typography on top

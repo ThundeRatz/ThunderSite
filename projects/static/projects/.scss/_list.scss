@@ -28,32 +28,30 @@
     }
 }
 
-#project_list {
-
-    .content {
-        position: relative;
-        background-color: white;
-        z-index: 3;
-        margin-top: -30vh;
-
-        @media all and (max-width: 1200px) {
-            margin-top: -25vh;
-        }
-
-        @media all and (max-width: 992px) {
-            margin-top: -15vh;
-        }
-
-        @media all and (max-width: 768px) {
-            margin-top: -5vh;
-        }
-
-        @media all and (max-width: 576px) {
-            margin-top: -2vh;
-        }
+.col-custom {
+    @media all and (min-width: 576px) {
+        -webkit-box-flex: 0;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 
+    @media all and (min-width: 768px) {
+        -webkit-box-flex: 0;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
 
+    @media all and (min-width: 1140px) {
+        -webkit-box-flex: 0;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    @media all and (min-width: 1440px) {
+        -webkit-box-flex: 0;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
 }
 
 .title {
@@ -61,66 +59,60 @@
     bottom: 31vh;
     right: 50%;
     transform: translateX(50%);
-
-    @media all and (max-width: 1200px) {
-        bottom: 26vh;
-    }
-
-    @media all and (max-width: 992px) {
-        bottom: 16vh;
-    }
-
-    @media all and (max-width: 768px) {
-        bottom: 6vh;
-    }
-
-    @media all and (max-width: 576px) {
-        bottom: 3vh;
-    }
 }
 
-.card-img {
+.card-img-top {
+    width: 100%;
     position: relative;
 
     background: {
-        position: center;
         size: cover;
+        position: center;
         repeat: no-repeat;
-        color: white;
+        color: transparent;
     }
 
     &::after {
         content: "";
         display: block;
-        padding-bottom: 75%;
         height: 0;
+        padding-bottom: 75%;
     }
 }
 
-.card-img-overlay {
-    transition: background-color 0.3s ease;
-    // background-color: transparent;
-    background-color: rgba(0, 0, 0, 0.3);
+.card {
+    border: 0px solid darken($white, 30%);
 
-    .card-title {
-        color: white;
+    background: {
+        image: url('http://thunderatz.org/wp-content/uploads/2015/02/background2.jpg');
+        repeat: no-repeat;
+        position: center;
+    }
+
+    color: $white;
+}
+
+.border-bt {
+    border-bottom: 1px $accent-color solid;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background 0.5s ease;
+
+    img {
+        max-width: 80%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
     }
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.5);
 
-        .surprise {
+        img {
             opacity: 1;
-        }
-    }
-
-    .surprise {
-        transition: opacity 0.3s ease;
-        opacity: 0;
-
-        &.btn {
-            background-color: $base-color;
-            color: white;
         }
     }
 }

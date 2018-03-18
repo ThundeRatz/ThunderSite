@@ -16,3 +16,34 @@
         height: auto;
     }
 }
+
+.images-w1 {
+    width: 90%;
+
+    .images-w2 {
+        .slick-slide {
+            .image {
+                margin: 0 1rem;
+                position: relative;
+                border-radius: 2px;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 80%;
+                    height: 0;
+                }
+
+                background: {
+                    position: center;
+                    size: cover;
+                    repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+.slick-arrow::before, .slick-arrow::after {
+    color: $base-color;
+}

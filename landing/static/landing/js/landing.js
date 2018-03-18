@@ -45,7 +45,7 @@ $(document).ready(function() {
         start: 'manual',
     }, function (obj) {
         obj.el.classList.add('finished');
-        $('#section-buttons').removeClass('hidden');
+        $('#section-buttons, #arrow-down').removeClass('hidden');
     });
 
     setTimeout(function() {
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     $('#thunderlogo').on('click', function() {
         $(this).removeClass('finished');
-        $('#section-buttons').addClass('hidden');
+        $('#section-buttons, #arrow-down').addClass('hidden');
         v.stop().reset();
         setTimeout(function() {
             v.play();
@@ -172,7 +172,7 @@ $(document).ready(function() {
         $.fn.fullpage.moveTo(1);
     });
 
-    $('#menu2, #menu2-start').on('click', function() {
+    $('#menu2, #menu2-start, #arrow-down').on('click', function() {
         $.fn.fullpage.moveTo(2);
     });
 
