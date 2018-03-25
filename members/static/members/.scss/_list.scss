@@ -35,7 +35,7 @@
     }
 }
 
-#project-row {
+#member-row {
     .col-xxl-2 {
         @media all and (min-width: 1200px) {
             -webkit-box-flex: 0;
@@ -67,36 +67,6 @@
             height: 0;
             padding-bottom: 100%;
         }
-    }
-
-    .card-flip {
-        perspective: 1000px;
-
-        &:hover .flip {
-            transform: rotateY(180deg);
-        }
-    }
-
-    .flip {
-        transition: 0.6s;
-        transform-style: preserve-3d;
-        position: relative;
-    }
-
-    .front, .back {
-        backface-visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .front {
-        z-index: 2;
-        transform: rotateY(0deg);
-    }
-
-    .back {
-        transform: rotateY(180deg);
     }
 
     .card {
@@ -131,6 +101,21 @@
 
             &:hover {
                 color: lighten(black, 30%);
+            }
+        }
+
+        .card-hover {
+            background-color: rgba(255,255,255,0.9);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: left;
+            z-index: 11;
+
+            &:hover {
+                opacity: 1;
             }
         }
     }

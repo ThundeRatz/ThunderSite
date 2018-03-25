@@ -65,35 +65,6 @@
     </div>
     {% endfor %}
   </div>
-
-
-{% comment %} <div id="project-row" class="row">
-    {% for project in project_list %}
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-cat="{{ project.category.super_category }}">
-        <div class="card my-2 mx-2">
-            <div style="background-image: url({{ project.thumbnail.url }});" class="card-img"></div>
-            <div class="text-white d-flex flex-column justify-content-around align-items-center card-img-overlay">
-
-                <a class="surprise btn" href="{% url 'projects:robot_detail' project.slug %}">
-                    Ver projeto
-                </a>
-
-                <div class="surprise d-flex w-100 justify-content-around">
-                    <p>{{ project.category.super_category | title }}</p>
-                    {% if project.is_active %}
-                    <p>Ativo</p>
-                    {% else %}
-                    <p>Inativo</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="card-body text-center">
-                <h3 class="mb-0 card-title">{{ project.name }}</h3>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div> {% endcomment %}
 {% endblock %}
 
 {% block extra_js %}

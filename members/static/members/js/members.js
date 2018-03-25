@@ -10,23 +10,8 @@ function GetURLParameter(sParam) {
     }
 }
 
-function fixSizes() {
-    var max_ht = -1;
-
-    $('.card').each(function() {
-        max_ht = max_ht > $(this).outerHeight(true) ? max_ht : $(this).outerHeight(true);
-    })
-
-    console.log(max_ht);
-
-    $('.card-flip').each(function() {
-        $('.card-flip').outerHeight(max_ht);
-    });
-
-}
-
 $(document).ready(function() {
-    fixSizes();
+    // fixSizes();
     $('.flip, .front, .back').addClass('h-100');
 
     var areas = ['EL', 'MC', 'CP', 'DM', 'AF'];
@@ -37,7 +22,7 @@ $(document).ready(function() {
 
     if (area) {
         $('a[data-area="'+area+'"]').addClass('active');
-        $('#project-row > div').each(function() {
+        $('#member-row > div').each(function() {
             ($(this).data('area') == area) ? $(this).show() : $(this).hide();
         });
     } else {
@@ -51,7 +36,7 @@ $(document).ready(function() {
         $('a[data-area]').removeClass('active');
         $(this).addClass('active');
 
-        $('#project-row > div').each(function() {
+        $('#member-row > div').each(function() {
             if (area != 'all') {
                 ($(this).data('area') == area) ? $(this).show() : $(this).hide();
             } else {
@@ -61,5 +46,3 @@ $(document).ready(function() {
     });
 
 });
-
-$(window).on('resize', fixSizes);

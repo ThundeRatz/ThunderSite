@@ -7,27 +7,35 @@
 {% block top_title_block %}<h1 class="title white-text">Placas</h1>{% endblock %}
 
 {% block nav_block %}
-
+<li class="nav-item">
+    <a href="{% url 'landing:index' %}" class="nav-special nav-link">Início</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'news:news_list' %}" class="nav-special nav-link">Notícias</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'projects:robots' %}" class="nav-special nav-link">Projetos</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'members:members_list' %}" class="nav-special nav-link">Membros</a>
+</li>
 {% endblock %}
 
 {% block content_block %}
 <div id="project-row" class="row">
     {% for board in board_list %}
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-name="{{ board.name }}">
-        <div class="card bg-dark my-2 mx-2">
-            <div style="background-image: url({{ board.thumbnail.url }});" class="card-img"></div>
-            <div class="text-white d-flex flex-column justify-content-around align-items-center card-img-overlay">
-                <h3 class="mb-0 card-title">{{ board.name }}</h3>
-
-                <a class="surprise btn" href="{% url 'projects:board_detail' board.slug %}">
-                    Ver placa
-                </a>
-
-                <div class="surprise d-flex w-100 justify-content-around">
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
+    <div class="col-12 col-custom" data-cat="{{ project.category.super_category }}">
+        <div class="card my-2 mx-2">
+            <div class="card-img-top" style="background-image: url({{ board.thumbnail.url }})"></div>
+            <div class="card-body">
+                <div class="d-flex flex-column px-2">
+                    <div class="row">
+                        <div class="font-bold mx-auto"><h3 class="mb-0">{{ board.name }}</h3></div>
+                    </div>
                 </div>
             </div>
+            <a href="{% url 'projects:board_detail' board.slug %}" class="card-overlay w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+            </a>
         </div>
     </div>
     {% endfor %}
