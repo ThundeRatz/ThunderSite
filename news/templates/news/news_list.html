@@ -53,6 +53,8 @@
             </div>
         </nav>
 
+        <h1 class="noticias_title mt-4 mb-3 font-bold text-center w-100"> Notícias</h1>
+
         <div class="row">
             {% for new in news_list %}
                 {% if new.visible %}
@@ -73,7 +75,6 @@
                                 {{ new.text|truncatechars_html:190|safe }}
                             </p>
                             <p>by <a class="font-bold dark-grey-text">{{ new.author.first_name }}</a>, {{ new.published_date | date:'d/m/Y' }}</p>
-                            {% comment %} <a href="{% url 'news:news_detail' new.slug %}" class="btn btn-md">Ler mais</a> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
 
         {% if is_paginated %}
         <nav aria-label="pagination">
-            <ul class="pagination justify-content-center">
+            <ul class="pagination pb-2 justify-content-center">
 
                 <li class="page-item
                     {% if not page_obj.has_previous %}

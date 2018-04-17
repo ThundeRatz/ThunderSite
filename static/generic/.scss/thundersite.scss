@@ -22,6 +22,10 @@ h1, h2, h3, h4, h5, h6, .fira-sans {
 	background: url("../img/loading.gif") center no-repeat #fff;
 }
 
+strong, .font-bold {
+    font-weight: 600;
+}
+
 #header {
 	background: $base-color;
 

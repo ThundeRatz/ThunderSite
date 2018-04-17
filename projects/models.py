@@ -56,8 +56,8 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'categories'
 
-def project_thumbnail_path(instance, filename):
-    return 'projects/' + instance.name + '/thumb_' + filename
+def project_cover_path(instance, filename):
+    return 'projects/' + instance.name + '/cover_' + filename
 
 def project_card_path(instance, filename):
     return 'projects/' + instance.name + '/card_' + filename
@@ -67,10 +67,10 @@ class Project(models.Model):
     slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/projects/robots/&lt;slug&gt;</em>")
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
 
-    logo = models.ImageField(upload_to='project_logos')
-    typography = models.ImageField(upload_to='project_typography')
-    thumbnail = models.ImageField(upload_to=project_thumbnail_path)
-    card_and_top = models.ImageField(upload_to=project_card_path)
+    logo = models.ImageField(upload_to='project_logos', null=True, blank=True)
+    typography = models.ImageField(upload_to='project_typography', null=True, blank=True)
+    cover_image = models.ImageField(upload_to=project_cover_path, null=True, blank=True)
+    card_image = models.ImageField(upload_to=project_card_path, null=True, blank=True)
 
     debut_year = models.PositiveSmallIntegerField()
 
@@ -82,6 +82,9 @@ class Project(models.Model):
     is_active = models.BooleanField(default=True)
     boards = models.ManyToManyField(Board, blank=True)
     bold = models.ForeignKey(Member, on_delete=models.SET_NULL, blank=True, null=True)
+
+    # thumbnail = models.IntegerField(blank=True, null=True, default=0)
+    # card_and_top = models.IntegerField(blank=True, null=True, default=0)
 
     class Meta:
         ordering = ['-is_active', 'name']

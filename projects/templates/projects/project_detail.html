@@ -3,7 +3,7 @@
 
 {% block title_block %}ThundeRatz | {{ project.name }}{% endblock %}
 
-{% block top_image_block %}{{ project.card_and_top.url }}{% endblock %}
+{% block top_image_block %}{{ project.cover_image.url }}{% endblock %}
 {% block top_title_block %}<img src="{{ project.typography.url }}" class="typography">{% endblock %}
 
 {% block nav_block %}
@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-md-3" id="left-info-wrapper">
         <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
-            <div style="background-image: url({{ project.card_and_top.url }})" class="thumbnail mx-auto pt-2"></div>
+            <div style="background-image: url({{ project.card_image.url }})" class="thumbnail mx-auto pt-2"></div>
             {% comment %} <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div> {% endcomment %}
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
@@ -37,6 +37,14 @@
                     </div>
                     <div class="line"></div>
                     {% endif %}
+
+                    {% for board in project.boards.all %}
+                    <div class="row">
+                        <div class="font-bold">{% if forloop.first %}Eletr&ocirc;nica{% endif %}</div>
+                        <div class="ml-auto"><a href="{% url 'projects:board_detail' board.slug %}">{{ board.name }}</a></div>
+                    </div>
+                    {% endfor %}
+                    <div class="line"></div>
                     <div class="row">
                         <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
                         <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>
