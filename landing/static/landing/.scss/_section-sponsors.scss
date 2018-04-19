@@ -1,10 +1,13 @@
 #section-sponsors {
     #sponsors {
-        height: 100%;
+        width: 100%;
+        height: calc(100vh - 40px - 1rem);
+        position: absolute;
+        bottom: 0;
 
         #sponsors-gold-w1 {
             width: 100%;
-            height: calc(0.4 * (100vh - 40px - 1rem));
+            height: 40%;
 
             #sponsors-gold-w2 {
                 .slick-slide {
@@ -25,7 +28,7 @@
 
         #sponsors-silver-w1 {
             width: 100%;
-            height: calc(0.35 * (100vh - 40px - 1rem));
+            height: 35%;
 
             #sponsors-silver-w2 {
                 .slick-slide {
@@ -54,7 +57,7 @@
 
         #sponsors-bronze-w1 {
             width: 100%;
-            height: calc(0.25 * (100vh - 40px - 1rem));
+            height: 25%;
 
             #sponsors-bronze-w2 {
                 .slick-slide {

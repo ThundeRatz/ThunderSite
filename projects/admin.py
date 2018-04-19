@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SuperCategory, Category, Project, ProjectImage, Board
+from .models import SuperCategory, Category, Project, ProjectImage, Board, BoardImage
 
 # Register your models here.
 @admin.register(Project)
@@ -20,3 +20,4 @@ class BoardAdmin(admin.ModelAdmin):
 
 admin.site.register(SuperCategory)
 admin.site.register(ProjectImage)
+admin.site.register(BoardImage)

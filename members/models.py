@@ -28,9 +28,9 @@ class Member(models.Model):
     area = models.CharField(max_length=2, choices=CHOICES)
     area_captain = models.BooleanField(default=False)
     team_captain = models.BooleanField(default=False)
-    picture = models.ImageField(upload_to=member_picture_path)
+    picture = models.ImageField(upload_to=member_picture_path, default='1000x1000.png')
     facebook = models.URLField(blank=True, null=True)
-    email = models.EmailField();
+    email = models.EmailField()
     entry_year = models.PositiveSmallIntegerField()
 
     class Meta:

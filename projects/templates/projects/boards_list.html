@@ -4,7 +4,7 @@
 {% block title_block %}ThundeRatz | Placas{% endblock %}
 
 {% block top_image_block %}{% static 'projects/img/cover.png' %}{% endblock %}
-{% block top_title_block %}<h1 class="title white-text">Placas</h1>{% endblock %}
+{% block top_title_block %}<h1 class="title white-text">Eletr&ocirc;nicas</h1>{% endblock %}
 
 {% block nav_block %}
 <li class="nav-item">
@@ -14,7 +14,7 @@
     <a href="{% url 'news:news_list' %}" class="nav-special nav-link">Notícias</a>
 </li>
 <li class="nav-item">
-    <a href="{% url 'projects:robots' %}" class="nav-special nav-link">Rob&oacute;s</a>
+    <a href="{% url 'projects:robots' %}" class="nav-special nav-link">Rob&ocirc;s</a>
 </li>
 <li class="nav-item">
     <a href="{% url 'members:members_list' %}" class="nav-special nav-link">Membros</a>
@@ -26,7 +26,7 @@
     {% for board in board_list %}
     <div class="col-12 col-custom" data-cat="{{ project.category.super_category }}">
         <div class="card my-2 mx-2">
-            <div class="card-img-top" style="background-image: url({{ board.thumbnail.url }})"></div>
+            <div class="card-img-top" style="background-image: url({{ board.card_image.url }})"></div>
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
                     <div class="row">

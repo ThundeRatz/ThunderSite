@@ -80,6 +80,12 @@
                     {% endif %}
                     {{ member.get_area_display }}
                 </p>
+                {% if member.team_captain %}
+                <strong>Capitão Geral</strong>
+                {% endif %}
+                {% if member.area_captain %}
+                <em>Capitã(o) de Área</em>
+                {% endif %}
                 <div class="social d-flex flex-row mt-auto">
                     {% if member.facebook %}
                     <a href="{{ member.facebook }}" class="mr-2"><i class="fab fa-facebook fa-2x"></i></a>

@@ -3,7 +3,7 @@
 
 {% block title_block %}ThundeRatz | {{ board.name }}{% endblock %}
 
-{% block top_image_block %}{{ project.pictures.all.0.image.url }}{% endblock %}
+{% block top_image_block %}{{ board.cover_image.url }}{% endblock %}
 {% block top_title_block %}<h1 class="title white-text">{{ board.name }}</h1>{% endblock %}
 
 {% block nav_block %}
@@ -16,9 +16,18 @@
 <div class="row">
     <div class="col-md-3" id="left-info-wrapper">
         <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
-            <div style="background-image: url({{ board.thumbnail.url }})" class="thumbnail mx-auto pt-2"></div>
+            <div style="background-image: url({{ board.card_image.url }})" class="thumbnail mx-auto pt-2"></div>
             <div class="card-body">
-                <h2 class="card-title text-center">{{ board.name }}</h4>
+                <div class="d-flex flex-column px-2">
+                    <h2 class="card-title text-center">{{ board.name }}</h4>
+                    <div class="line"></div>
+                    {% for project in board.projects.all %}
+                    <div class="row">
+                        <div class="font-bold">{% if forloop.first %}Rob&ocirc;s{% endif %}</div>
+                        <div class="ml-auto"><a href="{% url 'projects:robot_detail' project.slug %}">{{ project.name }}</a></div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

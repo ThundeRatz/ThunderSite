@@ -13,12 +13,19 @@ from members.models import Member
 
 ## Boards
 def board_thumbnail_path(instance, filename):
-    return 'projects/' + instance.name + '/thumb_' + filename
+    pass
+
+def board_cover_path(instance, filename):
+    return 'projects/' + instance.name + '/cover_' + filename
+
+def board_card_path(instance, filename):
+    return 'projects/' + instance.name + '/card_' + filename
 
 class Board(models.Model):
     name = models.CharField(max_length=64)
     slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/projects/boards/&lt;slug&gt;</em>")
-    thumbnail = models.ImageField(upload_to=board_thumbnail_path)
+    cover_image = models.ImageField(upload_to=board_cover_path, default='1000x1000.png')
+    card_image = models.ImageField(upload_to=board_card_path, default='1000x1000.png')
     description = RichTextField()
 
     def __str__(self):
@@ -67,10 +74,10 @@ class Project(models.Model):
     slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/projects/robots/&lt;slug&gt;</em>")
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
 
-    logo = models.ImageField(upload_to='project_logos', null=True, blank=True)
-    typography = models.ImageField(upload_to='project_typography', null=True, blank=True)
-    cover_image = models.ImageField(upload_to=project_cover_path, null=True, blank=True)
-    card_image = models.ImageField(upload_to=project_card_path, null=True, blank=True)
+    logo = models.ImageField(upload_to='project_logos', default='1000x1000.png')
+    typography = models.ImageField(upload_to='project_typography', default='1000x1000.png')
+    cover_image = models.ImageField(upload_to=project_cover_path, default='1000x1000.png')
+    card_image = models.ImageField(upload_to=project_card_path, default='1000x1000.png')
 
     debut_year = models.PositiveSmallIntegerField()
 
@@ -80,11 +87,8 @@ class Project(models.Model):
 
     description = RichTextField()
     is_active = models.BooleanField(default=True)
-    boards = models.ManyToManyField(Board, blank=True)
+    boards = models.ManyToManyField(Board, blank=True, related_name='projects')
     bold = models.ForeignKey(Member, on_delete=models.SET_NULL, blank=True, null=True)
-
-    # thumbnail = models.IntegerField(blank=True, null=True, default=0)
-    # card_and_top = models.IntegerField(blank=True, null=True, default=0)
 
     class Meta:
         ordering = ['-is_active', 'name']
