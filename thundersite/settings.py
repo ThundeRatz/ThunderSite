@@ -135,7 +135,7 @@ COMPRESS_PRECOMPILERS = (
 # COMPRESS_ENABLED = True
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/thunderatz/webapps/thundersitev2_static/'
 
 # CKEDITOR
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
