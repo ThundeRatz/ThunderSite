@@ -1,0 +1,64 @@
+#section-team {
+    #section-about, #section-workshop {
+        .carousel-img-div {
+            height: 100vh;
+            // padding-bottom: 70%;
+            background-size: cover;
+            background-position: center;
+
+            @media all and (max-width: 768px) {
+                height: 30vh;
+            }
+        }
+
+        .btn {
+            background-color: $base-color;
+            font-size: 1.25rem;
+        }
+
+        .description {
+            padding-top: calc(40px + 1rem);
+
+            @media all and (max-width: 768px) {
+                padding-top: 1rem;
+            }
+
+            & > div {
+                max-width: 70%;
+
+                @media all and (max-width: 1200px) {
+                    max-width: 80%;
+                }
+
+                @media all and (max-width: 992px) {
+                    max-width: 90%;
+                }
+
+                @media all and (max-width: 768px) {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .btn-container {
+            // position: absolute;
+            // top: calc(40px + 1rem);
+
+            .btn {
+                background-color: $base-color;
+                color: $white !important;
+                font-weight: 700;
+                border-radius: 10px;
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    }
+
+    .fp-controlArrow {
+        display: none;
+    }
+
+    .fp-slidesNav {
+        display: none;
+    }
+}

@@ -180,8 +180,12 @@ $(document).ready(function() {
         $.fn.fullpage.moveTo(3, 0);
     });
 
-    $('#timeline-btn').on('click', function() {
+    $('#workshop-btn').on('click', function() {
         $.fn.fullpage.moveTo(3, 1);
+    });
+
+    $('#team-btn').on('click', function() {
+        $.fn.fullpage.moveTo(3, 0);
     });
 
     $('#menu4, #menu4-start').on('click', function() {

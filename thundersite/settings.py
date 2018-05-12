@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'compressor',
     'ckeditor',
     'landing',
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'thundersite.urls'
@@ -67,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -135,3 +139,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CKEDITOR
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = 'admin:login'
+LOGIN_REDIRECT_URL = 'admin:index'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ['thunderatz.org',]
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/403/'
+
+#CKEDITOR_CONFIGS = {
+#    'default': {
+#        'toolbar': 'standard',
+#        'extraPlugins': 'youtube'
+#    }
+#}

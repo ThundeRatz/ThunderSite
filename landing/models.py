@@ -38,3 +38,21 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+## About texts
+class About(models.Model):
+    CHOICES = (
+        ('A', 'Team'),
+        ('B', 'Workshop'),
+    )
+
+    type = models.CharField(max_length=1, choices=CHOICES, unique=True)
+    text = RichTextField()
+    title = models.CharField(max_length=32)
+
+    image1 = models.ImageField(upload_to='about')
+    image2 = models.ImageField(upload_to='about')
+    image3 = models.ImageField(upload_to='about')
+
+    def __str__(self):
+        return self.title

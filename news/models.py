@@ -19,7 +19,7 @@ class News(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.SET(get_sentinel_user))
     title = models.CharField(max_length=256)
     slug = models.SlugField(unique=True, help_text="URL name: <em>thunderatz.org/news/&lt;slug&gt;</em>")
-    text = RichTextUploadingField(help_text='<h1><strong>Se upar imagens, colocar a classe "body-image" nela na aba Advanced!</strong></h1>')
+    text = RichTextUploadingField(extra_plugins=['youtube'], help_text='<h1><strong>Se upar imagens, colocar a classe "body-image" nela na aba Advanced!</strong></h1>')
 
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
