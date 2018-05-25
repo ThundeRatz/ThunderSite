@@ -89,6 +89,8 @@
                 <div class="social d-flex flex-row mt-auto">
                     {% if member.facebook %}
                     <a href="{{ member.facebook }}" class="mr-2"><i class="fab fa-facebook fa-2x"></i></a>
+                    {% endif %}
+                    {% if member.email %}
                     <a href="mailto:{{ member.email }}"><i class="fas fa-envelope fa-2x"></i></a>
                     {% endif %}
                 </div>

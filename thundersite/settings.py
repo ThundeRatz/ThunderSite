@@ -135,7 +135,7 @@ COMPRESS_PRECOMPILERS = (
 # COMPRESS_ENABLED = True
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/thunderatz/webapps/thundersitev2_static/'
+MEDIA_ROOT = '/home/thunderatz/webapps/thundersitev2_media/'
 
 # CKEDITOR
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
@@ -154,9 +154,9 @@ LOGIN_REDIRECT_URL = 'admin:index'
 SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ['thunderatz.org',]
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/403/'
 
-#CKEDITOR_CONFIGS = {
-#    'default': {
-#        'toolbar': 'standard',
-#        'extraPlugins': 'youtube'
-#    }
-#}
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'standard',
+        'extraPlugins': 'youtube'
+    }
+}

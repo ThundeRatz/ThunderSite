@@ -1,37 +1,37 @@
 {% load staticfiles %}
 
 <div class="cd-horizontal-timeline h-100 d-flex flex-column justify-content-center">
-	<div class="timeline">
-		<div class="events-wrapper">
-			<div class="events">
-				<ol>
-					{% for e in events %}
-					<li><a href="#0" data-date="{{ e.date | date:'d/m/Y' }}" {% if forloop.first %}class="selected"{% endif %}>{{ e.date | date:'d M'}}</a></li>
-					{% endfor %}
-				</ol>
+    <div class="timeline">
+        <div class="events-wrapper">
+            <div class="events">
+                <ol>
+                    {% for e in events %}
+                    <li><a href="#0" data-date="{{ e.date | date:'d/m/Y' }}" {% if forloop.first %}class="selected"{% endif %}>{{ e.date | date:'d M'}}</a></li>
+                    {% endfor %}
+                </ol>
 
-				<span class="filling-line" aria-hidden="true"></span>
-			</div> <!-- .events -->
-		</div> <!-- .events-wrapper -->
+                <span class="filling-line" aria-hidden="true"></span>
+            </div> <!-- .events -->
+        </div> <!-- .events-wrapper -->
 
-		<ul class="cd-timeline-navigation">
-			<li><a href="#0" class="prev inactive">Prev</a></li>
-			<li><a href="#0" class="next">Next</a></li>
-		</ul> <!-- .cd-timeline-navigation -->
-	</div> <!-- .timeline -->
+        <ul class="cd-timeline-navigation">
+            <li><a href="#0" class="prev inactive">Prev</a></li>
+            <li><a href="#0" class="next">Next</a></li>
+        </ul> <!-- .cd-timeline-navigation -->
+    </div> <!-- .timeline -->
 
-	<div class="events-content">
-		<ol>
-			{% for e in events %}
-			<li {% if forloop.first %}class="selected"{% endif %} data-date="{{ e.date | date:'d/m/Y' }}">
-				<div class="event-image" style="background-image: url({{ e.image.url }})"></div>
-				<div>
-					<h2>{{ e.title }}</h2>
-					<em>{{ e.date | date }}</em>
-					{{ e.text | safe }}
-				</div>
-			</li>
-			{% endfor %}
-		</ol>
-	</div> <!-- .events-content -->
+    <div class="events-content">
+        <ol>
+            {% for e in events %}
+            <li {% if forloop.first %}class="selected"{% endif %} data-date="{{ e.date | date:'d/m/Y' }}">
+                <div class="event-image" style="background-image: url({{ e.image.url }})"></div>
+                <div>
+                    <h2>{{ e.title }}</h2>
+                    <em>{{ e.date | date }}</em>
+                    {{ e.text | safe }}
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+    </div> <!-- .events-content -->
 </div>

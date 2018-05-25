@@ -16,19 +16,19 @@
 
 #section-home {
     .layer{
-		position: absolute;
-		z-index: 4;
-		width: 100%;
-		left: 0;
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+        left: 0;
         top: 0;
         height: 100%;
 
-		/*
-		* Preventing flicker on some browsers
-		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
-		*/
-		transform: translate3d(0,0,0);
-	}
+        /*
+        * Preventing flicker on some browsers
+        * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+        */
+        transform: translate3d(0,0,0);
+    }
 
     #thunderlogo {
         height: 50vh;
