@@ -25,7 +25,7 @@ class News(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
 
     cover_image = models.ImageField(upload_to='news_cover',
-                                    help_text='Imagem que vai no preview da noticia, no topo da pagina de detalhes e no final do texto da noticia')
+                                    help_text='Imagem que vai no preview da noticia, no topo da pagina de detalhes e no final do texto da noticia, <strong>Cuidado</strong> com imagens muito grandes! Menos de 1MB é mais que suficiente.')
     intro_image = models.ImageField(upload_to='news_intro',
                                     help_text='Imagem que vai logo antes do começo do texto da notícias', blank=True, null=True)
 

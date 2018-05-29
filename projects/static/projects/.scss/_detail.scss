@@ -1,13 +1,13 @@
 #header {
     .navbar-nav {
-		.nav-special {
+        .nav-special {
             color: $white !important;
 
-			&:hover, &:focus {
-				border-bottom-color: $white;
-			}
-		}
-	}
+            &:hover, &:focus {
+                border-bottom-color: $white;
+            }
+        }
+    }
 }
 
 .typography, .title {
@@ -24,7 +24,7 @@
     top: 1rem;
 
     background: {
-        image: url('http://thunderatz.org/wp-content/uploads/2015/02/background2.jpg');
+        // image: url('http://thunderatz.org/wp-content/uploads/2015/02/background2.jpg');
         repeat: no-repeat;
         position: center;
     }

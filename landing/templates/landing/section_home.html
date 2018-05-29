@@ -1,10 +1,10 @@
 {% load staticfiles %}
 
 <video id="back-video" data-autoplay="" loop="" muted="">
-    <!-- <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"> -->
+    <source src="{% static 'landing/img/fundo.mp4' %}" type="video/mp4">
 </video>
 
-<div class="layer">
+<div class="layer hidden">
     <svg id='thunderlogo' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="467.5px"
         height="277.7px" viewBox="0 0 467.5 277.7" style="enable-background:new 0 0 467.5 277.7;" xml:space="preserve">
         <title>ThunderLogo</title>
@@ -61,7 +61,7 @@
     </svg>
 
     <nav id="section-buttons" class="nav justify-content-center hidden d-none d-md-block">
-        <button id="menu2-start" class="nav-item btn align-middle btn-md-lg" type="button"><span>Início</span></button>
+        <button id="menu2-start" class="nav-item btn align-middle btn-md-lg" type="button"><span>Not&iacute;cias</span></button>
         <button id="menu3-start" class="nav-item btn align-middle btn-lg" type="button"><span>A Equipe</span></button>
         <button id="menu4-start" class="nav-item btn align-middle btn-lg" type="button"><span>Projetos</span></button>
         <button id="menu5-start" class="nav-item btn align-middle btn-lg" type="button"><span>Patrocinadores</span></button>

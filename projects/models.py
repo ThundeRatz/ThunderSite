@@ -28,6 +28,9 @@ class Board(models.Model):
     card_image = models.ImageField(upload_to=board_card_path, default='1000x1000.png')
     description = RichTextField()
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self):
         return self.name
 
@@ -91,7 +94,7 @@ class Project(models.Model):
     bold = models.ForeignKey(Member, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
-        ordering = ['-is_active', 'name']
+        ordering = ['-is_active', '-debut_year', 'name']
 
     def __str__(self):
         return self.name

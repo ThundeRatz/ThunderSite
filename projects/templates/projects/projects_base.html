@@ -10,7 +10,7 @@
 {% block body_block %}
 <section id="project-body" class="container-fluid px-0">
     <div class="top view hm-black-strong">
-        <div class="top-image" style="background-image: url({% block top_image_block %}{% endblock %});"></div>
+        <div class="top-image" style='background-image: url("{% block top_image_block %}{% endblock %}");'></div>
         <div class="mask waves-effect waves-light">
             {% block top_title_block %}{% endblock %}
         </div>

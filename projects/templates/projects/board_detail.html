@@ -3,7 +3,7 @@
 
 {% block title_block %}ThundeRatz | {{ board.name }}{% endblock %}
 
-{% block top_image_block %}{{ board.cover_image.url }}{% endblock %}
+{% block top_image_block %}{% static 'landing/img/micropress.jpg' %}{% endblock %}
 {% block top_title_block %}<h1 class="title white-text">{{ board.name }}</h1>{% endblock %}
 
 {% block nav_block %}
@@ -15,7 +15,7 @@
 {% block content_block %}
 <div class="row">
     <div class="col-md-3" id="left-info-wrapper">
-        <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
+        <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3" style='background-image: url("{% static 'projects/img/background1.png' %}")'>
             <div style="background-image: url({{ board.card_image.url }})" class="thumbnail mx-auto pt-2"></div>
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
@@ -56,6 +56,7 @@
 </div>
 {% endblock %}
 
-{% block extra_js_block %}
+{% block extra_js %}
+{{ block.super }}
 <script src="{% static 'projects/js/boards_detail.js' %}"></script>
 {% endblock %}

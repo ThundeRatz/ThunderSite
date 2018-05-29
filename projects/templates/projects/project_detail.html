@@ -15,9 +15,14 @@
 {% block content_block %}
 <div class="row">
     <div class="col-md-3" id="left-info-wrapper">
-        <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3">
-            <div style="background-image: url({{ project.card_image.url }})" class="thumbnail mx-auto pt-2"></div>
-            {% comment %} <div style="background-image: url({{ project.logo.url }})" class="logo mx-auto py-1"></div> {% endcomment %}
+        <div id="left-info" class="z-depth-2 mr-3 mr-md-0 ml-3 my-3"
+            {% if project.is_active %}
+            style='background-image: url("{% static 'projects/img/background1.png' %}")'
+            {% else %}
+            style='background-image: url("{% static 'projects/img/background1-velhos.png' %}")'
+            {% endif %}
+        >
+            <div style='background-image: url("{{ project.card_image.url }}")' class="thumbnail mx-auto pt-2"></div>
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
                     <div class="row">
@@ -32,7 +37,7 @@
                     <div class="line"></div>
                     {% if project.bold.nickname %}
                     <div class="row">
-                        <div class="font-bold">Negrito</div>
+                        <div class="font-bold">Respons&aacute;vel</div>
                         <div class="ml-auto"><a href="{% url 'members:members_list' %}">{{ project.bold.nickname }}</a></div>
                     </div>
                     <div class="line"></div>
@@ -43,12 +48,12 @@
                         <div class="font-bold">{% if forloop.first %}Eletr&ocirc;nica{% endif %}</div>
                         <div class="ml-auto"><a href="{% url 'projects:board_detail' board.slug %}">{{ board.name }}</a></div>
                     </div>
-                    {% endfor %}
                     <div class="line"></div>
+                    {% endfor %}
                     <div class="row">
-                        <span class="col"><i class="fas fa-trophy" style="color: gold"></i> {{ project.gold }}</span>
-                        <span class="col"><i class="fas fa-trophy" style="color: silver"></i> {{ project.silver }}</span>
-                        <span class="col"><i class="fas fa-trophy" style="color: brown"></i> {{ project.bronze }}</span>
+                        <span class="col"><i class="fas fa-trophy" style="color: gold"></i>&nbsp;&nbsp;{{ project.gold }}</span>
+                        <span class="col"><i class="fas fa-trophy" style="color: silver"></i>&nbsp;&nbsp;{{ project.silver }}</span>
+                        <span class="col"><i class="fas fa-trophy" style="color: brown"></i>&nbsp;&nbsp;{{ project.bronze }}</span>
                     </div>
                 </div>
             </div>
@@ -69,7 +74,7 @@
                 <div id="project-images-w2">
                     {% for pic in project.pictures.all %}
                     <div>
-                        <a href="{{ pic.image.url }}" data-lightbox="project-gallery" data-title="{{ pic.description }}"><div class="image z-depth-1" style="background-image: url({{ pic.image.url }});"></div></a>
+                        <a href="{{ pic.image.url }}" data-lightbox="project-gallery" data-title="{{ pic.description }}"><div class="image z-depth-1" style='background-image: url("{{ pic.image.url }}");'></div></a>
                     </div>
                     {% endfor %}
                 </div>

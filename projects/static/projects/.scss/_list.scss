@@ -84,7 +84,7 @@
     border: 0px solid darken($white, 30%);
 
     background: {
-        image: url('http://thunderatz.org/wp-content/uploads/2015/02/background2.jpg');
+        // image: url('http://thunderatz.org/wp-content/uploads/2015/02/background2.jpg');
         repeat: no-repeat;
         position: center;
     }
@@ -108,10 +108,16 @@
         transition: opacity 0.5s ease;
     }
 
+    h3 {
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
     &:hover {
         background-color: rgba(0, 0, 0, 0.5);
 
-        img {
+        img, h3 {
             opacity: 1;
         }
     }

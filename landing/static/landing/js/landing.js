@@ -45,7 +45,7 @@ $(document).ready(function() {
         start: 'manual',
     }, function (obj) {
         obj.el.classList.add('finished');
-        $('#section-buttons, #arrow-down').removeClass('hidden');
+        $('#section-buttons, #arrow-down, .layer').removeClass('hidden');
     });
 
     setTimeout(function() {
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     $('#thunderlogo').on('click', function() {
         $(this).removeClass('finished');
-        $('#section-buttons, #arrow-down').addClass('hidden');
+        $('#section-buttons, #arrow-down, .layer').addClass('hidden');
         v.stop().reset();
         setTimeout(function() {
             v.play();

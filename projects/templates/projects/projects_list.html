@@ -14,7 +14,7 @@
     <a href="{% url 'news:news_list' %}" class="nav-special nav-link">Notícias</a>
 </li>
 <li class="nav-item">
-    <a href="{% url 'projects:boards' %}" class="nav-special nav-link">Placas</a>
+    <a href="{% url 'projects:boards' %}" class="nav-special nav-link">Eletrônicas</a>
 </li>
 <li class="nav-item">
     <a href="{% url 'members:members_list' %}" class="nav-special nav-link">Membros</a>
@@ -38,8 +38,14 @@
 <div id="project-row" class="row">
     {% for project in project_list %}
     <div class="col-12 col-custom" data-cat="{{ project.category.super_category }}">
-        <div class="card my-2 mx-2">
-            <div class="card-img-top" style="background-image: url({{ project.card_image.url }})"></div>
+        <div class="card my-2 mx-2"
+            {% if project.is_active %}
+            style='background-image: url("{% static 'projects/img/background1.png' %}")'
+            {% else %}
+            style='background-image: url("{% static 'projects/img/background1-velhos.png' %}")'
+            {% endif %}
+        >
+            <div class="card-img-top" style='background-image: url("{{ project.card_image.url }}")'></div>
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
                     <div class="row">
@@ -54,7 +60,11 @@
                 </div>
             </div>
             <a href="{% url 'projects:robot_detail' project.slug %}" class="card-overlay w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+                {% if project.is_active %}
                 <img src="{{ project.typography.url }}" alt="">
+                {% else %}
+                <h3 class="h3-responsive">Projeto Aposentado</h3>
+                {% endif %}
             </a>
         </div>
     </div>

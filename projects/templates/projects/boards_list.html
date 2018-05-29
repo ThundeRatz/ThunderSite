@@ -3,7 +3,7 @@
 
 {% block title_block %}ThundeRatz | Placas{% endblock %}
 
-{% block top_image_block %}{% static 'projects/img/cover.png' %}{% endblock %}
+{% block top_image_block %}{% static 'landing/img/micropress.jpg' %}{% endblock %}
 {% block top_title_block %}<h1 class="title white-text">Eletr&ocirc;nicas</h1>{% endblock %}
 
 {% block nav_block %}
@@ -25,8 +25,8 @@
 <div id="project-row" class="row">
     {% for board in board_list %}
     <div class="col-12 col-custom" data-cat="{{ project.category.super_category }}">
-        <div class="card my-2 mx-2">
-            <div class="card-img-top" style="background-image: url({{ board.card_image.url }})"></div>
+        <div class="card my-2 mx-2" style='background-image: url("{% static 'projects/img/background1.png' %}")'>
+            <div class="card-img-top" style='background-image: url("{{ board.card_image.url }}")'></div>
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
                     <div class="row">

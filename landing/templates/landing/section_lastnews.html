@@ -1,13 +1,13 @@
 {% load staticfiles %}
 
-{% for new in news %}
 <div class="last-news-and-button">
     <h2 class="h2-responsive title">Ùltimas notícias!</h2>
     <a href="{% url 'news:news_list' %}"<button id="news-btn" class="btn">Ver todas <i class="fas fa-newspaper"></i></button></a>
 </div>
+{% for new in news %}
 <div class="slide" style="background-image: url({{ new.cover_image.url }})">
     <a href="{% url 'news:news_detail' new.slug %}">
-        <div class="h-100 d-flex flex-column py-5">
+        <div class="title-wrapper d-flex flex-column py-5">
             <h1 class="h1-responsive mt-auto title">{{ new.title }}</h1>
         </div>
     </a>

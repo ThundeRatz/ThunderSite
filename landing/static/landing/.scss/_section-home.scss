@@ -22,12 +22,18 @@
         left: 0;
         top: 0;
         height: 100%;
+        transition: background-color 1s ease;
+        background-color: rgba($base-color, .5);
 
         /*
         * Preventing flicker on some browsers
         * See http://stackoverflow.com/a/36671466/1081396  or issue #183
         */
         transform: translate3d(0,0,0);
+
+        &.hidden {
+            background-color: transparent;
+        }
     }
 
     #thunderlogo {
@@ -59,6 +65,7 @@
         bottom: 0;
         transition: opacity 1s ease;
         border-top: 2px solid $white;
+        background-color: $base-color;
 
         .btn {
             padding: 0.5rem 2rem;
@@ -76,7 +83,8 @@
                 line-height: 1.5;
             }
 
-            background-color: $base-color;
+            // background-color: $base-color;
+            background-color: transparent;
             color: $white;
             box-shadow: unset;
 
