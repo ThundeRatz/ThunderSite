@@ -23,12 +23,8 @@
         top: 0;
         height: 100%;
         transition: background-color 1s ease;
-        background-color: rgba($base-color, .5);
+        background-color: rgba($base-color, .7);
 
-        /*
-        * Preventing flicker on some browsers
-        * See http://stackoverflow.com/a/36671466/1081396  or issue #183
-        */
         transform: translate3d(0,0,0);
 
         &.hidden {

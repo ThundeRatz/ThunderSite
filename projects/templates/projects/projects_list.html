@@ -60,11 +60,11 @@
                 </div>
             </div>
             <a href="{% url 'projects:robot_detail' project.slug %}" class="card-overlay w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-                {% if project.is_active %}
+                {% comment %} {% if project.is_active %} {% endcomment %}
                 <img src="{{ project.typography.url }}" alt="">
-                {% else %}
+                {% comment %} {% else %}
                 <h3 class="h3-responsive">Projeto Aposentado</h3>
-                {% endif %}
+                {% endif %} {% endcomment %}
             </a>
         </div>
     </div>

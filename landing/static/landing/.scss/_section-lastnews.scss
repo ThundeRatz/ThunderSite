@@ -4,15 +4,30 @@
     .slide {
         background-size: cover;
         background-position: center;
+
+        .title {
+            font-weight: 500;
+            color: $white;
+            background-color: rgba(black, .6);
+            padding: 1rem 0 4rem 0;
+            margin-bottom: 0;
+        }
     }
 
     .last-news-and-button {
         position: absolute;
         z-index: 10;
         top: calc(40px + 1rem);
-        margin-top: 1rem;
+        // padding-top: 1rem;
         right: 0;
         left: 0;
+
+        .title {
+            font-weight: 500;
+            color: $white;
+            background-color: rgba($base-color, .7);
+            padding: 1rem 0;
+        }
 
         .btn {
             background-color: $accent-color;
@@ -49,11 +64,5 @@
 
     .title-wrapper {
         height: 100vh !important;
-    }
-
-    .title {
-        font-weight: 500;
-        color: $white;
-        text-shadow: 2px 2px #000000;
     }
 }
