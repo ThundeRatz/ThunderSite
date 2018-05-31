@@ -122,12 +122,24 @@ def deploy_prod(conn):
     install_dependencies(conn, PROD)
     update_db(conn, PROD)
     collect_static(conn, PROD)
+    start_server(conn, PROD)
+
+    conn.run('rm -r ' + PROD['static_root'] + '/CACHE/css')
+
+    with conn.cd(PROD['app_root'] + '/' + PROJECT):
+        conn.run('source {}/bin/activate && python manage.py compress'.format(
+            PROD['venv_dir']
+        ))
 
     with conn.cd(PROD['static_root'] + '/CACHE/css'):
         conn.run('postcss *.css --replace --use autoprefixer')
 
-    start_server(conn, PROD)
+@task
 
 @task
 def start_dev_server(conn):
     start_server(conn, DEV)
+
+@task
+def start_prod_server(conn):
+    start_server(conn, PROD)
