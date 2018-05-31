@@ -115,6 +115,9 @@ def deploy_dev(conn):
     collect_static(conn, DEV)
     start_server(conn, DEV)
 
+    with conn.cd(DEV['static_root'] + '/CACHE/css'):
+        conn.run('postcss *.css --replace --use autoprefixer')
+
 @task
 def deploy_prod(conn):
     stop_server(conn, PROD)
@@ -122,12 +125,16 @@ def deploy_prod(conn):
     install_dependencies(conn, PROD)
     update_db(conn, PROD)
     collect_static(conn, PROD)
+    start_server(conn, PROD)
 
     with conn.cd(PROD['static_root'] + '/CACHE/css'):
         conn.run('postcss *.css --replace --use autoprefixer')
 
-    start_server(conn, PROD)
 
 @task
 def start_dev_server(conn):
     start_server(conn, DEV)
+
+@task
+def start_prod_server(conn):
+    start_server(conn, PROD)
