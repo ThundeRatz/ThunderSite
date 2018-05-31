@@ -1,3 +1,8 @@
+## Symbolic links to local static and media (or folders)
+local_static
+media
+local_static/
+media/
 
 # Created by https://www.gitignore.io/api/code,linux,django,python,windows
 
@@ -158,4 +163,3 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/code,linux,django,python,windows
-

@@ -70,23 +70,19 @@ def push_dev(conn, env):
     r = subprocess.run(['git', 'checkout', 'develop'])
     if r.returncode != 0:
         print('Error on git checkout develop')
-        return
 
     r = subprocess.run(['git', 'add', '-A'])
     if r.returncode != 0:
         print('Error on git add')
-        return
 
     commit = input("Commit message: ")
     r = subprocess.run(['git', 'commit', '-m', commit])
     if r.returncode != 0:
         print('Error on git commit')
-        return
 
     r = subprocess.run(['git', 'push', 'origin', 'develop'])
     if r.returncode != 0:
         print('Error on git push')
-        return
 
     with conn.cd(env['app_root'] + '/' + PROJECT):
         conn.run('git pull origin develop')

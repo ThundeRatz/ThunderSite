@@ -7,7 +7,7 @@
             {% for sponsor in sponsors %}
                 {% if sponsor.quota.name == 'Ouro' %}
                 <div>
-                    <a href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
+                    <a target="_blank" href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
                 </div>
                 {% endif %}
             {% endfor %}
@@ -19,7 +19,7 @@
             {% for sponsor in sponsors %}
                 {% if sponsor.quota.name == 'Prata' %}
                 <div>
-                    <a href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
+                    <a target="_blank" href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
                 </div>
                 {% endif %}
             {% endfor %}
@@ -31,7 +31,7 @@
             {% for sponsor in sponsors %}
                 {% if sponsor.quota.name == 'Bronze' %}
                 <div>
-                    <a href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
+                    <a target="_blank" href="{{ sponsor.website }}"><div style="background-image: url({{ sponsor.logo.url }})"></div></a>
                 </div>
                 {% endif %}
             {% endfor %}
