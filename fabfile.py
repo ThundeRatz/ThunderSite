@@ -23,7 +23,7 @@ DEV['venv_dir'] = '{}/tsitedev_venv'.format(DEV['app_root'])
 PROD['app'] = 'thundersitev2_prod'
 PROD['app_root'] = '/home/{}/webapps/{}'.format(USER, PROD['app'])
 PROD['app_port'] = 23449
-PROD['static_root'] = '/home/{}/webapps/tsite_dev_static'.format(USER)
+PROD['static_root'] = '/home/{}/webapps/thundersitev2_static'.format(USER)
 PROD['gunicorn_workers'] = 2
 PROD['gunicorn_pidfile'] = '{}/gunicorn.pid'.format(PROD['app_root'])
 PROD['gunicorn_logfile'] = '/home/{}/logs/user/gunicorn_dev.log'.format(USER)
@@ -122,4 +122,12 @@ def deploy_prod(conn):
     install_dependencies(conn, PROD)
     update_db(conn, PROD)
     collect_static(conn, PROD)
+
+    with conn.cd(PROD['static_root'] + '/CACHE/css'):
+        conn.run('postcss *.css --replace --use autoprefixer')
+
     start_server(conn, PROD)
+
+@task
+def start_dev_server(conn):
+    start_server(conn, DEV)
