@@ -65,9 +65,6 @@ def collect_static(conn, env):
             env['venv_dir']
         ))
 
-    with conn.cd(env['static_root'] + '/CACHE/css'):
-        conn.run('postcss *.css --replace --use autoprefixer')
-
 def push_dev(conn, env):
     print('Pushing changes to develop branch...')
     r = subprocess.run(['git', 'checkout', 'develop'])
@@ -125,6 +122,10 @@ def deploy_prod(conn):
     install_dependencies(conn, PROD)
     update_db(conn, PROD)
     collect_static(conn, PROD)
+
+    with conn.cd(PROD['static_root'] + '/CACHE/css'):
+        conn.run('postcss *.css --replace --use autoprefixer')
+
     start_server(conn, PROD)
 
 @task
