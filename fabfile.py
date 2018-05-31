@@ -65,28 +65,31 @@ def collect_static(conn, env):
             env['venv_dir']
         ))
 
-def push_dev():
+def push_dev(conn, env):
     print('Pushing changes to develop branch...')
     r = subprocess.run(['git', 'checkout', 'develop'])
     if r.returncode != 0:
         print('Error on git checkout develop')
-        sys.exit(1)
+        return
 
     r = subprocess.run(['git', 'add', '-A'])
     if r.returncode != 0:
         print('Error on git add')
-        sys.exit(1)
+        return
 
     commit = input("Commit message: ")
     r = subprocess.run(['git', 'commit', '-m', commit])
     if r.returncode != 0:
         print('Error on git commit')
-        sys.exit(1)
+        return
 
     r = subprocess.run(['git', 'push', 'origin', 'develop'])
     if r.returncode != 0:
         print('Error on git push')
-        sys.exit(1)
+        return
+
+    with conn.cd(env['app_root'] + '/' + PROJECT):
+        conn.run('git pull origin develop')
 
 def _gunicorn(env):
     return '{}/bin/gunicorn --log-file {} -b 127.0.0.1:{} -D -w {} --pid {} thundersite.wsgi'.format(
@@ -100,7 +103,7 @@ def _gunicorn(env):
 @task
 def deploy_dev(conn):
     stop_server(conn, DEV)
-    push_dev()
+    push_dev(conn, DEV)
     install_dependencies(conn, DEV)
     update_db(conn, DEV)
     collect_static(conn, DEV)
