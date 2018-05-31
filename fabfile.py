@@ -65,7 +65,7 @@ def collect_static(conn, env):
             env['venv_dir']
         ))
 
-    with conn.cd(env['static_root'] + '/css'):
+    with conn.cd(env['static_root'] + '/CACHE/css'):
         conn.run('postcss *.css --replace --use autoprefixer')
 
 def push_dev(conn, env):
@@ -126,3 +126,7 @@ def deploy_prod(conn):
     update_db(conn, PROD)
     collect_static(conn, PROD)
     start_server(conn, PROD)
+
+@task
+def start_dev_server(conn):
+    start_server(conn, DEV)
