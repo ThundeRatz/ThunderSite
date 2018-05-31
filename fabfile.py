@@ -106,6 +106,17 @@ def _gunicorn(env):
         env['gunicorn_pidfile']
     )
 
+def cache_process_static(conn, env):
+    conn.run('rm -r ' + env['static_root'] + '/CACHE/css')
+
+    with conn.cd(env['app_root'] + '/' + PROJECT):
+        conn.run('source {}/bin/activate && python manage.py compress'.format(
+            env['venv_dir']
+        ))
+
+    with conn.cd(env['static_root'] + '/CACHE/css'):
+        conn.run('postcss *.css --replace --use autoprefixer')
+
 @task
 def deploy_dev(conn):
     stop_server(conn, DEV)
@@ -122,19 +133,8 @@ def deploy_prod(conn):
     install_dependencies(conn, PROD)
     update_db(conn, PROD)
     collect_static(conn, PROD)
+    cache_process_static(conn, PROD)
     start_server(conn, PROD)
-
-    conn.run('rm -r ' + PROD['static_root'] + '/CACHE/css')
-
-    with conn.cd(PROD['app_root'] + '/' + PROJECT):
-        conn.run('source {}/bin/activate && python manage.py compress'.format(
-            PROD['venv_dir']
-        ))
-
-    with conn.cd(PROD['static_root'] + '/CACHE/css'):
-        conn.run('postcss *.css --replace --use autoprefixer')
-
-@task
 
 @task
 def start_dev_server(conn):
