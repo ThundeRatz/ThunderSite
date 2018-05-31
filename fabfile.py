@@ -23,7 +23,7 @@ DEV['venv_dir'] = '{}/tsitedev_venv'.format(DEV['app_root'])
 PROD['app'] = 'thundersitev2_prod'
 PROD['app_root'] = '/home/{}/webapps/{}'.format(USER, PROD['app'])
 PROD['app_port'] = 23449
-PROD['static_root'] = '/home/{}/webapps/tsite_dev_static'.format(USER)
+PROD['static_root'] = '/home/{}/webapps/thundersitev2_static'.format(USER)
 PROD['gunicorn_workers'] = 2
 PROD['gunicorn_pidfile'] = '{}/gunicorn.pid'.format(PROD['app_root'])
 PROD['gunicorn_logfile'] = '/home/{}/logs/user/gunicorn_dev.log'.format(USER)
@@ -64,6 +64,9 @@ def collect_static(conn, env):
         conn.run('source {}/bin/activate && python manage.py collectstatic -v0 --noinput --clear'.format(
             env['venv_dir']
         ))
+
+    with conn.cd(env['static_root'] + '/css'):
+        conn.run('postcss *.css --replace --use autoprefixer')
 
 def push_dev(conn, env):
     print('Pushing changes to develop branch...')
