@@ -22,12 +22,12 @@ DEV['venv_dir'] = '{}/tsitedev_venv'.format(DEV['app_root'])
 
 PROD['app'] = 'thundersitev2_prod'
 PROD['app_root'] = '/home/{}/webapps/{}'.format(USER, PROD['app'])
-PROD['app_port'] = 25553
+PROD['app_port'] = 23449
 PROD['static_root'] = '/home/{}/webapps/tsite_dev_static'.format(USER)
-PROD['gunicorn_workers'] = 1
+PROD['gunicorn_workers'] = 2
 PROD['gunicorn_pidfile'] = '{}/gunicorn.pid'.format(PROD['app_root'])
 PROD['gunicorn_logfile'] = '/home/{}/logs/user/gunicorn_dev.log'.format(USER)
-PROD['venv_dir'] = '{}/tsitedev_venv'.format(PROD['app_root'])
+PROD['venv_dir'] = '{}/tsiteprod_venv'.format(PROD['app_root'])
 
 PYTHON_BIN = 'python'
 
@@ -91,6 +91,12 @@ def push_dev(conn, env):
     with conn.cd(env['app_root'] + '/' + PROJECT):
         conn.run('git pull origin develop')
 
+def push_prod(conn, env):
+    print('Getting changes from master branch...')
+
+    with conn.cd(env['app_root'] + '/' + PROJECT):
+        conn.run('git pull origin master')
+
 def _gunicorn(env):
     return '{}/bin/gunicorn --log-file {} -b 127.0.0.1:{} -D -w {} --pid {} thundersite.wsgi'.format(
         env['venv_dir'],
@@ -108,3 +114,12 @@ def deploy_dev(conn):
     update_db(conn, DEV)
     collect_static(conn, DEV)
     start_server(conn, DEV)
+
+@task
+def deploy_prod(conn):
+    stop_server(conn, PROD)
+    push_prod(conn, PROD)
+    install_dependencies(conn, PROD)
+    update_db(conn, PROD)
+    collect_static(conn, PROD)
+    start_server(conn, PROD)
