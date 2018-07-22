@@ -11,6 +11,8 @@ function GetURLParameter(sParam) {
 }
 
 $(document).ready(function() {
+    $('.card-img-top').lazy();
+
     var categories = ['autonomo', 'sumo', 'hockey', 'combate'];
     var category = GetURLParameter('cat');
 

@@ -37,7 +37,8 @@
     {% for member in members_list %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2" data-area="{{ member.area }}">
         <div class="card card-body text-center mx-2 my-2">
-            <div class="member-photo mx-auto my-3" style="background-image: url({{ member.picture.url }})">
+            <div class="member-photo mx-auto my-3" data-src="{{ member.picture.url }}">
+            {% comment %} <div class="member-photo mx-auto my-3" style="background-image: url({{ member.picture.url }})"> {% endcomment %}
                 <div class="area-badge
                     {% if member.team_captain %}
                     tcap

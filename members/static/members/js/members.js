@@ -11,6 +11,8 @@ function GetURLParameter(sParam) {
 }
 
 $(document).ready(function() {
+    $('.member-photo').lazy();
+
     // fixSizes();
     $('.flip, .front, .back').addClass('h-100');
 
