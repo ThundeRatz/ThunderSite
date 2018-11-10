@@ -166,24 +166,24 @@ $(document).ready(function() {
         }],
     });
 
-    // $('#doacoes').slick({
-    //     accessibility: false,
-    //     arrows: false,
-    //     autoplay: false,
-    //     cssEase: 'linear',
-    //     infinite: true,
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
+    $('#doacoes').slick({
+        accessibility: false,
+        arrows: false,
+        autoplay: false,
+        cssEase: 'linear',
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
 
-    //     responsive: [
-    //     {
-    //         breakpoint: 670,
-    //         settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1,
-    //         },
-    //     }],
-    // })
+        responsive: [
+        {
+            breakpoint: 670,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        }],
+    })
 
     $('#header').hide();
 
