@@ -45,7 +45,7 @@
             style='background-image: url("{% static 'projects/img/background1-velhos.png' %}")'
             {% endif %}
         >
-            <div class="card-img-top" data-src="{{ project.card_image.url }}"></div>
+            <div class="card-img-top" data-src="{{ project.card_image.url|escape }}"></div>
             {% comment %} <div class="card-img-top" style='background-image: url("{{ project.card_image.url }}")'></div> {% endcomment %}
             <div class="card-body">
                 <div class="d-flex flex-column px-2">
