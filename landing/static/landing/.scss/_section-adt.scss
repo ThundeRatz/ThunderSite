@@ -25,12 +25,16 @@
             flex: 0 0 35%;
         }
 
-        #doe1, #doe2, #doe3 {
-            padding: 10px;
+        #doe1 {
+            width: 100%;
+            background-color: lighten($base-color, 15%);
+            cursor: pointer;
+            font-size: 8em;
+            color: white;
+            padding: 2rem 0;
 
-            & > div {
-                border: 1px solid pink;
-                height: 500px;
+            &:hover {
+                background-color: lighten($base-color, 10%);
             }
         }
 
@@ -46,9 +50,10 @@
             background-color: $base-color;
             color: $white;
 
-            & > div {
-                font-size: 60px;
-                height: unset;
+            #adt-description {
+                font-size: 1.3em;
+                text-align: justify !important;
+                text-align-last: center;
             }
         }
     }
