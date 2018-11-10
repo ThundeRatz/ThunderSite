@@ -69,13 +69,28 @@
             line-height: 2;
             border-radius: 0;
 
-            @media all and (max-width: 1110px) {
-                font-size: 1.25rem;
+            @media all and (max-width: 1400px) {
+                font-size: 1.3rem;
                 line-height: 1.5;
             }
 
-            @media all and (max-width: 890px) {
-                font-size: 0.9rem;
+            @media all and (max-width: 1265px) {
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+
+            @media all and (max-width: 1205px) {
+                font-size: 1.1rem;
+                line-height: 1.5;
+            }
+
+            @media all and (max-width: 1144px) {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            @media all and (max-width: 1082px) {
+                font-size: 0.8rem;
                 line-height: 1.5;
             }
 

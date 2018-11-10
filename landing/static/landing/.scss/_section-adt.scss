@@ -14,12 +14,17 @@
         }
 
         #doacoes {
+            // padding: 0 3rem;
             margin-top: calc(40px + 1rem);
             flex: 5;
 
             @media all and (max-width: 767px) {
                 flex: unset;
                 margin: 1rem 0;
+            }
+
+            img {
+                max-height: calc((100vh - 40px - 1rem)/2 - 3rem);
             }
         }
 
@@ -33,6 +38,25 @@
 
 
         #doacoes-imgs {
+            img {
+                padding: 0 12rem;
+
+                @media all and (max-width: 1340px) {
+                    padding: 0 10rem;
+                }
+
+                @media all and (max-width: 1200px) {
+                    padding: 0 6rem;
+                }
+
+                @media all and (max-width: 1000px) {
+                    padding: 0 4rem;
+                }
+
+                @media all and (max-width: 800) {
+                    padding: 0 3rem;
+                }
+            }
 
             @media all and (min-width: 768px) {
                 flex: 3;
@@ -44,7 +68,6 @@
                     right: 0;
                 }
             }
-
         }
 
         #doe1 {
@@ -93,28 +116,42 @@
             background-color: $base-color;
             color: $white;
 
+            #adt-logo {
+                padding: 3rem;
+
+                @media all and (max-width: 1500px) {
+                    padding-top: 1.5rem;
+                    padding-bottom: 1.5rem;
+                }
+
+                @media all and (max-width: 1370px) {
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                }
+            }
+
             #adt-description {
+                padding: 0 3rem;
                 font-size: 1.6rem;
 
                 @media all and (max-width: 1500px) {
                     font-size: 1.4rem;
+                    padding: 0 2rem;
                 }
 
-                @media all and (max-width: 1350px) {
-                    font-size: 1.3rem;
-                }
-
-                @media all and (max-width: 1190px) {
-                    font-size: 1.2rem;
+                @media all and (max-width: 1370px) {
+                    font-size: 1.15rem;
+                    padding: 0 1.5rem;
                 }
 
                 @media all and (max-width: 992px) {
                     font-size: 1.1rem;
+                    padding: 0 1rem;
                 }
 
                 @media all and (max-width: 767px) {
                     font-size: 1.1rem;
-                    padding-bottom: 1rem;
+                    padding: 0 1rem 1rem 1rem;
                 }
 
                 text-align: justify !important;
