@@ -2,11 +2,7 @@
     #adt {
         background-color: lighten($base-color, 50%);
 
-        .row {
-            height: calc(100vh - 40px - 1rem);
-        }
-
-        @media (min-width: 768px) {
+        @media all and (min-width: 768px) {
             .row {
                 height: unset;
                 margin-top: 0;
@@ -18,45 +14,105 @@
         }
 
         #doacoes {
-            flex: 0 0 55%;
+            margin-top: calc(40px + 1rem);
+            flex: 5;
+
+            @media all and (max-width: 767px) {
+                flex: unset;
+                margin: 1rem 0;
+            }
         }
 
         #doacoes-any {
-            flex: 0 0 20%;
+            flex: 2;
+
+            @media all and (max-width: 767px) {
+                flex: unset;
+            }
         }
 
 
         #doacoes-imgs {
-            flex: 0 0 25%;
+
+            @media all and (min-width: 768px) {
+                flex: 3;
+
+                img {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
         }
 
         #doe1 {
             width: 100%;
             background-color: lighten($base-color, 15%);
             cursor: pointer;
-            font-size: 3rem;
             color: white;
             padding: 1rem 0;
+
+            font-size: 3rem;
+
+            @media all and (max-width: 1200px) {
+                font-size: 2.5rem;
+            }
+
+            @media all and (max-width: 992px) {
+                font-size: 2rem;
+            }
+
+            @media all and (max-width: 767px) {
+                font-size: 2.5rem;
+            }
+
+            @media all and (max-width: 700px) {
+                font-size: 1.8rem;
+            }
+
+            @media all and (max-width: 410px) {
+                font-size: 1.2rem;
+            }
 
             &:hover {
                 background-color: lighten($base-color, 10%);
             }
         }
 
-        #adt-info {
-            padding-top: calc(40px + 1rem);
-
+        #adt-buttons {
             background-color: $white;
         }
 
-        #adt-buttons {
-            padding-top: calc(40px + 1rem);
+        #adt-info {
+            @media all and (min-width: 768px) {
+                padding-top: calc(40px + 1rem);
+            }
 
             background-color: $base-color;
             color: $white;
 
             #adt-description {
-                font-size: 1.6em;
+                font-size: 1.6rem;
+
+                @media all and (max-width: 1500px) {
+                    font-size: 1.4rem;
+                }
+
+                @media all and (max-width: 1200px) {
+                    font-size: 1.3rem;
+                }
+
+                @media all and (max-width: 992px) {
+                    font-size: 1.1rem;
+                }
+
+                @media all and (max-width: 767px) {
+                    font-size: 1.1rem;
+                    padding-bottom: 1rem;
+                }
+
                 text-align: justify !important;
                 text-align-last: center;
             }

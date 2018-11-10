@@ -6,7 +6,7 @@
             background-size: cover;
             background-position: center;
 
-            @media all and (max-width: 768px) {
+            @media all and (max-width: 767px) {
                 height: 30vh;
             }
         }
@@ -19,7 +19,7 @@
         .description {
             padding-top: calc(40px + 1rem);
 
-            @media all and (max-width: 768px) {
+            @media all and (max-width: 767px) {
                 padding-top: 1rem;
             }
 
@@ -34,7 +34,7 @@
                     max-width: 90%;
                 }
 
-                @media all and (max-width: 768px) {
+                @media all and (max-width: 767px) {
                     max-width: 100%;
                 }
             }

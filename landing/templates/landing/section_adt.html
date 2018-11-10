@@ -1,8 +1,8 @@
 {% load staticfiles %}
 
-<div id="adt">
+<div id="adt" class="">
     <div class="row no-gutters justify-content-end">
-        <div id="adt-info" class="d-flex flex-column col-12 col-md-7 order-2 order-md-1 justify-content-center">
+        <div id="adt-buttons" class="d-flex flex-column col-12 col-md-7 order-2 order-md-1 justify-content-center">
             <div id="doacoes" class="d-flex flex-column text-center justify-content-center">
                 <div>
                     <img class="mx-auto" src="{% static 'landing/img/adt_soon.png' %}" alt="">
@@ -22,16 +22,16 @@
                     </div>
                 </a>
             </div>
-            <div id="doacoes-imgs" class="d-flex flex-column text-center justify-content-end">
-                GIFzão
-                <!-- <img src="{% static 'landing/img/thor_coin.gif' %}" alt=""> -->
+            <div id="doacoes-imgs" class=""">
+                <!-- GIFzão -->
+                <img class="img-fluid px-5" src="{% static 'landing/img/thor_coin.gif' %}" alt="">
             </div>
         </div>
-        <div id="adt-buttons" class="d-flex flex-column no-gutters col-12 col-md-5 order-1 order-md-2 pr-5">
+        <div id="adt-info" class="d-flex flex-column justify-content-around col-12 col-md-5 order-1 order-md-2 pr-0 pr-md-5">
             <div class="p-5">
                 <img src="{% static 'landing/img/logo_adt.png' %}" alt="" class="img-fluid">
             </div>
-            <div id="adt-description" class="d-flex flex-column text-center justify-content-center h-100 px-5">
+            <div id="adt-description" class="d-flex flex-column text-center justify-content-center px-5">
                 O Programa Amigos da Thunder foi criado como um meio de conectar ex-membros,
                 familiares e todos que tenham interesse nas iniciativas desenvolvidas pela ThundeRatz.
                 A fim de potencializar os projetos e a participação em competições da equipe,
