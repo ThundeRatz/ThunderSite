@@ -26,7 +26,7 @@ PROD['app_port'] = 23449
 PROD['static_root'] = '/home/{}/webapps/thundersitev2_static'.format(USER)
 PROD['gunicorn_workers'] = 2
 PROD['gunicorn_pidfile'] = '{}/gunicorn.pid'.format(PROD['app_root'])
-PROD['gunicorn_logfile'] = '/home/{}/logs/user/gunicorn_dev.log'.format(USER)
+PROD['gunicorn_logfile'] = '/home/{}/logs/user/gunicorn_prod.log'.format(USER)
 PROD['venv_dir'] = '{}/tsiteprod_venv'.format(PROD['app_root'])
 
 PYTHON_BIN = 'python'
@@ -138,4 +138,9 @@ def start_dev_server(conn):
 
 @task
 def start_prod_server(conn):
+    start_server(conn, PROD)
+
+@task
+def restart_prod_server(conn):
+    stop_server(conn, PROD)
     start_server(conn, PROD)
