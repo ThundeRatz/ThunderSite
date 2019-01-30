@@ -6,21 +6,34 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('landing', '0001_initial'),
-    ]
+    dependencies = [("landing", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='About',
+            name="About",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('A', 'Team'), ('B', 'Workshop')], max_length=1, unique=True)),
-                ('text', ckeditor.fields.RichTextField()),
-                ('title', models.CharField(max_length=32)),
-                ('image1', models.ImageField(upload_to='about')),
-                ('image2', models.ImageField(upload_to='about')),
-                ('image3', models.ImageField(upload_to='about')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "type",
+                    models.CharField(
+                        choices=[("A", "Team"), ("B", "Workshop")],
+                        max_length=1,
+                        unique=True,
+                    ),
+                ),
+                ("text", ckeditor.fields.RichTextField()),
+                ("title", models.CharField(max_length=32)),
+                ("image1", models.ImageField(upload_to="about")),
+                ("image2", models.ImageField(upload_to="about")),
+                ("image3", models.ImageField(upload_to="about")),
             ],
-        ),
+        )
     ]

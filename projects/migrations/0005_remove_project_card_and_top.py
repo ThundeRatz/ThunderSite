@@ -5,13 +5,6 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0004_remove_project_thumbnail'),
-    ]
+    dependencies = [("projects", "0004_remove_project_thumbnail")]
 
-    operations = [
-        migrations.RemoveField(
-            model_name='project',
-            name='card_and_top',
-        ),
-    ]
+    operations = [migrations.RemoveField(model_name="project", name="card_and_top")]

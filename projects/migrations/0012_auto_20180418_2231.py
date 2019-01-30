@@ -6,23 +6,22 @@ import projects.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0011_auto_20180416_2226'),
-    ]
+    dependencies = [("projects", "0011_auto_20180416_2226")]
 
     operations = [
-        migrations.RemoveField(
-            model_name='board',
-            name='thumbnail',
+        migrations.RemoveField(model_name="board", name="thumbnail"),
+        migrations.AddField(
+            model_name="board",
+            name="card_image",
+            field=models.ImageField(
+                default="1000x1000.png", upload_to=projects.models.board_card_path
+            ),
         ),
         migrations.AddField(
-            model_name='board',
-            name='card_image',
-            field=models.ImageField(default='1000x1000.png', upload_to=projects.models.board_card_path),
-        ),
-        migrations.AddField(
-            model_name='board',
-            name='cover_image',
-            field=models.ImageField(default='1000x1000.png', upload_to=projects.models.board_cover_path),
+            model_name="board",
+            name="cover_image",
+            field=models.ImageField(
+                default="1000x1000.png", upload_to=projects.models.board_cover_path
+            ),
         ),
     ]

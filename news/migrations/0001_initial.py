@@ -11,28 +11,65 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-    ]
+    dependencies = [migrations.swappable_dependency(settings.AUTH_USER_MODEL)]
 
     operations = [
         migrations.CreateModel(
-            name='News',
+            name="News",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=256)),
-                ('slug', models.SlugField(help_text='URL name: <em>thunderatz.org/news/&lt;slug&gt;</em>', unique=True)),
-                ('text', ckeditor_uploader.fields.RichTextUploadingField(help_text='<h1><strong>Se upar imagens, colocar a classe "body-image" nela na aba Advanced!</strong></h1>')),
-                ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
-                ('published_date', models.DateTimeField(blank=True, null=True)),
-                ('cover_image', models.ImageField(help_text='Imagem que vai no preview da noticia, no topo da pagina de detalhes e no final do texto da noticia', upload_to='news_cover')),
-                ('intro_image', models.ImageField(blank=True, help_text='Imagem que vai logo antes do começo do texto da notícias', null=True, upload_to='news_intro')),
-                ('visible', models.BooleanField(default=False)),
-                ('author', models.ForeignKey(on_delete=models.SET(news.models.get_sentinel_user), to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=256)),
+                (
+                    "slug",
+                    models.SlugField(
+                        help_text="URL name: <em>thunderatz.org/news/&lt;slug&gt;</em>",
+                        unique=True,
+                    ),
+                ),
+                (
+                    "text",
+                    ckeditor_uploader.fields.RichTextUploadingField(
+                        help_text='<h1><strong>Se upar imagens, colocar a classe "body-image" nela na aba Advanced!</strong></h1>'
+                    ),
+                ),
+                (
+                    "created_date",
+                    models.DateTimeField(default=django.utils.timezone.now),
+                ),
+                ("published_date", models.DateTimeField(blank=True, null=True)),
+                (
+                    "cover_image",
+                    models.ImageField(
+                        help_text="Imagem que vai no preview da noticia, no topo da pagina de detalhes e no final do texto da noticia",
+                        upload_to="news_cover",
+                    ),
+                ),
+                (
+                    "intro_image",
+                    models.ImageField(
+                        blank=True,
+                        help_text="Imagem que vai logo antes do começo do texto da notícias",
+                        null=True,
+                        upload_to="news_intro",
+                    ),
+                ),
+                ("visible", models.BooleanField(default=False)),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=models.SET(news.models.get_sentinel_user),
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
-            options={
-                'verbose_name_plural': 'news',
-                'ordering': ['-published_date'],
-            },
-        ),
+            options={"verbose_name_plural": "news", "ordering": ["-published_date"]},
+        )
     ]

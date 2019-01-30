@@ -10,7 +10,8 @@ Daniel Nery Silva de Oliveira
 from django.views.generic import ListView
 from .models import Member
 
+
 class MemberListView(ListView):
     model = Member
-    context_object_name = 'members_list'
-    template_name = 'members/members_list.html'
+    context_object_name = "members_list"
+    template_name = "members/members_list.html"
