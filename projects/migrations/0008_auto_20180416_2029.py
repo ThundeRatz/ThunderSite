@@ -6,21 +6,23 @@ import projects.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0007_auto_20180416_2027'),
-    ]
+    dependencies = [("projects", "0007_auto_20180416_2027")]
 
     operations = [
         migrations.AddField(
-            model_name='project',
-            name='card_image',
-            field=models.ImageField(default='', upload_to=projects.models.project_card_path),
+            model_name="project",
+            name="card_image",
+            field=models.ImageField(
+                default="", upload_to=projects.models.project_card_path
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='project',
-            name='cover_image',
-            field=models.ImageField(default='', upload_to=projects.models.project_cover_path),
+            model_name="project",
+            name="cover_image",
+            field=models.ImageField(
+                default="", upload_to=projects.models.project_cover_path
+            ),
             preserve_default=False,
         ),
     ]

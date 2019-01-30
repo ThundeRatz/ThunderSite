@@ -15,7 +15,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "thundersite.settings")
 
 application = get_wsgi_application()
 
-#def application(environ, start_response):
+# def application(environ, start_response):
 #    if environ['mod_wsgi.process_group'] != '':
 #        import signal
 #        os.kill(os.getpid(), signal.SIGINT)

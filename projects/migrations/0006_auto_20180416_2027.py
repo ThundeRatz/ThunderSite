@@ -5,19 +5,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0005_remove_project_card_and_top'),
-    ]
+    dependencies = [("projects", "0005_remove_project_card_and_top")]
 
     operations = [
         migrations.AddField(
-            model_name='project',
-            name='card_and_top',
+            model_name="project",
+            name="card_and_top",
             field=models.IntegerField(blank=True, default=0, null=True),
         ),
         migrations.AddField(
-            model_name='project',
-            name='thumbnail',
+            model_name="project",
+            name="thumbnail",
             field=models.IntegerField(blank=True, default=0, null=True),
         ),
     ]
