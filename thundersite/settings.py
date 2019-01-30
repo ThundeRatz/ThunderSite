@@ -72,7 +72,7 @@ USE_L10N = True
 USE_TZ = True
 
 ############## STATIC ##############
-STATIC_URL = "/local_static/"
+STATIC_URL = "/static/"
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -83,10 +83,7 @@ STATICFILES_FINDERS = [
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 COMPRESS_PRECOMPILERS = (
-    (
-        "text/x-sass",
-        "/home/thunderatz/bin/sassc {infile} {outfile}",
-    ),
+    ("text/x-sass", "/home/thunderatz/bin/sassc {infile} {outfile}"),
 )
 
 ############## MEDIA ##############
