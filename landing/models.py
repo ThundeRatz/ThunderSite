@@ -56,3 +56,14 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+class Recruitment(models.Model):
+    title = models.CharField(max_length=64)
+    text = RichTextField()
+    image = models.ImageField(upload_to="ps")
+    isOpen = models.BooleanField(default=False)
+    info = RichTextField()
+
+
+    def __str__(self):
+        return self.title

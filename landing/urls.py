@@ -12,4 +12,6 @@ from landing import views
 
 app_name = "landing"
 
-urlpatterns = [path("", views.IndexView.as_view(), name="index")]
+urlpatterns = [
+  path("", views.IndexView.as_view(), name="index"),
+  path("processo-seletivo/", views.RecruitmentView.as_view(), name="recruitment")]
