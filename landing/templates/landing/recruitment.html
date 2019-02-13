@@ -1,0 +1,60 @@
+{% extends 'generic/base.html' %}
+
+{% load staticfiles %}
+
+{% block title_block %} ThundeRatz | Processo Seletivo {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/x-sass" href="{% static 'landing/.scss/recruitment.scss' %}">
+{% endblock %}
+
+{% load  staticfiles %}
+
+{% block body_block %}
+<section id="ps-body" class="container-fluid px-0">
+    <div class="top view hm-black-light">
+        <div class="top-image" style="background-image: url({% static 'landing/img/equipe.jpg' %});"></div>
+        <div class="mask waves-effect waves-light">
+        </div>
+    </div>
+
+    <div class="container content z-depth-4 mx-auto px-1 px-md-4 px-lg-5">
+        <nav id="header" class="navbar navbar-expand-md navbar-dark">
+            <a href="{% url 'landing:index' %}"><img class="navbar-brand" src="{% static 'landing/img/logo.svg' %}" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul id="categories-menu" class="navbar-nav ml-auto">
+                        <a href="{% url 'landing:index' %}" class="nav-link nav-item nav-special">P&aacute;gina Inicial</a>
+                        <a href="{% url 'news:news_list' %}" class="nav-link nav-item nav-special">Notícias</a>
+                        <a href="{% url 'projects:robots' %}" class="nav-link nav-item nav-special">Projetos</a>
+                        <a href="{% url 'members:members_list' %}" class="nav-link nav-item nav-special">Membros</a>
+                </ul>
+            </div>
+        </nav>
+
+        <h1 text="Processo Seletivo"></h1>
+        
+        <div class="pt-3 pb-2">
+            <h1 class="h1-responsive">Processo Seletivo</h1>
+            <hr>
+            <p> {{ recruitment.text | safe }} </p>
+            
+            {% if recruitment.isOpen %}
+              <p> {{ recruitment.button | safe }} </p>
+            {% endif %}
+            <div class="text-center">
+              <img class="img-fluid center-block" src="{{ recruitment.image.url }}">
+            </div>
+            <hr>
+            <h3><u>Informações</u></h3>
+            <p> {{ recruitment.info | safe }} </p>
+        </div>
+    </div>
+
+    {% include 'generic/footer.html' %}
+</section>
+
+{% endblock %}

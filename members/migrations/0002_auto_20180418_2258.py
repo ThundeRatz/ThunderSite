@@ -6,14 +6,14 @@ import members.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('members', '0001_initial'),
-    ]
+    dependencies = [("members", "0001_initial")]
 
     operations = [
         migrations.AlterField(
-            model_name='member',
-            name='picture',
-            field=models.ImageField(default='1000x1000.png', upload_to=members.models.member_picture_path),
-        ),
+            model_name="member",
+            name="picture",
+            field=models.ImageField(
+                default="1000x1000.png", upload_to=members.models.member_picture_path
+            ),
+        )
     ]

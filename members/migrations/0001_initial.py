@@ -8,26 +8,46 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Member',
+            name="Member",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=128)),
-                ('nickname', models.CharField(max_length=64, unique=True)),
-                ('area', models.CharField(choices=[('EL', 'Elétrica'), ('MC', 'Mecânica'), ('CP', 'Computação'), ('DM', 'Design e Marketing'), ('AF', 'Administrativo e Financeiro')], max_length=2)),
-                ('area_captain', models.BooleanField(default=False)),
-                ('team_captain', models.BooleanField(default=False)),
-                ('picture', models.ImageField(upload_to=members.models.member_picture_path)),
-                ('facebook', models.URLField(blank=True, null=True)),
-                ('email', models.EmailField(max_length=254)),
-                ('entry_year', models.PositiveSmallIntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=128)),
+                ("nickname", models.CharField(max_length=64, unique=True)),
+                (
+                    "area",
+                    models.CharField(
+                        choices=[
+                            ("EL", "Elétrica"),
+                            ("MC", "Mecânica"),
+                            ("CP", "Computação"),
+                            ("DM", "Design e Marketing"),
+                            ("AF", "Administrativo e Financeiro"),
+                        ],
+                        max_length=2,
+                    ),
+                ),
+                ("area_captain", models.BooleanField(default=False)),
+                ("team_captain", models.BooleanField(default=False)),
+                (
+                    "picture",
+                    models.ImageField(upload_to=members.models.member_picture_path),
+                ),
+                ("facebook", models.URLField(blank=True, null=True)),
+                ("email", models.EmailField(max_length=254)),
+                ("entry_year", models.PositiveSmallIntegerField()),
             ],
-            options={
-                'ordering': ['-team_captain', '-area_captain', 'name'],
-            },
-        ),
+            options={"ordering": ["-team_captain", "-area_captain", "name"]},
+        )
     ]

@@ -9,38 +9,64 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Event',
+            name="Event",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=64)),
-                ('date', models.DateField(unique=True)),
-                ('text', ckeditor.fields.RichTextField()),
-                ('image', models.ImageField(upload_to='events')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=64)),
+                ("date", models.DateField(unique=True)),
+                ("text", ckeditor.fields.RichTextField()),
+                ("image", models.ImageField(upload_to="events")),
             ],
-            options={
-                'ordering': ['date'],
-            },
+            options={"ordering": ["date"]},
         ),
         migrations.CreateModel(
-            name='Quota',
+            name="Quota",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=64)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=64)),
             ],
         ),
         migrations.CreateModel(
-            name='Sponsor',
+            name="Sponsor",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=128, unique=True)),
-                ('website', models.URLField(unique=True)),
-                ('logo', models.ImageField(upload_to='sponsors')),
-                ('quota', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='landing.Quota')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=128, unique=True)),
+                ("website", models.URLField(unique=True)),
+                ("logo", models.ImageField(upload_to="sponsors")),
+                (
+                    "quota",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT, to="landing.Quota"
+                    ),
+                ),
             ],
         ),
     ]

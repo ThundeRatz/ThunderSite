@@ -10,8 +10,8 @@ Daniel Nery Silva de Oliveira
 from django.urls import path
 from landing import views
 
-app_name = 'landing'
+app_name = "landing"
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-]
+  path("", views.IndexView.as_view(), name="index"),
+  path("processo-seletivo/", views.RecruitmentView.as_view(), name="recruitment")]

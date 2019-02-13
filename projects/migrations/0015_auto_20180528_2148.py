@@ -5,13 +5,10 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0014_auto_20180528_2147'),
-    ]
+    dependencies = [("projects", "0014_auto_20180528_2147")]
 
     operations = [
         migrations.AlterModelOptions(
-            name='project',
-            options={'ordering': ['-is_active', '-debut_year']},
-        ),
+            name="project", options={"ordering": ["-is_active", "-debut_year"]}
+        )
     ]

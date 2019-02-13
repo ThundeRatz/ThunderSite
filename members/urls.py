@@ -10,8 +10,6 @@ Daniel Nery Silva de Oliveira
 from django.urls import path
 from . import views
 
-app_name = 'members'
+app_name = "members"
 
-urlpatterns = [
-    path('', views.MemberListView.as_view(), name='members_list'),
-]
+urlpatterns = [path("", views.MemberListView.as_view(), name="members_list")]
