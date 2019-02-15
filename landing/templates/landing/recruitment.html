@@ -38,19 +38,19 @@
         <h1 text="Processo Seletivo"></h1>
         
         <div class="pt-3 pb-2">
-            <h1 class="h1-responsive">Processo Seletivo</h1>
+            <h1 class="h1-responsive"><strong>Processo Seletivo</strong></h1>
             <hr>
-            <p> {{ recruitment.text | safe }} </p>
             
-            {% if recruitment.isOpen %}
-              <p> {{ recruitment.button | safe }} </p>
-            {% endif %}
             <div class="text-center">
               <img class="img-fluid center-block" src="{{ recruitment.image.url }}">
             </div>
+            <div class="container" style='margin-top:25px'>
+                {% if recruitment.isOpen %}
+                    <div class="text-center"> {{ recruitment.button | safe }} </div>
+                {% endif %}
+            </div>
             <hr>
-            <h3><u>Informações</u></h3>
-            <p> {{ recruitment.info | safe }} </p>
+            <div class="text-justify"> {{ recruitment.info | safe }} </div>
         </div>
     </div>
 
