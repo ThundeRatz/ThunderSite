@@ -59,7 +59,6 @@ class About(models.Model):
 
 class Recruitment(models.Model):
     title = models.CharField(max_length=64)
-    text = RichTextField()
     button = models.TextField(help_text="Cole o script do Typeform aqui", default="")
     image = models.ImageField(upload_to="ps")
     isOpen = models.BooleanField(default=False)
