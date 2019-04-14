@@ -6,28 +6,28 @@ import sys
 DEV = dict()
 PROD = dict()
 
-USER = "thunderatz"
+USER = "tr"
 HOST = "thunderatz.org"
 
 PROJECT = "ThunderSite"
 
-DEV["app"] = "thundersitev2_dev"
-DEV["app_root"] = "/home/{}/webapps/{}".format(USER, DEV["app"])
-DEV["app_port"] = 25553
-DEV["static_root"] = "/home/{}/webapps/tsite_dev_static".format(USER)
+DEV["app"] = "thundersite_dev"
+DEV["app_root"] = f"/home/{USER}/apps/{DEV['app']}"
+DEV["app_socket"] = f"unix:{DEV['app_root']}/{DEV['app']}.sock"
+DEV["static_root"] = f"{DEV['app_root']}/static"
 DEV["gunicorn_workers"] = 1
-DEV["gunicorn_pidfile"] = "{}/gunicorn.pid".format(DEV["app_root"])
-DEV["gunicorn_logfile"] = "/home/{}/logs/user/gunicorn_dev.log".format(USER)
-DEV["venv_dir"] = "{}/tsitedev_venv".format(DEV["app_root"])
+DEV["gunicorn_pidfile"] = f"{DEV['app_root']}/gunicorn.pid"
+DEV["gunicorn_logfile"] = f"/home/{USER}/logs/gunicorn_dev.log"
+DEV["venv_dir"] = f"{DEV['app_root']}/venv"
 
-PROD["app"] = "thundersitev2_prod"
-PROD["app_root"] = "/home/{}/webapps/{}".format(USER, PROD["app"])
-PROD["app_port"] = 23449
-PROD["static_root"] = "/home/{}/webapps/thundersitev2_static".format(USER)
+PROD["app"] = "thundersite"
+PROD["app_root"] = f"/home/{USER}/apps/{PROD['app']}"
+PROD["app_socket"] = f"unix:{PROD['app_root']}/{PROD['app']}.sock"
+PROD["static_root"] = f"{PROD['app_root']}/static"
 PROD["gunicorn_workers"] = 2
-PROD["gunicorn_pidfile"] = "{}/gunicorn.pid".format(PROD["app_root"])
-PROD["gunicorn_logfile"] = "/home/{}/logs/user/gunicorn_prod.log".format(USER)
-PROD["venv_dir"] = "{}/tsiteprod_venv".format(PROD["app_root"])
+PROD["gunicorn_pidfile"] = f"{PROD['app_root']}/gunicorn.pid"
+PROD["gunicorn_logfile"] = f"/home/{USER}/logs/gunicorn.log"
+PROD["venv_dir"] = f"{PROD['app_root']}/venv"
 
 PYTHON_BIN = "python"
 
@@ -43,7 +43,7 @@ def stop_server(conn, env):
     if not conn.run("cat {}".format(env["gunicorn_pidfile"])).ok:
         return
 
-    conn.run("kill $(cat {})".format(env["gunicorn_pidfile"]))
+    conn.run("kill (cat {})".format(env["gunicorn_pidfile"]))
     # conn.run('rm {}'.format(env['gunicorn_pidfile']))
 
 
@@ -51,7 +51,7 @@ def install_dependencies(conn, env):
     print("Installing dependencies...")
     with conn.cd(env["app_root"] + "/" + PROJECT):
         conn.run(
-            "source {}/bin/activate && pip install -r requirements.txt".format(
+            "source {}/bin/activate.fish && pip install -r requirements.txt".format(
                 env["venv_dir"]
             )
         )
@@ -61,7 +61,7 @@ def update_db(conn, env):
     print("Updating databases...")
     with conn.cd(env["app_root"] + "/" + PROJECT):
         conn.run(
-            "source {}/bin/activate && python manage.py migrate --noinput".format(
+            "source {}/bin/activate.fish && python manage.py migrate --noinput".format(
                 env["venv_dir"]
             )
         )
@@ -71,7 +71,7 @@ def collect_static(conn, env):
     print("Collecting staticfiles...")
     with conn.cd(env["app_root"] + "/" + PROJECT):
         conn.run(
-            "source {}/bin/activate && python manage.py collectstatic -v0 --noinput --clear".format(
+            "source {}/bin/activate.fish && python manage.py collectstatic -v0 --noinput --clear".format(
                 env["venv_dir"]
             )
         )
@@ -108,10 +108,10 @@ def push_prod(conn, env):
 
 
 def _gunicorn(env):
-    return "{}/bin/gunicorn --log-file {} -b 127.0.0.1:{} -D -w {} --pid {} thundersite.wsgi".format(
+    return "{}/bin/gunicorn --log-file {} -b {} -D -w {} --pid {} thundersite.wsgi".format(
         env["venv_dir"],
         env["gunicorn_logfile"],
-        env["app_port"],
+        env["app_socket"],
         env["gunicorn_workers"],
         env["gunicorn_pidfile"],
     )
@@ -122,7 +122,7 @@ def cache_process_static(conn, env):
 
     with conn.cd(env["app_root"] + "/" + PROJECT):
         conn.run(
-            "source {}/bin/activate && python manage.py compress".format(
+            "source {}/bin/activate.fish && python manage.py compress".format(
                 env["venv_dir"]
             )
         )
