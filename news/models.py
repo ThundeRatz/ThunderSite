@@ -24,7 +24,7 @@ class News(models.Model):
         unique=True, help_text="URL name: <em>thunderatz.org/news/&lt;slug&gt;</em>"
     )
     text = RichTextUploadingField(
-        extra_plugins=["youtube"],
+        # extra_plugins=["youtube"],
         help_text='<h1><strong>Se upar imagens, colocar a classe "body-image" nela na aba Advanced!</strong></h1>',
     )
 
