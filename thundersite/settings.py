@@ -92,7 +92,7 @@ MEDIA_URL = "/media/"
 ############### CKEDITOR ##############
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
-CKEDITOR_CONFIGS = {"default": {"toolbar": "standard", "extraPlugins": "youtube"}}
+CKEDITOR_CONFIGS = {"default": {"toolbar": "standard"}}
 
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.open_id.OpenIdAuth",

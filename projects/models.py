@@ -17,11 +17,11 @@ def board_thumbnail_path(instance, filename):
 
 
 def board_cover_path(instance, filename):
-    return "projects/" + instance.name + "/cover_" + filename
+    return "projects/" + instance.slug + "/cover_" + filename
 
 
 def board_card_path(instance, filename):
-    return "projects/" + instance.name + "/card_" + filename
+    return "projects/" + instance.slug + "/card_" + filename
 
 
 class Board(models.Model):
@@ -78,11 +78,11 @@ class Category(models.Model):
 
 
 def project_cover_path(instance, filename):
-    return "projects/" + instance.name + "/cover_" + filename
+    return "projects/" + instance.slug + "/cover_" + filename
 
 
 def project_card_path(instance, filename):
-    return "projects/" + instance.name + "/card_" + filename
+    return "projects/" + instance.slug + "/card_" + filename
 
 
 class Project(models.Model):
