@@ -158,6 +158,11 @@ def start_dev_server(conn):
 
 
 @task
+def stop_dev_server(conn):
+    stop_server(conn, DEV)
+
+
+@task
 def start_prod_server(conn):
     start_server(conn, PROD)
 

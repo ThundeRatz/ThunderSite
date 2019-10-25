@@ -82,10 +82,6 @@ STATICFILES_FINDERS = [
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-COMPRESS_PRECOMPILERS = (
-    ("text/x-sass", "/home/tr/apps/thundersite/venv/bin/sassc {infile} {outfile}"),
-)
-
 ############## MEDIA ##############
 MEDIA_URL = "/media/"
 
@@ -114,9 +110,14 @@ except ImportError as e:
     print("    ALLOWED_HOSTS")
     print("    MEDIA_ROOT")
     print("    STATIC_ROOT")
+    print("    VENV_ROOT")
     print("    SECRET_KEY")
     print("    DEBUG")
     print("    COMPRESS_ENABLED")
     print("    DATABASES")
     print("    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
     print("    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
+
+COMPRESS_PRECOMPILERS = (
+    ("text/x-sass", VENV_ROOT + "/bin/sassc {infile} {outfile}"),
+)
