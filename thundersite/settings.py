@@ -1,5 +1,21 @@
 import os
 
+try:
+    from .local_settings import *
+except ImportError as e:
+    print("local_settings.py not found, create it with these settings:")
+    print("    ALLOWED_HOSTS")
+    print("    MEDIA_ROOT")
+    print("    STATIC_ROOT")
+    print("    VENV_ROOT")
+    print("    SECRET_KEY")
+    print("    DEBUG")
+    print("    COMPRESS_ENABLED")
+    print("    DATABASES")
+    print("    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
+    print("    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
@@ -83,7 +99,7 @@ STATICFILES_FINDERS = [
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 COMPRESS_PRECOMPILERS = (
-    ("text/x-sass", "/home/tr/apps/thundersite/venv/bin/sassc {infile} {outfile}"),
+    ("text/x-sass", VENV_ROOT + "/bin/sassc {infile} {outfile}"),
 )
 
 ############## MEDIA ##############
@@ -106,17 +122,3 @@ LOGIN_REDIRECT_URL = "admin:index"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ["thunderatz.org"]
 SOCIAL_AUTH_LOGIN_ERROR_URL = "/403/"
-
-try:
-    from .local_settings import *
-except ImportError as e:
-    print("local_settings.py not found, create it with these settings:")
-    print("    ALLOWED_HOSTS")
-    print("    MEDIA_ROOT")
-    print("    STATIC_ROOT")
-    print("    SECRET_KEY")
-    print("    DEBUG")
-    print("    COMPRESS_ENABLED")
-    print("    DATABASES")
-    print("    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
-    print("    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
