@@ -161,5 +161,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# IDE config files
+.idea/
 
 # End of https://www.gitignore.io/api/code,linux,django,python,windows
