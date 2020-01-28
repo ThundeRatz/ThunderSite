@@ -1,0 +1,20 @@
+name: Deploy PROD Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploying PROD site
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Deploying site
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        password: ${{ secrets.PASSWORD }}
+        script: env ENV=PROD ~/deploy_site
