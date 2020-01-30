@@ -92,7 +92,10 @@
                     <a href="{{ member.facebook }}" class="mr-2"><i class="fab fa-facebook fa-2x"></i></a>
                     {% endif %}
                     {% if member.email %}
-                    <a href="mailto:{{ member.email }}"><i class="fas fa-envelope fa-2x"></i></a>
+                    <a href="mailto:{{ member.email }}"  class="mr-2"><i class="fas fa-envelope fa-2x"></i></a>
+                    {% endif %}
+                    {% if member.github %}
+                    <a href="{{ member.github }}"><i class="fab fa-github fa-2x"></i></a>
                     {% endif %}
                 </div>
             </div>
