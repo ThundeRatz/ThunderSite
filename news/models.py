@@ -43,7 +43,7 @@ class News(models.Model):
     )
 
     cover_on_text_end = models.BooleanField(
-        default=False,
+        default=True,
         help_text="Define se a imagem de capa aparece no final da notícia."
         )
 
