@@ -36,7 +36,7 @@
             <hr>
             {% if news.intro_image %}<div class="mx-auto text-center mb-2"><img src="{{ news.intro_image.url }}" alt=""></div>{% endif %}
             <div class="text-justify">{{ news.text | safe }}</div>
-            <div class="mx-auto text-center mb-2"><img src="{{ news.cover_image.url }}" alt=""></div>
+            {% if news.cover_on_text_end %}<div class="mx-auto text-center mb-2"><img src="{{ news.cover_image.url }}" alt=""></div>{% endif %}
             <hr>
             <p class="text-muted">Publicado por {{ news.author.first_name }}</p>
         </div>

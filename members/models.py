@@ -32,6 +32,7 @@ class Member(models.Model):
     team_captain = models.BooleanField(default=False)
     picture = models.ImageField(upload_to=member_picture_path, default="1000x1000.png")
     facebook = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True)
     email = models.EmailField()
     entry_year = models.PositiveSmallIntegerField()
 

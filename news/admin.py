@@ -9,6 +9,7 @@ class NewsAdmin(admin.ModelAdmin):
         "slug",
         "author",
         "cover_image",
+        "cover_on_text_end",
         "intro_image",
         "text",
         "visible",

@@ -42,6 +42,11 @@ class News(models.Model):
         null=True,
     )
 
+    cover_on_text_end = models.BooleanField(
+        default=True,
+        help_text="Define se a imagem de capa aparece no final da notícia."
+        )
+
     visible = models.BooleanField(default=False)
 
     class Meta:
