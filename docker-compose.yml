@@ -12,6 +12,7 @@ services:
     container_name: thundersite-django
     build: .
     command: ./scripts/start_dev.sh
+    restart: on-failure:10 # necessary due to possibility of postgres not being ready when service runs
     volumes:
       - .:/code
     ports:
