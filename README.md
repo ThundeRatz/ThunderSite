@@ -33,3 +33,14 @@ To do that, run the script:
 ### 🏠 Local settings
 
 A templete for the server local_settings is provided under the name ```local_settings.docker.py```. Create a copy of this file with the name ```local_settings.py``` inside the **thundersite** folder. It is not necessary to change anything to run the docker image, change the configurations as needed in development enviroment
+
+### 🍱 Assets
+
+To download all site images, run the following commands
+
+```sh
+cd wget
+./dump.sh
+```
+
+All files of type jpg, png or gif from the site will be downloaded inside a folder named **thunderatz.org**. The ```local_settings.docker.py``` points to that folder to find static and media files.
