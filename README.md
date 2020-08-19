@@ -22,12 +22,12 @@ Once ```docker``` is available, you can build the enviroment with the following 
 docker-compose build
 ```
 
-Before running the project in the first time, it is necessary to populate the database with some necessary data.
+After running the project in the first time, it is necessary to populate the database with some necessary data (while the container is up).
 
-To do that, run the command:
+To do that, run the script:
 
 ```sh
-TODO: seeds script
+./scripts/build_dev.sh
 ```
 
 ### 🏠 Local settings
