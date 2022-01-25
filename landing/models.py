@@ -57,6 +57,7 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+
 class Recruitment(models.Model):
     title = models.CharField(max_length=64)
     button = models.TextField(help_text="Cole o script do Typeform aqui", default="")
@@ -64,6 +65,14 @@ class Recruitment(models.Model):
     isOpen = models.BooleanField(default=False)
     info = RichTextField()
 
-
     def __str__(self):
         return self.title
+
+
+class ProgressBar(models.Model):
+    name = models.CharField(max_length=64)
+    current_value = models.IntegerField()
+    maximum_value = models.IntegerField()
+
+    def __str__(self):
+        return f"Name: {self.name} {self.current_value}/{self.maximum_value}"
