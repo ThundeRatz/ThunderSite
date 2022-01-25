@@ -1,7 +1,6 @@
 [
   {
     "model": "contenttypes.contenttype",
-    "pk": 1,
     "fields": {
       "app_label": "admin",
       "model": "logentry"
@@ -9,7 +8,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 2,
     "fields": {
       "app_label": "auth",
       "model": "permission"
@@ -17,7 +15,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 3,
     "fields": {
       "app_label": "auth",
       "model": "group"
@@ -25,7 +22,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 4,
     "fields": {
       "app_label": "auth",
       "model": "user"
@@ -33,7 +29,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 5,
     "fields": {
       "app_label": "contenttypes",
       "model": "contenttype"
@@ -41,7 +36,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 6,
     "fields": {
       "app_label": "sessions",
       "model": "session"
@@ -49,7 +43,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 7,
     "fields": {
       "app_label": "social_django",
       "model": "association"
@@ -57,7 +50,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 8,
     "fields": {
       "app_label": "social_django",
       "model": "code"
@@ -65,7 +57,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 9,
     "fields": {
       "app_label": "social_django",
       "model": "nonce"
@@ -73,7 +64,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 10,
     "fields": {
       "app_label": "social_django",
       "model": "usersocialauth"
@@ -81,7 +71,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 11,
     "fields": {
       "app_label": "social_django",
       "model": "partial"
@@ -89,7 +78,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 12,
     "fields": {
       "app_label": "landing",
       "model": "event"
@@ -97,7 +85,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 13,
     "fields": {
       "app_label": "landing",
       "model": "quota"
@@ -105,7 +92,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 14,
     "fields": {
       "app_label": "landing",
       "model": "sponsor"
@@ -113,7 +99,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 15,
     "fields": {
       "app_label": "landing",
       "model": "about"
@@ -121,7 +106,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 16,
     "fields": {
       "app_label": "landing",
       "model": "recruitment"
@@ -129,7 +113,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 17,
     "fields": {
       "app_label": "projects",
       "model": "board"
@@ -137,7 +120,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 18,
     "fields": {
       "app_label": "projects",
       "model": "boardimage"
@@ -145,7 +127,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 19,
     "fields": {
       "app_label": "projects",
       "model": "category"
@@ -153,7 +134,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 20,
     "fields": {
       "app_label": "projects",
       "model": "project"
@@ -161,7 +141,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 21,
     "fields": {
       "app_label": "projects",
       "model": "projectimage"
@@ -169,7 +148,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 22,
     "fields": {
       "app_label": "projects",
       "model": "supercategory"
@@ -177,7 +155,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 23,
     "fields": {
       "app_label": "news",
       "model": "news"
@@ -185,7 +162,6 @@
   },
   {
     "model": "contenttypes.contenttype",
-    "pk": 24,
     "fields": {
       "app_label": "members",
       "model": "member"
@@ -2065,7 +2041,6 @@
   },
   {
     "model": "news.news",
-    "pk": 112,
     "fields": {
       "author": 30,
       "title": "4 ouros na IRON Cup!",
@@ -2081,7 +2056,6 @@
   },
   {
     "model": "news.news",
-    "pk": 113,
     "fields": {
       "author": 30,
       "title": "Agradecimento ao Grupo de Pesquisas de Jato d’Água (GPJA/POLI)",
@@ -2093,6 +2067,14 @@
       "intro_image": "",
       "cover_on_text_end": false,
       "visible": true
+    }
+  },
+  {
+    "model": "landing.progressbar",
+    "fields": {
+      "name": "thunder_donations",
+      "current_value": 0,
+      "maximum_value": 100
     }
   }
 ]
