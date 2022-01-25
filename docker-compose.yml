@@ -19,3 +19,10 @@ services:
       - "8000:8000"
     depends_on:
       - db
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.14.130.0/24
