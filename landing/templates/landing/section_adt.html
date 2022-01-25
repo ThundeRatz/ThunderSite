@@ -24,16 +24,18 @@
                 <img class="img-fluid" src="{% static 'landing/img/thor_coin.gif' %}" alt="">
             </div>
         </div>
-        <div id="adt-info" class="d-flex flex-column justify-content-around col-12 col-md-5 order-1 order-md-2 pr-0 pr-md-5">
+        <div id="adt-info"
+            class="d-flex flex-column justify-content-around col-12 col-md-5 order-1 order-md-2 pr-0 pr-md-5">
             <div id="adt-logo">
                 <img src="{% static 'landing/img/logo_adt.png' %}" alt="" class="img-fluid">
             </div>
             <div id="adt-progress" class="container">
                 <div id="adt-meta" class="d-flex flex-column text-center justify-content-center">
-                    Meta: R$ 5000,00 <br>
-                    Arrecadado: R$ 2000,00
+                    Meta: R$ {{thunder_donations.current_value}},00 <br>
+                    Arrecadado: R$ {{thunder_donations.maximum_value}},00
                 </div>
-                <progress id="progress-bar" value="25" max="100"> </progress>
+                <progress id="progress-bar" value="{{thunder_donations.current_value}}"
+                    max="{{thunder_donations.maximum_value}}"> </progress>
             </div>
             <div id="adt-description" class="d-flex flex-column text-center justify-content-center">
                 A iniciativa ThunderDoações foi criada como forma de conectar ex-membros,
@@ -42,8 +44,8 @@
                 A fim de potencializar os projetos e a participação da equipe
                 em competições, foi criado um canal para receber doações únicas.
 
-                Todo dinheiro arrecadado será destinado para viabilizar a participação da equipe 
-                na 
+                Todo dinheiro arrecadado será destinado para viabilizar a participação da equipe
+                na
                 <a href="https://www.robocoreexperience.com/" target="_blank">
                     <img src="{% static 'landing/img/logo_RC_experience1.webp'%}" class="col-12 col-md-5" alt="">
                 </a>
