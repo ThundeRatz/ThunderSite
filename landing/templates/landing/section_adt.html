@@ -12,10 +12,10 @@
                 </div>
             </div>
             <div id="doacoes-any" class="d-flex flex-column text-center justify-content-center">
-                <a href="https://pag.ae/7UjdUgzKp" target="_blank" id="doe1">
+                <a href="https://nubank.com.br/pagar/1do4v/AKsGnbP7pJ" target="_blank" id="doe1">
                     <div style="font-weight: 500;">Contribua com qualquer valor!</div>
                     <div style="font-size: 1.5rem;">
-                        com <img src="{% static 'landing/img/pagseguro.png' %}" class="pl-2" alt="">
+                        clicando aqui: <img src="{% static 'landing/img/pix-logo.png' %}" class="col-6 col-md-2" alt="">
                     </div>
                 </a>
             </div>
@@ -28,6 +28,13 @@
             <div id="adt-logo">
                 <img src="{% static 'landing/img/logo_adt.png' %}" alt="" class="img-fluid">
             </div>
+            <div id="adt-progress" class="container">
+                <div id="adt-meta" class="d-flex flex-column text-center justify-content-center">
+                    Meta: R$ 5000,00 <br>
+                    Arrecadado: R$ 2000,00
+                </div>
+                <progress id="progress-bar" value="25" max="100"> </progress>
+            </div>
             <div id="adt-description" class="d-flex flex-column text-center justify-content-center">
                 A iniciativa ThunderDoações foi criada como forma de conectar ex-membros,
                 familiares e todos que tenham interesse nos trabalhos desenvolvidas pela ThundeRatz.
@@ -35,11 +42,11 @@
                 A fim de potencializar os projetos e a participação da equipe
                 em competições, foi criado um canal para receber doações únicas.
 
-                Todo dinheiro arrecadado é destinado a melhorias nos projetos
-                ou para possibilitar a participação em eventos internacionais.
-
-                Todos os doadores recebem um feedback do andamento dos projetos
-                e prestação dos gastos executados.
+                Todo dinheiro arrecadado será destinado para viabilizar a participação da equipe 
+                na 
+                <a href="https://www.robocoreexperience.com/" target="_blank">
+                    <img src="{% static 'landing/img/logo_RC_experience1.webp'%}" class="col-12 col-md-5" alt="">
+                </a>
             </div>
         </div>
     </div>
