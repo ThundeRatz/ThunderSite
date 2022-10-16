@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ["0.0.0.0", 'localhost']
 MEDIA_ROOT = os.path.join(BASE_DIR, "wget/thunderatz.org/media/")
 STATIC_ROOT = os.path.join(BASE_DIR, "wget/thunderatz.org/static/")
 
