@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    container_name: thundersite-database
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    container_name: thundersite-django
+    build: .
+    command: ./scripts/start_dev.sh
+    restart: on-failure:10 # necessary due to possibility of postgres not being ready when service runs
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.14.130.0/24

@@ -1,0 +1,2080 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "social_django",
+      "model": "association"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "social_django",
+      "model": "code"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "social_django",
+      "model": "nonce"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "social_django",
+      "model": "usersocialauth"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "social_django",
+      "model": "partial"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "landing",
+      "model": "event"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "landing",
+      "model": "quota"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "landing",
+      "model": "sponsor"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "landing",
+      "model": "about"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "landing",
+      "model": "recruitment"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "projects",
+      "model": "board"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "projects",
+      "model": "boardimage"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "projects",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "projects",
+      "model": "project"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "projects",
+      "model": "projectimage"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "projects",
+      "model": "supercategory"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "news",
+      "model": "news"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "members",
+      "model": "member"
+    }
+  },
+  {
+    "model": "landing.quota",
+    "pk": 1,
+    "fields": {
+      "name": "Ouro"
+    }
+  },
+  {
+    "model": "landing.quota",
+    "pk": 2,
+    "fields": {
+      "name": "Prata"
+    }
+  },
+  {
+    "model": "landing.quota",
+    "pk": 3,
+    "fields": {
+      "name": "Bronze"
+    }
+  },
+  {
+    "model": "landing.quota",
+    "pk": 4,
+    "fields": {
+      "name": "Apoio"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 2,
+    "fields": {
+      "name": "Amigos da Poli",
+      "website": "http://www.amigosdapoli.com.br/",
+      "quota": 1,
+      "logo": "sponsors/Amigos-da-Poli_FTUFEC8.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 3,
+    "fields": {
+      "name": "FDTE",
+      "website": "http://www.fdte.org.br",
+      "quota": 2,
+      "logo": "sponsors/FDTE.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 9,
+    "fields": {
+      "name": "Scorpion Power System",
+      "website": "http://www.scorpionsystem.com",
+      "quota": 2,
+      "logo": "sponsors/Scorpion.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 10,
+    "fields": {
+      "name": "Treffer",
+      "website": "http://www.treffer.com.br",
+      "quota": 3,
+      "logo": "sponsors/Treffer.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 11,
+    "fields": {
+      "name": "Kaishin",
+      "website": "http://www.kaishin.com.br/quem-somos.asp",
+      "quota": 1,
+      "logo": "sponsors/Kaishin.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 13,
+    "fields": {
+      "name": "Colégio Albert Sabin",
+      "website": "http://www.albertsabin.com.br/www/",
+      "quota": 3,
+      "logo": "sponsors/Albert-Sabin.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 15,
+    "fields": {
+      "name": "OSG",
+      "website": "http://www.osg.com.br/v4/paginas/default.asp?lang=pt",
+      "quota": 2,
+      "logo": "sponsors/OSG2.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 16,
+    "fields": {
+      "name": "Moldflex Modelagem",
+      "website": "https://www.moldflexmodelagem.com",
+      "quota": 3,
+      "logo": "sponsors/Moldflex.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 18,
+    "fields": {
+      "name": "ST Microeletronics",
+      "website": "http://www.st.com/content/st_com/en.html",
+      "quota": 2,
+      "logo": "sponsors/ST-Microeletronics.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 22,
+    "fields": {
+      "name": "POLI USP",
+      "website": "http://www.poli.usp.br",
+      "quota": 1,
+      "logo": "sponsors/PoliUSP.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 23,
+    "fields": {
+      "name": "Maddza",
+      "website": "http://www.maddza.com",
+      "quota": 4,
+      "logo": "sponsors/MADDZA.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 24,
+    "fields": {
+      "name": "PMR",
+      "website": "http://www.pmr.poli.usp.br",
+      "quota": 4,
+      "logo": "sponsors/Mecatronica.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 26,
+    "fields": {
+      "name": "InovaLab POLI",
+      "website": "http://sistemas-producao.net/inovalab/",
+      "quota": 4,
+      "logo": "sponsors/InovaLab.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 27,
+    "fields": {
+      "name": "GEDORE",
+      "website": "http://www.gedore.com.br/",
+      "quota": 1,
+      "logo": "sponsors/GEDORE.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 29,
+    "fields": {
+      "name": "Tek Bond",
+      "website": "http://www.tekbond.com.br/home/",
+      "quota": 2,
+      "logo": "sponsors/TEK-Bond.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 30,
+    "fields": {
+      "name": "Micropress",
+      "website": "http://www.micropress.com.br",
+      "quota": 1,
+      "logo": "sponsors/Micropress_CajOf2f.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 31,
+    "fields": {
+      "name": "CORACORTHE",
+      "website": "https://coracorthe.com.br",
+      "quota": 4,
+      "logo": "sponsors/CORACORTHE.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 32,
+    "fields": {
+      "name": "Blucher",
+      "website": "https://www.blucher.com.br/",
+      "quota": 2,
+      "logo": "sponsors/blucher-01.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 33,
+    "fields": {
+      "name": "Flow",
+      "website": "https://www.flowwaterjet.com/",
+      "quota": 1,
+      "logo": "sponsors/Flow-logo.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 34,
+    "fields": {
+      "name": "ARC",
+      "website": "http://www.arc.eng.br/",
+      "quota": 1,
+      "logo": "sponsors/arc.PNG"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 36,
+    "fields": {
+      "name": "MGM",
+      "website": "https://www.mgm-controllers.com/",
+      "quota": 3,
+      "logo": "sponsors/MGM_COMPRO-01.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 37,
+    "fields": {
+      "name": "MaxAmps",
+      "website": "https://www.maxamps.com/",
+      "quota": 3,
+      "logo": "sponsors/MaxAmps-01.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 38,
+    "fields": {
+      "name": "J.Assy",
+      "website": "http://www.jassy.com.br/",
+      "quota": 1,
+      "logo": "sponsors/logo_JAssy.png"
+    }
+  },
+  {
+    "model": "landing.sponsor",
+    "pk": 39,
+    "fields": {
+      "name": "Pololu Robotics and Electronics",
+      "website": "https://www.pololu.com/",
+      "quota": 3,
+      "logo": "sponsors/Pololu.jpeg"
+    }
+  },
+  {
+    "model": "landing.about",
+    "pk": 1,
+    "fields": {
+      "type": "A",
+      "text": "<p>A Equipe de Rob&oacute;tica da <a href=\"http://www.poli.usp.br/\">Escola Polit&eacute;cnica da USP</a> foi fundada em 2001, sendo reformulada em 2005, dando origem &agrave; ThundeRatz.</p>\r\n\r\n<p>Orientado pelo <a href=\"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4792633U2\">Prof. Dr. Marcos Ribeiro Pereira Barretto</a>, o grupo desenvolve mecanismos rob&oacute;ticos que s&atilde;o postos &agrave; prova contra outros projetos em competi&ccedil;&otilde;es nacionais e internacionais, obtendo destaque relevante no cen&aacute;rio mundial da rob&oacute;tica.</p>\r\n\r\n<p>Na equipe, os membros t&ecirc;m a oportunidade de ter um contato mais pr&oacute;ximo com a engenharia, que engloba o&nbsp;conhecimento t&eacute;cnico atrav&eacute;s da manipula&ccedil;&atilde;o de alta tecnologia, e tamb&eacute;m a gest&atilde;o de membros, desenvolvendo o esp&iacute;rito de equipe, o conceito de lideran&ccedil;a e aprendendo a resolver problemas.</p>",
+      "title": "A Equipe",
+      "image1": "about/z_IMG_5575-3_2_MuJgtvz.jpg",
+      "image2": "about/Equipe_3.jpg",
+      "image3": "about/Equipe_2.jpg"
+    }
+  },
+  {
+    "model": "landing.about",
+    "pk": 2,
+    "fields": {
+      "type": "B",
+      "text": "<p>Carinhosamente apelidada de &quot;A Gaiola&quot;, devido &agrave;s tramas de arame que a cercam, a equipe possui&nbsp;um espa&ccedil;o pr&oacute;prio para desenvolver a montagem e reparo dos rob&ocirc;s no interior do Departamento&nbsp;de Engenharia Mecatr&ocirc;nica e Sistemas Mec&acirc;nicos da Escola Polit&eacute;cnica da Universidade de S&atilde;o Paulo.</p>\r\n\r\n<p>Na oficina da equipe, dispomos de diversas ferramentas essenciais para a montagem de nossos rob&ocirc;s, como furadeiras de m&atilde;o e de bancada, solda, esmerilhadeira, entre outros. Al&eacute;m de ser um espa&ccedil;o&nbsp;para o trabalho, a Gaiola &eacute; o principal local de conv&iacute;vio da Equipe.</p>",
+      "title": "Oficina",
+      "image1": "about/IMG_7271_HKlfFcF.jpg",
+      "image2": "about/IMG_7279_qCgAutT.jpg",
+      "image3": "about/IMG_7286_bt1WqpZ.jpg"
+    }
+  },
+  {
+    "model": "landing.recruitment",
+    "pk": 1,
+    "fields": {
+      "title": "Processo Seletivo",
+      "button": "<a class=\"typeform-share button\" href=\"https://thunderatz.typeform.com/to/sNOzGf\" data-mode=\"drawer_left\" style=\"display:inline-block;text-decoration:none;background-color:#0F243E;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:18px;line-height:45px;text-align:center;margin:0;height:45px;padding:0px 30px;border-radius:13px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;\" data-submit-close-delay=\"7\" target=\"_blank\">CLIQUE PARA SE INSCREVER </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id=\"typef_orm_share\", b=\"https://embed.typeform.com/\"; if(!gi.call(d,id)){ js=ce.call(d,\"script\"); js.id=id; js.src=b+\"embed.js\"; q=gt.call(d,\"script\")[0]; q.parentNode.insertBefore(js,q) } })() </script>",
+      "image": "ps/post-PS2020_eBXmyhH.png",
+      "isOpen": false,
+      "info": "<p><strong><span style=\"font-size:28px\">Fique por dentro:</span></strong></p>\r\n\r\n<p dir=\"ltr\"><span style=\"font-size:16px\">Somos um grupo de extens&atilde;o composto, em sua maioria, por alunos da Escola Polit&eacute;cnica da USP. Mas n&atilde;o se engane! Estamos em busca de pessoas de qualquer faculdade, &aacute;rea, ano e curso, com os &uacute;nicos pr&eacute;-requisitos de que sejam dedicadas e que tenham vontade de aprender e desenvolver novos projetos. Nossa equipe &eacute; dividida em 4&nbsp;&aacute;reas, que desenvolvem as seguintes compet&ecirc;ncias:</span></p>\r\n\r\n<p dir=\"ltr\"><span style=\"font-size:16px\"><span style=\"color:#bf0000\"><strong>Mec&acirc;nica</strong>:</span> Projeto em CAD; simula&ccedil;&atilde;o de elementos finitos; usinagem e manufatura; manuten&ccedil;&atilde;o dos rob&ocirc;s.</span></p>\r\n\r\n<p dir=\"ltr\"><span style=\"font-size:16px\"><span style=\"color:#0000bf\"><strong>El&eacute;trica</strong>:</span>&nbsp;Projeto, fabrica&ccedil;&atilde;o e manuten&ccedil;&atilde;o de circuitos eletr&ocirc;nicos; controle de motores de alta pot&ecirc;ncia; programa&ccedil;&atilde;o de microcontroladores.</span></p>\r\n\r\n<p dir=\"ltr\"><span style=\"font-size:16px\"><span style=\"color:#0080ff\"><strong>Computa&ccedil;&atilde;o</strong>:</span> Programa&ccedil;&atilde;o embarcada; intelig&ecirc;ncia de aut&ocirc;nomos; aplicativos.</span></p>\r\n\r\n<p dir=\"ltr\"><span style=\"font-size:16px\"><span style=\"color:#804080\"><strong>Design &amp; Marketing</strong>:</span>&nbsp;Edi&ccedil;&atilde;o audiovisual; design gr&aacute;fico; fotografia e filmagem; m&iacute;dias sociais.</span></p>\r\n\r\n<p dir=\"ltr\">&nbsp;</p>\r\n\r\n<p dir=\"ltr\"><span style=\"font-size:16px\">N&atilde;o perca essa oportunidade: as inscri&ccedil;&otilde;es v&atilde;o somente at&eacute; o dia<strong> 8 de Mar&ccedil;o!</strong></span></p>\r\n\r\n<p><span style=\"font-size:16px\">Caso queira conhecer mais a equipe, entre em contato com a gente! Mande uma mensagem em nosso <a href=\"https://www.facebook.com/Thunderatz\">Facebook</a>, envie um e-mail para:&nbsp;<a href=\"mailto:contato@thunderatz.org\">contato@thunderatz.org</a>&nbsp;ou venha nos vistar na nossa &aacute;rea de trabalho (veja <a href=\"https://www.youtube.com/watch?v=hDfti5CJ1BE\">como chegar</a>).</span></p>"
+    }
+  },
+  {
+    "model": "projects.board",
+    "pk": 1,
+    "fields": {
+      "name": "TPM-HobbyDC",
+      "slug": "tpm-hobbydc",
+      "cover_image": "1000x1000.png",
+      "card_image": "projects/TPM-HobbyDC/card_TPM-Hobby_0.png",
+      "description": "<p>Juntamente com a renova&ccedil;&atilde;o do rob&ocirc; Cachorro Louco, da categoria Hobbyweight &ndash; 5,44kg (12lbs), foi necess&aacute;rio realizar tamb&eacute;m uma substitui&ccedil;&atilde;o de suas eletr&ocirc;nicas da locomo&ccedil;&atilde;o por um projeto mais compacto e vers&aacute;til.</p>\r\n\r\n<p>Desenvolvida para ser utilizada em rob&ocirc;s de categorias de peso intermedi&aacute;rias (sum&ocirc;s, hobbyweights e hockeys), a TPM-HobbyDC foi feita sob medida para o Cachorro Louco 2.0 com dimens&otilde;es de apenas 47x50mm, por&eacute;m bastante potente, utilizando MOSFETs de alta qualidade para o chaveamento dos motores DC utilizados em sua locomo&ccedil;&atilde;o.</p>\r\n\r\n<p>Sua competi&ccedil;&atilde;o de estreia foi o Summer Challenge III (2015, Lavras &ndash; MG), na qual foi utilizada n&atilde;o apenas no Cachorro Louco 2.0, mas tamb&eacute;m nos rob&ocirc;s do Time Olympus, categoria Hockey Pro &ndash; 6,8kg (15lbs), sem falhas, mostrando seu alto desempenho e confiabilidade.</p>"
+    }
+  },
+  {
+    "model": "projects.board",
+    "pk": 2,
+    "fields": {
+      "name": "TPM-Ant",
+      "slug": "tpm-ant",
+      "cover_image": "1000x1000.png",
+      "card_image": "projects/TPM-Ant/card_TPM-Ant_0.png",
+      "description": "<p>Com o nascimento de nosso pequeno guerreiro Duende, bem como o surgimento da categoria de combate de Antweight &ndash; 454g (1lb), houve a necessidade de desenvolvermos uma nova eletr&ocirc;nica: pequena, compacta, potente e confi&aacute;vel.</p>\r\n\r\n<p>Sendo assim, foi desenvolvida a TPM-Ant, a eletr&ocirc;nica controladora de 2 motores DC utilizada no rob&ocirc; Duende. Com dimens&otilde;es de apenas 24x23mm, este projeto &eacute; capaz de fornecer at&eacute; 1,5A cont&iacute;nuos em cada canal, suportando picos de at&eacute; 2A.</p>\r\n\r\n<p>Durante o Summer Challenge III (2015, Lavras &ndash; MG), foi poss&iacute;vel validar o alto desempenho e confiabilidade do projeto, o qual garantiu ao Duende seu primeiro p&oacute;dio.</p>"
+    }
+  },
+  {
+    "model": "projects.board",
+    "pk": 3,
+    "fields": {
+      "name": "TPM-Beetle",
+      "slug": "tpm-beetle",
+      "cover_image": "1000x1000.png",
+      "card_image": "projects/TPM-Beetle/card_TPM-Beetle_0.png",
+      "description": "<p>Este projeto eletr&ocirc;nico surgiu juntamente com a estreia da ThundeRatz na categoria de combate Beetleweight &ndash; 1,36kg (3lbs), com o rob&ocirc; Ratnik. Mesmo sendo uma novidade para a Equipe, a placa desenvolvida se mostrou bastante confi&aacute;vel e vers&aacute;til.</p>\r\n\r\n<p>Medindo apenas 22x33mm, a TPM-Beetle &eacute; capaz de fornecer 2,5A cont&iacute;nuos por canal, gerenciando picos de corrente de at&eacute; 3,5A. Como esta placa acaba sendo mais robusta do que muitos motores utilizados na categoria, ela permite que seja feito um controle de limita&ccedil;&atilde;o de corrente por&nbsp;<em>hardware</em>.</p>\r\n\r\n<p>Sendo utilizada desde o Winter Challenge 2013 sem dar problema, a TPM-Beetle &eacute; um bom exemplo de que tamanho n&atilde;o &eacute; documento!</p>"
+    }
+  },
+  {
+    "model": "projects.board",
+    "pk": 4,
+    "fields": {
+      "name": "TPM-Apolka",
+      "slug": "tpm-apolka",
+      "cover_image": "1000x1000.png",
+      "card_image": "projects/TPM-Apolka/card_TPM-Apolkalipse_0.png",
+      "description": "<p>Com o retorno da ThundeRatz &agrave; participa&ccedil;&atilde;o na categoria Middleweight &ndash; 54,4kg (120lbs) com o rob&ocirc; Apolkalipse, surgiu o projeto de eletr&ocirc;nica controladora de motores DC mais potente e robusta j&aacute; desenvolvida pela equipe.</p>\r\n\r\n<p>Elaborada para controlar 2 motores DC de alto desempenho (Ampflow A28-150), a TPM-Apolkalipse utiliza circuitos de ponte-H em configura&ccedil;&atilde;o de 2 MOSFETs em paralelo para cada elemento de chaveamento, e tudo isso em uma &uacute;nica PCB de dimens&otilde;es 75x75mm.</p>\r\n\r\n<p>O projeto se mostrou extremamente confi&aacute;vel desde sua estreia e levou o Apolkalipse &agrave; conquista da medalha de ouro na RoboGames 2016, a maior competi&ccedil;&atilde;o de rob&oacute;tica do mundo.</p>"
+    }
+  },
+  {
+    "model": "projects.board",
+    "pk": 5,
+    "fields": {
+      "name": "Arclighter",
+      "slug": "arclighter",
+      "cover_image": "1000x1000.png",
+      "card_image": "projects/Arclighter/card_TPM-ArcLighter_0.png",
+      "description": "<p>Com a utiliza&ccedil;&atilde;o de sistemas de lan&ccedil;a-chamas nos rob&ocirc;s de combate da ThundeRatz, fez-se necess&aacute;rio um projeto eletr&ocirc;nico que fosse compacto, vers&aacute;til e funcional para controlar o acionamento do fogo do Iskeiro.</p>\r\n\r\n<p>O Arclighter &eacute; capaz de realizar o acionamento de uma v&aacute;lvula que libera o g&aacute;s combust&iacute;vel utilizado no lan&ccedil;a-chamas, bem como ativar o ignitor el&eacute;trico que acende o fogo.</p>\r\n\r\n<p>Ela possui dimens&otilde;es de 25,4x21,6mm para ser utilizada no Iskeiro e &eacute; capaz de lidar com o acionamento de v&aacute;lvulas por solenoide.</p>"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 4,
+    "fields": {
+      "board": 5,
+      "image": "projects/Arclighter/TPM-ArcLighter2.PNG",
+      "description": "ArcLighter_2"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 5,
+    "fields": {
+      "board": 5,
+      "image": "projects/Arclighter/TPM-ArcLighter_0.png",
+      "description": "ArcLighter_1"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 6,
+    "fields": {
+      "board": 5,
+      "image": "projects/Arclighter/TPM-ArcLighter3.PNG",
+      "description": "ArcLighter_0"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 7,
+    "fields": {
+      "board": 2,
+      "image": "projects/TPM-Ant/TPM-Ant_1.png",
+      "description": "TPM-Ant_1"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 8,
+    "fields": {
+      "board": 2,
+      "image": "projects/TPM-Ant/TPM-Ant_0.png",
+      "description": "TPM-Ant_0"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 9,
+    "fields": {
+      "board": 2,
+      "image": "projects/TPM-Ant/TPM-Ant_2.png",
+      "description": "TPM-Ant_2"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 10,
+    "fields": {
+      "board": 4,
+      "image": "projects/TPM-Apolka/TPM-Apolkalipse_2.png",
+      "description": "TPM-Apolka_2"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 11,
+    "fields": {
+      "board": 4,
+      "image": "projects/TPM-Apolka/TPM-Apolkalipse_0.png",
+      "description": "TPM-Apolka_0"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 12,
+    "fields": {
+      "board": 4,
+      "image": "projects/TPM-Apolka/TPM-Apolkalipse_1.png",
+      "description": "TPM-Apolka_1"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 13,
+    "fields": {
+      "board": 3,
+      "image": "projects/TPM-Beetle/TPM-Beetle_2_IayIyfq.png",
+      "description": "TPM-Beetle_2"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 14,
+    "fields": {
+      "board": 3,
+      "image": "projects/TPM-Beetle/TPM-Beetle_0_C2VFt1q.png",
+      "description": "TPM-Beetle_0"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 15,
+    "fields": {
+      "board": 3,
+      "image": "projects/TPM-Beetle/TPM-Beetle_1_z57d2xc.png",
+      "description": "TPM-Beetle_1"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 16,
+    "fields": {
+      "board": 1,
+      "image": "projects/TPM-HobbyDC/TPM-Hobby_2.png",
+      "description": "TPM-Hobby_2"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 17,
+    "fields": {
+      "board": 1,
+      "image": "projects/TPM-HobbyDC/TPM-Hobby_0.png",
+      "description": "TPM-Hobby_0"
+    }
+  },
+  {
+    "model": "projects.boardimage",
+    "pk": 18,
+    "fields": {
+      "board": 1,
+      "image": "projects/TPM-HobbyDC/TPM-Hobby_1.png",
+      "description": "TPM-Hobby_1"
+    }
+  },
+  {
+    "model": "projects.supercategory",
+    "pk": 1,
+    "fields": {
+      "name": "combate"
+    }
+  },
+  {
+    "model": "projects.supercategory",
+    "pk": 2,
+    "fields": {
+      "name": "sumo"
+    }
+  },
+  {
+    "model": "projects.supercategory",
+    "pk": 3,
+    "fields": {
+      "name": "autonomo"
+    }
+  },
+  {
+    "model": "projects.supercategory",
+    "pk": 4,
+    "fields": {
+      "name": "hockey"
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 1,
+    "fields": {
+      "name": "Middleweight",
+      "description": "55kg",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 2,
+    "fields": {
+      "name": "Lightweight",
+      "description": "27,2 kg (60 lb)",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 3,
+    "fields": {
+      "name": "Featherweight",
+      "description": "13,6 kg (30 lb)",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 4,
+    "fields": {
+      "name": "Hobbyweight",
+      "description": "5,44 kg (12 lb)",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 5,
+    "fields": {
+      "name": "Beetleweight",
+      "description": "1,36 kg (3 lb)",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 6,
+    "fields": {
+      "name": "Antweight",
+      "description": "454g (1 lb)",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 7,
+    "fields": {
+      "name": "Sumô 3 kg (R/C)",
+      "description": "Sumô 3 kg Radio controlado",
+      "super_category": 2
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 8,
+    "fields": {
+      "name": "Sumô 3 kg (Auto)",
+      "description": "Sumô 3 kg Autônomo",
+      "super_category": 2
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 9,
+    "fields": {
+      "name": "Mini Sumô",
+      "description": "Sumô 500g",
+      "super_category": 2
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 10,
+    "fields": {
+      "name": "Micro Sumô",
+      "description": "Sumô 100 g",
+      "super_category": 2
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 11,
+    "fields": {
+      "name": "Sumô LEGO",
+      "description": "Sumô LEGO 1 kg",
+      "super_category": 2
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 12,
+    "fields": {
+      "name": "Hockey Pro",
+      "description": "Hockey Pro (6,8 kg)",
+      "super_category": 4
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 13,
+    "fields": {
+      "name": "Humanoide",
+      "description": "Humanoide",
+      "super_category": 3
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 14,
+    "fields": {
+      "name": "Seguidor de Linha",
+      "description": "Follower Line",
+      "super_category": 3
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 15,
+    "fields": {
+      "name": "Trekking",
+      "description": "Trekking",
+      "super_category": 3
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 16,
+    "fields": {
+      "name": "Fairyweight",
+      "description": "Fairyweight (150g)",
+      "super_category": 1
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 17,
+    "fields": {
+      "name": "VSSS",
+      "description": "Very Small Size Soccer",
+      "super_category": 3
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 18,
+    "fields": {
+      "name": "RCSS",
+      "description": "RoboCup Soccer Simulation 2D",
+      "super_category": 3
+    }
+  },
+  {
+    "model": "projects.category",
+    "pk": 19,
+    "fields": {
+      "name": "Sumô 3kg",
+      "description": "Sumô 3kg Autônomo e Rádio controlado",
+      "super_category": 2
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 30,
+    "fields": {
+      "name": "Pikachu",
+      "slug": "pikachu",
+      "category": 1,
+      "logo": "1000x1000.png",
+      "typography": "project_typography/Pikachu.png",
+      "cover_image": "projects/Pikachu/cover_pikachu21.jpg",
+      "card_image": "projects/Pikachu/card_pikachu.jpg",
+      "debut_year": 2003,
+      "gold": 0,
+      "silver": 0,
+      "bronze": 0,
+      "description": "<p>O rob&ocirc; Pikachu tem o poder de dar choque el&eacute;trico nos oponentes. Al&eacute;m disso, possui alta resist&ecirc;ncia mec&acirc;nica, sua armadura e estrutura s&atilde;o feitas de a&ccedil;o ABNT1020. Em 2004, o projeto apresentou evolu&ccedil;&otilde;es &ndash; ele obteve melhorias na armadura e na estrutura e teve o acr&eacute;scimo de lan&ccedil;as traseiras.</p>",
+      "is_active": false,
+      "bold": null,
+      "boards": []
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 32,
+    "fields": {
+      "name": "Mata Cachorro",
+      "slug": "mata-cachorro",
+      "category": 1,
+      "logo": "1000x1000.png",
+      "typography": "project_typography/Mata_Cachorro.png",
+      "cover_image": "projects/Mata Cachorro/cover_matacachorro.jpg-nggid03405-ngg0dyn-300x200x100-00f0w010c01_uHC5zEo.jpg",
+      "card_image": "projects/Mata Cachorro/card_matacachorro.jpg-nggid03405-ngg0dyn-300x200x100-00f0w010c010_c4g1bI7.jpg",
+      "debut_year": 2002,
+      "gold": 0,
+      "silver": 0,
+      "bronze": 0,
+      "description": "<p>O rob&ocirc; Mata Cachorro possui como arma principal um losango de impacto vertical. Esta foi a primeira atua&ccedil;&atilde;o do losango como arma.</p>\r\n\r\n<p>Ele competiu junto o nosso outro rob&ocirc; Heleonor na 2&deg; Guerra de Rob&ocirc;s em 2002.</p>",
+      "is_active": false,
+      "bold": null,
+      "boards": []
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 33,
+    "fields": {
+      "name": "Cuervo",
+      "slug": "cuervo",
+      "category": 1,
+      "logo": "1000x1000.png",
+      "typography": "project_typography/Cuervo.png",
+      "cover_image": "projects/Cuervo/cover_cuervo.jpg-nggid03403-ngg0dyn-300x200x100-00f0w010c010r110f110r010t010.jpg",
+      "card_image": "projects/Cuervo/card_cuervo.jpg-nggid03403-ngg0dyn-300x200x100-00f0w010c010r110f110r010t010.jpg",
+      "debut_year": 2001,
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "description": "<p>O Cuervo foi primeiro rob&ocirc; desenvolvido pela equipe, ele &eacute; extremamente resistente e sua arma principal &eacute; uma rampa. Ele participou da 1&ordf; Guerra de Rob&ocirc;s, o primeiro evento do g&ecirc;nero a ser realizado no pa&iacute;s, no qual conquistou o segundo lugar.</p>",
+      "is_active": false,
+      "bold": null,
+      "boards": []
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 41,
+    "fields": {
+      "name": "Seninha",
+      "slug": "seninha",
+      "category": 14,
+      "logo": "1000x1000.png",
+      "typography": "project_typography/Seninha.png",
+      "cover_image": "projects/Seninha/cover_seninha3.jpg",
+      "card_image": "projects/Seninha/card_seninha2.jpg",
+      "debut_year": 2009,
+      "gold": 0,
+      "silver": 1,
+      "bronze": 1,
+      "description": "<p>O projeto follower consiste na constru&ccedil;&atilde;o de um rob&ocirc; aut&ocirc;nomo que deve seguir um circuito demarcado por linhas no ch&atilde;o e executar alguma a&ccedil;&atilde;o predeterminada quando chegar a uma marca especial da pista. O vencedor da competi&ccedil;&atilde;o &eacute; aquele que consegue fazer todo o circuito em menor tempo. Vale ressaltar que o circuito a ser percorrido n&atilde;o &eacute; previamente conhecido pelos competidores.</p>\r\n\r\n<p>Na 6&ordf; edi&ccedil;&atilde;o do Winter Challenge o Seninha foi um dos poucos prot&oacute;tipos que conseguiram completar com &ecirc;xito o circuito proposto pela organiza&ccedil;&atilde;o. E mais, conquistou 2&ordm; lugar na categoria, o que representa um excelente desempenho para uma das primeiras participa&ccedil;&otilde;es da Equipe.</p>",
+      "is_active": false,
+      "bold": null,
+      "boards": []
+    }
+  },
+  {
+    "model": "projects.projectimage",
+    "pk": 18,
+    "fields": {
+      "project": 30,
+      "image": "projects/Pikachu/pikachu3.jpg",
+      "description": "Pikachu - Manutenção"
+    }
+  },
+  {
+    "model": "projects.projectimage",
+    "pk": 19,
+    "fields": {
+      "project": 30,
+      "image": "projects/Pikachu/pikachu21.jpg",
+      "description": "Pikachu - Interno"
+    }
+  },
+  {
+    "model": "projects.projectimage",
+    "pk": 35,
+    "fields": {
+      "project": 41,
+      "image": "projects/Seninha/seninha2.jpg",
+      "description": "Seninha"
+    }
+  },
+  {
+    "model": "projects.projectimage",
+    "pk": 36,
+    "fields": {
+      "project": 41,
+      "image": "projects/Seninha/seninha3.jpg",
+      "description": "Seninha (2)"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can add association",
+      "content_type": 7,
+      "codename": "add_association"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can change association",
+      "content_type": 7,
+      "codename": "change_association"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can delete association",
+      "content_type": 7,
+      "codename": "delete_association"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can add code",
+      "content_type": 8,
+      "codename": "add_code"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can change code",
+      "content_type": 8,
+      "codename": "change_code"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can delete code",
+      "content_type": 8,
+      "codename": "delete_code"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add nonce",
+      "content_type": 9,
+      "codename": "add_nonce"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change nonce",
+      "content_type": 9,
+      "codename": "change_nonce"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete nonce",
+      "content_type": 9,
+      "codename": "delete_nonce"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can add user social auth",
+      "content_type": 10,
+      "codename": "add_usersocialauth"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can change user social auth",
+      "content_type": 10,
+      "codename": "change_usersocialauth"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can delete user social auth",
+      "content_type": 10,
+      "codename": "delete_usersocialauth"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can add partial",
+      "content_type": 11,
+      "codename": "add_partial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can change partial",
+      "content_type": 11,
+      "codename": "change_partial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can delete partial",
+      "content_type": 11,
+      "codename": "delete_partial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can add event",
+      "content_type": 12,
+      "codename": "add_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can change event",
+      "content_type": 12,
+      "codename": "change_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can delete event",
+      "content_type": 12,
+      "codename": "delete_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add quota",
+      "content_type": 13,
+      "codename": "add_quota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change quota",
+      "content_type": 13,
+      "codename": "change_quota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete quota",
+      "content_type": 13,
+      "codename": "delete_quota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can add sponsor",
+      "content_type": 14,
+      "codename": "add_sponsor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can change sponsor",
+      "content_type": 14,
+      "codename": "change_sponsor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can delete sponsor",
+      "content_type": 14,
+      "codename": "delete_sponsor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can add about",
+      "content_type": 15,
+      "codename": "add_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can change about",
+      "content_type": 15,
+      "codename": "change_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can delete about",
+      "content_type": 15,
+      "codename": "delete_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can add recruitment",
+      "content_type": 16,
+      "codename": "add_recruitment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can change recruitment",
+      "content_type": 16,
+      "codename": "change_recruitment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can delete recruitment",
+      "content_type": 16,
+      "codename": "delete_recruitment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add board",
+      "content_type": 17,
+      "codename": "add_board"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change board",
+      "content_type": 17,
+      "codename": "change_board"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete board",
+      "content_type": 17,
+      "codename": "delete_board"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can add board image",
+      "content_type": 18,
+      "codename": "add_boardimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can change board image",
+      "content_type": 18,
+      "codename": "change_boardimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can delete board image",
+      "content_type": 18,
+      "codename": "delete_boardimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can add category",
+      "content_type": 19,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can change category",
+      "content_type": 19,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can delete category",
+      "content_type": 19,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can add project",
+      "content_type": 20,
+      "codename": "add_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can change project",
+      "content_type": 20,
+      "codename": "change_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can delete project",
+      "content_type": 20,
+      "codename": "delete_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add project image",
+      "content_type": 21,
+      "codename": "add_projectimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change project image",
+      "content_type": 21,
+      "codename": "change_projectimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete project image",
+      "content_type": 21,
+      "codename": "delete_projectimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can add super category",
+      "content_type": 22,
+      "codename": "add_supercategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can change super category",
+      "content_type": 22,
+      "codename": "change_supercategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can delete super category",
+      "content_type": 22,
+      "codename": "delete_supercategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can add news",
+      "content_type": 23,
+      "codename": "add_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can change news",
+      "content_type": 23,
+      "codename": "change_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can delete news",
+      "content_type": 23,
+      "codename": "delete_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can add member",
+      "content_type": 24,
+      "codename": "add_member"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can change member",
+      "content_type": 24,
+      "codename": "change_member"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can delete member",
+      "content_type": 24,
+      "codename": "delete_member"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view association",
+      "content_type": 18,
+      "codename": "view_association"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can view code",
+      "content_type": 19,
+      "codename": "view_code"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can view nonce",
+      "content_type": 20,
+      "codename": "view_nonce"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can view user social auth",
+      "content_type": 21,
+      "codename": "view_usersocialauth"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view partial",
+      "content_type": 22,
+      "codename": "view_partial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can view event",
+      "content_type": 7,
+      "codename": "view_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can view quota",
+      "content_type": 8,
+      "codename": "view_quota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can view sponsor",
+      "content_type": 9,
+      "codename": "view_sponsor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view about",
+      "content_type": 23,
+      "codename": "view_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can view board",
+      "content_type": 10,
+      "codename": "view_board"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can view board image",
+      "content_type": 11,
+      "codename": "view_boardimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can view category",
+      "content_type": 12,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view project",
+      "content_type": 13,
+      "codename": "view_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+      "name": "Can view project image",
+      "content_type": 14,
+      "codename": "view_projectimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+      "name": "Can view super category",
+      "content_type": 15,
+      "codename": "view_supercategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+      "name": "Can view news",
+      "content_type": 16,
+      "codename": "view_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+      "name": "Can view member",
+      "content_type": 17,
+      "codename": "view_member"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+      "name": "Can add recruitment",
+      "content_type": 24,
+      "codename": "add_recruitment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+      "name": "Can change recruitment",
+      "content_type": 24,
+      "codename": "change_recruitment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+      "name": "Can delete recruitment",
+      "content_type": 24,
+      "codename": "delete_recruitment"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Editor Geral",
+      "permissions": [
+        43,
+        44,
+        45,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        46,
+        47,
+        48,
+        40,
+        41,
+        42,
+        93,
+        94,
+        95,
+        67,
+        68,
+        69,
+        49,
+        50,
+        51,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        31,
+        32,
+        33,
+        28,
+        29,
+        30
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Admin",
+      "permissions": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        9,
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        43,
+        44,
+        45,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        46,
+        47,
+        48,
+        40,
+        41,
+        42,
+        67,
+        68,
+        69,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        31,
+        32,
+        33,
+        28,
+        29,
+        30
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+      "name": "Editor Notícias",
+      "permissions": [
+        46,
+        47,
+        48
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 4,
+    "fields": {
+      "name": "Editor Projetos",
+      "permissions": [
+        37,
+        38,
+        40,
+        41,
+        42,
+        31,
+        32,
+        33,
+        28,
+        29
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 5,
+    "fields": {
+      "name": "Editor Membros",
+      "permissions": [
+        49,
+        50,
+        51
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 29,
+    "fields": {
+      "password": "pbkdf2_sha256$100000$rX6V38RgXM0F$+1oO00nNnVh8r+tbntiXc1l6/pqI7QjeEXmeJ1p7j88=",
+      "last_login": "2020-08-18T22:53:58.572Z",
+      "is_superuser": true,
+      "username": "thor",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-08-18T22:53:51.986Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 30,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "deleted",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-18T22:54:17.307Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "news.news",
+    "fields": {
+      "author": 30,
+      "title": "4 ouros na IRON Cup!",
+      "slug": "4-ouro-na-iron-cup",
+      "text": "<p>Nos dias 8, 9 e 10 de mar&ccedil;o de 2019, participamos da <strong>IRON Cup</strong> (Inatel Robotics National Cup), no munic&iacute;pio de Santa Rita do Sapuca&iacute; (MG). Com 25 membros da equipe participando, competimos em&nbsp;8 categorias com 14 projetos diferentes, e conquistamos 5 p&oacute;dios, dentre eles&nbsp;<strong>4&nbsp;trof&eacute;us de ouro</strong>.&nbsp;</p>\r\n\r\n<p>No Trekking, a equipe conquistou um dos ouros com o ThunderWaze, rob&ocirc; que foi o &uacute;nico a passar por todos os 3 cones espalhados no campo de futebol.</p>\r\n\r\n<p>J&aacute; nos Sum&ocirc;s, a equipe se inscreveu com os rob&ocirc;s Stonehenge, Moai, RoZeta, ThunderBlock e ThunderTruck, e se destacou na competi&ccedil;&atilde;o.&nbsp;<br />\r\nO Rozeta participou da primeira competi&ccedil;&atilde;o com a sua mec&acirc;nica nova, obtendo o 14&deg; lugar.<br />\r\nNa categoria Lego, a equipe conquistou o 1&deg; lugar com o ThunderTruck e 7&deg; lugar com o rob&ocirc; ThunderBlock.<br />\r\nNos Sum&ocirc;s&nbsp;3kg,&nbsp;obtivemos 3 p&oacute;dios, um de 1&deg; lugar na categoria Aut&ocirc;nomo com o Moai, um de 2&deg; lugar na categoria R&aacute;dio Controlado e uma de 1&deg; lugar na mesma categoria com o Stonehenge.</p>\r\n\r\n<p><img alt=\"\" class=\"body-image\" src=\"/media/ckeditor/2019/03/29/ironcup-1jpg.png\" style=\"height:200px; width:300px\" /></p>\r\n\r\n<p>Na categoria de combate Antweight(454g), os rob&ocirc;s Duende, Sharkhai e Atom&nbsp;conquistaram&nbsp;respectivamente&nbsp;o 8&deg;, 7&deg; e 4&deg; lugar. Vale destacar o sucesso do rob&ocirc; Atom, mais novo Antweight da equipe, que continua melhorando seus resultados a cada competi&ccedil;&atilde;o.<br />\r\nNa categoria de combate Beetleweight(1,36kg), n&oacute;s inscrevemos os rob&ocirc;s D&rsquo;Arc, Ratnik e Iskeiro. Depois de combates&nbsp;&aacute;rduos, o rob&ocirc; Ratnik se destacou, conquistando o 5&deg; lugar.<br />\r\nNa categoria seguidor de linha, o Tracer obteve bons resultados no primeiro dia, mas acabou ficando na 11&ordf; posi&ccedil;&atilde;o.</p>\r\n\r\n<p>Tamb&eacute;m participamos pela primeira vez na categoria de Futebol 2D em uma IRON&nbsp;Cup.</p>\r\n\r\n<p>Por fim, gostar&iacute;amos de agradecer aos nossos patrocinadores, que torna uma&nbsp;realidade&nbsp;a participa&ccedil;&atilde;o da equipe nessas competi&ccedil;&otilde;es, possibilitando&nbsp;as nossas grandes conquistas. Sem eles, a equipe nunca teria atingido patamares t&atilde;o altos.</p>\r\n\r\n<p><img alt=\"\" class=\"body-image\" src=\"/media/ckeditor/2019/03/29/ironcup-3jpg_K7Iq7bf.png\" /></p>",
+      "created_date": "2019-03-29T16:42:01Z",
+      "published_date": "2019-03-29T17:35:11Z",
+      "cover_image": "news_cover/ironcup-2.JPG_SOnf5sb.png",
+      "intro_image": "",
+      "cover_on_text_end": false,
+      "visible": true
+    }
+  },
+  {
+    "model": "news.news",
+    "fields": {
+      "author": 30,
+      "title": "Agradecimento ao Grupo de Pesquisas de Jato d’Água (GPJA/POLI)",
+      "slug": "agradecimento-ao-grupo-de-pesquisas-de-jato-dagua",
+      "text": "<p>Gostar&iacute;amos de fazer um agradecimento ao <strong>Grupo de Pesquisas de Jato d&rsquo;&Aacute;gua</strong>&nbsp;(GPJA) do Laborat&oacute;rio de Mec&acirc;nica de Rochas do PMI, departamento de Engenharia de Minas e Petr&oacute;leo da POLI. Nele, utilizamos uma m&aacute;quina de corte a jato d&rsquo;&aacute;gua, cuja fun&ccedil;&atilde;o &eacute; fazer cortes passantes em chapas e blocos, seguindo desenhos computadorizados, por meio de um jato d&rsquo;&aacute;gua adicionado a um material abrasivo, sendo capaz de cortar at&eacute; mesmo os mais resistentes materiais que usamos. Por meio da m&aacute;quina e de seu operador, <strong>Jorge Sakamoto</strong>, conseguimos fazer diversos cortes de pe&ccedil;as essenciais para compor a estrutura e gerar a resist&ecirc;ncia devida aos nossos rob&ocirc;s ao longo de v&aacute;rios anos, o que nos proporcionou a oportunidade de concluir nossos projetos e alcan&ccedil;ar diversas conquistas nas competi&ccedil;&otilde;es que participamos. Muito obrigado ao Jorge e ao GPJA por nos atender quando precisamos e nos ajudar nessa jornada!</p>\r\n\r\n<p style=\"text-align:center\"><img alt=\"\" class=\"body-image\" src=\"/media/ckeditor/2019/04/12/1a7799eb-e628-4314-a82e-2e2f4c3b65bb.jpeg\" style=\"height:225px; width:300px\" /><img alt=\"\" class=\"body-image\" src=\"/media/ckeditor/2019/04/12/73b78595-c73f-47c8-90be-7213fc0a564e.jpeg\" style=\"height:225px; width:300px\" /></p>",
+      "created_date": "2019-04-13T00:31:39Z",
+      "published_date": "2019-04-13T00:39:54Z",
+      "cover_image": "news_cover/42129EE0-98EF-40CE-92FA-B5F0EE138B4E.jpeg",
+      "intro_image": "",
+      "cover_on_text_end": false,
+      "visible": true
+    }
+  },
+  {
+    "model": "landing.progressbar",
+    "fields": {
+      "name": "thunder_donations",
+      "current_value": 0,
+      "maximum_value": 100
+    }
+  }
+]
