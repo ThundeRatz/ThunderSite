@@ -73,6 +73,8 @@ class ProgressBar(models.Model):
     name = models.CharField(max_length=64)
     current_value = models.IntegerField()
     maximum_value = models.IntegerField()
+    pix_link = models.URLField(default="")
+    description = RichTextField(null=True, blank=True)
 
     def __str__(self):
         return f"Name: {self.name} {self.current_value}/{self.maximum_value}"

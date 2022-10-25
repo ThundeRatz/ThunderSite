@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div id="doacoes-any" class="d-flex flex-column text-center justify-content-center">
-                <a href="https://nubank.com.br/pagar/ok4ds/OV8nae5FCf" target="_blank" id="doe1">
+                <a href="{{ thunder_donations.pix_link }}" target="_blank" id="doe1">
                     <div style="font-weight: 500;">Contribua com qualquer valor!</div>
                     <div style="font-size: 1.5rem;">
                         clicando aqui: <img src="{% static 'landing/img/pix-logo.png' %}" class="col-6 col-md-2" alt="">
@@ -38,17 +38,7 @@
                     max="{{thunder_donations.maximum_value}}"> </progress>
             </div>
             <div id="adt-description" class="d-flex flex-column text-center justify-content-center">
-                A iniciativa ThunderDoações foi criada como forma de conectar ex-membros,
-                familiares e todos que tenham interesse nos trabalhos desenvolvidas pela ThundeRatz.
-
-                A fim de potencializar os projetos e a participação da equipe
-                em competições, foi criado um canal para receber doações únicas.
-
-                Todo dinheiro arrecadado será destinado para viabilizar a participação da equipe
-                na
-                <a href="https://www.robocoreexperience.com/" target="_blank">
-                    <img src="{% static 'landing/img/logo_RC_experience1.webp'%}" class="col-12 col-md-5" alt="">
-                </a>
+                {{ thunder_donations.description | safe }}
             </div>
         </div>
     </div>
