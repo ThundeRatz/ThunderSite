@@ -7,7 +7,7 @@
                 <h5>Contato:</h5>
                 <p class="py-2"><i class="fas fa-envelope"></i>&nbsp;<span>contato@thunderatz.org</span><br>
 
-                <i class="fas fa-phone"></i>&nbsp;<span>+55 21 97954-1523</span></p>
+                <i class="fas fa-phone"></i>&nbsp;<span>+55 11 99145-4877</span></p>
 
                 <h5>Membro Oficial</h5>
                 <a target="_blank" href="//gearpoli.com.br">
@@ -40,8 +40,12 @@
 
         <div class="footer-lower">
             <div class="line"></div>
-            <div class="text-center">&copy; 2020 Equipe ThundeRatz de Rob&oacute;tica</div>
+            <div class="text-center">&copy; <span id="current-year"></span> Equipe ThundeRatz de Rob&oacute;tica</div>
             <div class="text-center">See this site on <a href="https://github.com/ThundeRatz/ThunderSite"><i class="fab fa-github"></i> GitHub</a>!</div>
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
